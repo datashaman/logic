@@ -1,2 +1,6 @@
 /composer.lock
+/dist/*.bundle.js
+/dist/*.bundle.js.gz
+/.env
+/node_modules/
 /vendor/

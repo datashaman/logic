@@ -1,0 +1,673 @@
+{
+    "shortcuts": [
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "class",
+                    "type": "string",
+                    "variadic": false
+                }
+            ],
+            "file": "shortcuts",
+            "header": "C(string $class)",
+            "name": "Datashaman\\Logic\\C",
+            "href": "#C",
+            "shortName": "C",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates a predicate function for checking the class of a value<\/p>"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "d",
+                    "type": "mixed",
+                    "variadic": false
+                },
+                {
+                    "default": "null",
+                    "description": "",
+                    "name": "f",
+                    "type": "null|callable",
+                    "variadic": false
+                }
+            ],
+            "file": "shortcuts",
+            "header": "D(mixed $d, $f = null)",
+            "name": "Datashaman\\Logic\\D",
+            "href": "#D",
+            "shortName": "D",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates a function that calls a function on a Just (it should return the value)\nand returns a default on a Nothing value.<\/p>"
+        },
+        {
+            "arguments": [],
+            "file": "shortcuts",
+            "header": "I()",
+            "name": "Datashaman\\Logic\\I",
+            "href": "#I",
+            "shortName": "I",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates an identity function (returns its value unchanged).<\/p>"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "arg",
+                    "type": "mixed",
+                    "variadic": false
+                }
+            ],
+            "file": "shortcuts",
+            "header": "K(mixed $arg)",
+            "name": "Datashaman\\Logic\\K",
+            "href": "#K",
+            "shortName": "K",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates a constant function (returns the same value regardless of argument).<\/p>"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "conditions",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "shortcuts",
+            "header": "M(...$conditions)",
+            "name": "Datashaman\\Logic\\M",
+            "href": "#M",
+            "shortName": "M",
+            "description": "<ul>\n<li>loops through the provided conditions<\/li>\n<li>calls the first array item (the predicate function) with the subject<\/li>\n<li>if the result is true, call the second array item (the callback function) with the subject<\/li>\n<li>if the result is false, go down the list of conditions<\/li>\n<li>all cases must be handled or an exception is thrown<\/li>\n<\/ul>",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates a match function which takes one parameter (the subject):<\/p>"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "shortcuts",
+            "header": "P(...$args)",
+            "name": "Datashaman\\Logic\\P",
+            "href": "#P",
+            "shortName": "P",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>An alias for creating predicate functions.<\/p>"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "x",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "y",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "z",
+                    "type": "mixed",
+                    "variadic": false
+                }
+            ],
+            "file": "shortcuts",
+            "header": "S(callable $x, callable $y, mixed $z)",
+            "name": "Datashaman\\Logic\\S",
+            "href": "#S",
+            "shortName": "S",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Application (not sure what to do with this yet)<\/p>"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": "",
+                    "name": "type",
+                    "type": "string",
+                    "variadic": false
+                }
+            ],
+            "file": "shortcuts",
+            "header": "T(string $type)",
+            "name": "Datashaman\\Logic\\T",
+            "href": "#T",
+            "shortName": "T",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates a predicate function for checking the type of a value.<\/p>"
+        },
+        {
+            "arguments": [],
+            "file": "shortcuts",
+            "header": "V()",
+            "name": "Datashaman\\Logic\\V",
+            "href": "#V",
+            "shortName": "V",
+            "description": "",
+            "example": null,
+            "output": "",
+            "return": {
+                "type": "callable",
+                "description": ""
+            },
+            "summary": "<p>Creates a function which returns the value of the monad.<\/p>"
+        }
+    ],
+    "maybe": [
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "ms",
+                    "type": "array",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "catMaybes(array $ms)",
+            "name": "Datashaman\\Logic\\Maybe\\catMaybes",
+            "href": "#catMaybes",
+            "shortName": "catMaybes"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "m",
+                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "fromJust(Datashaman\\Logic\\Maybe\\Maybe $m)",
+            "name": "Datashaman\\Logic\\Maybe\\fromJust",
+            "href": "#fromJust",
+            "shortName": "fromJust"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "d",
+                    "type": false,
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "m",
+                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "fromMaybe($d, Datashaman\\Logic\\Maybe\\Maybe $m)",
+            "name": "Datashaman\\Logic\\Maybe\\fromMaybe",
+            "href": "#fromMaybe",
+            "shortName": "fromMaybe"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "m",
+                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "isJust(Datashaman\\Logic\\Maybe\\Maybe $m)",
+            "name": "Datashaman\\Logic\\Maybe\\isJust",
+            "href": "#isJust",
+            "shortName": "isJust"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "m",
+                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "isNothing(Datashaman\\Logic\\Maybe\\Maybe $m)",
+            "name": "Datashaman\\Logic\\Maybe\\isNothing",
+            "href": "#isNothing",
+            "shortName": "isNothing"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "x",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "listToMaybe($x)",
+            "name": "Datashaman\\Logic\\Maybe\\listToMaybe",
+            "href": "#listToMaybe",
+            "shortName": "listToMaybe"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "f",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "a",
+                    "type": "array",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "mapMaybe(callable $f, array $a)",
+            "name": "Datashaman\\Logic\\Maybe\\mapMaybe",
+            "href": "#mapMaybe",
+            "shortName": "mapMaybe"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "b",
+                    "type": false,
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "f",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "a",
+                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "maybe($b, callable $f, Datashaman\\Logic\\Maybe\\Maybe $a)",
+            "name": "Datashaman\\Logic\\Maybe\\maybe",
+            "href": "#maybe",
+            "shortName": "maybe"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "m",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "maybe",
+            "header": "maybeToList($m)",
+            "name": "Datashaman\\Logic\\Maybe\\maybeToList",
+            "href": "#maybeToList",
+            "shortName": "maybeToList"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "maybe",
+            "header": "mkJust(...$args)",
+            "name": "Datashaman\\Logic\\Maybe\\mkJust",
+            "href": "#mkJust",
+            "shortName": "mkJust"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "maybe",
+            "header": "mkMaybe(...$args)",
+            "name": "Datashaman\\Logic\\Maybe\\mkMaybe",
+            "href": "#mkMaybe",
+            "shortName": "mkMaybe"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "maybe",
+            "header": "mkNothing(...$args)",
+            "name": "Datashaman\\Logic\\Maybe\\mkNothing",
+            "href": "#mkNothing",
+            "shortName": "mkNothing"
+        }
+    ],
+    "either": [
+        {
+            "arguments": [
+                {
+                    "default": "null",
+                    "description": null,
+                    "name": "f",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": "null",
+                    "description": null,
+                    "name": "g",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "e",
+                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "either(callable $f = null, callable $g = null, Datashaman\\Logic\\Either\\Either $e)",
+            "name": "Datashaman\\Logic\\Either\\either",
+            "href": "#either",
+            "shortName": "either"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "d",
+                    "type": false,
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "e",
+                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "fromLeft($d, Datashaman\\Logic\\Either\\Either $e)",
+            "name": "Datashaman\\Logic\\Either\\fromLeft",
+            "href": "#fromLeft",
+            "shortName": "fromLeft"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "d",
+                    "type": false,
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "e",
+                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "fromRight($d, Datashaman\\Logic\\Either\\Either $e)",
+            "name": "Datashaman\\Logic\\Either\\fromRight",
+            "href": "#fromRight",
+            "shortName": "fromRight"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "e",
+                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "isLeft(Datashaman\\Logic\\Either\\Either $e)",
+            "name": "Datashaman\\Logic\\Either\\isLeft",
+            "href": "#isLeft",
+            "shortName": "isLeft"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "e",
+                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "isRight(Datashaman\\Logic\\Either\\Either $e)",
+            "name": "Datashaman\\Logic\\Either\\isRight",
+            "href": "#isRight",
+            "shortName": "isRight"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "es",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "lefts($es)",
+            "name": "Datashaman\\Logic\\Either\\lefts",
+            "href": "#lefts",
+            "shortName": "lefts"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "either",
+            "header": "mkLeft(...$args)",
+            "name": "Datashaman\\Logic\\Either\\mkLeft",
+            "href": "#mkLeft",
+            "shortName": "mkLeft"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "either",
+            "header": "mkRight(...$args)",
+            "name": "Datashaman\\Logic\\Either\\mkRight",
+            "href": "#mkRight",
+            "shortName": "mkRight"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "es",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "partitionEithers($es)",
+            "name": "Datashaman\\Logic\\Either\\partitionEithers",
+            "href": "#partitionEithers",
+            "shortName": "partitionEithers"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "es",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "either",
+            "header": "rights($es)",
+            "name": "Datashaman\\Logic\\Either\\rights",
+            "href": "#rights",
+            "shortName": "rights"
+        }
+    ],
+    "chain": [
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "value",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "chain",
+            "header": "mkChain($value)",
+            "name": "Datashaman\\Logic\\mkChain",
+            "href": "#mkChain",
+            "shortName": "mkChain"
+        }
+    ],
+    "list": [
+        {
+            "arguments": [
+                {
+                    "default": "[]",
+                    "description": null,
+                    "name": "value",
+                    "type": false,
+                    "variadic": false
+                }
+            ],
+            "file": "list",
+            "header": "mkList($value = [])",
+            "name": "Datashaman\\Logic\\mkList",
+            "href": "#mkList",
+            "shortName": "mkList"
+        }
+    ]
+}
