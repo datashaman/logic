@@ -2,6 +2,8 @@
 
 namespace Datashaman\Logic;
 
+use Exception;
+
 abstract class Monad
 {
     public $value;

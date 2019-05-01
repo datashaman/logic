@@ -12,8 +12,10 @@ function isType($x, string $type): bool
 
 function mkPredicate(...$args)
 {
-    return function ($x) use ($args): bool {
-        [$p, $args] = [head($args), tail($args)];
+    $list = mkList($args);
+
+    return function ($x) use ($list): bool {
+        $maybe = $list->uncons();
 
         return $p($x, ...$args);
     };

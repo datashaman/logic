@@ -3,6 +3,7 @@
 namespace Datashaman\Logic\Maybe;
 
 use Datashaman\Logic\Monad;
+use Exception;
 
 use function Datashaman\Logic\K;
 use function Datashaman\Logic\M;
@@ -23,7 +24,7 @@ final class Nothing extends Maybe
 
     public function __invoke(...$_)
     {
-        throw new Exception('Nothing is nothing');
+        return $this;
     }
 }
 
@@ -92,7 +93,7 @@ function mapMaybe(
         return [];
     }
 
-    [$x, $xs] = [head($a), tail($a)];
+    [$x, $xs] = fromJust(mkList($a)->uncons());
 
     $rs = mapMaybe($f, $xs);
 
