@@ -1,0 +1,20 @@
+{
+    "name": "datashaman/logic",
+    "authors": [
+        {
+            "name": "Marlin Forbes",
+            "email": "marlinf@datashaman.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "files": [
+            "src/bootstrap.php"
+        ]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2"
+    }
+}
