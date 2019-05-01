@@ -258,11 +258,7 @@ class List_ extends Monad
     }
 }
 
-function mkList($value = [])
+function mkList($value = []): List_
 {
-    if ($value instanceof List_) {
-        return $value;
-    }
-
-    return new List_($value);
+    return $value instanceof List_ ? $value : new List_($value);
 }

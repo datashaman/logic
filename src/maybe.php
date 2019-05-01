@@ -109,18 +109,22 @@ function mapMaybe(
     );
 }
 
-function mkJust(...$args)
+function mkJust(...$args): Just
 {
     $f = function ($value): Just {
-        return new Just($value);
+        return $value instanceof Just ? $value : new Just($value);
     };
 
     return $args ? $f($args[0]) : $f;
 }
 
-function mkMaybe(...$args)
+function mkMaybe(...$args): Maybe
 {
     $f = function ($value): Maybe {
+        if ($value instanceof Maybe) {
+            return $value;
+        }
+
         return M(
             ['is_null', mkNothing()],
             [K(true), mkJust()]
@@ -130,10 +134,10 @@ function mkMaybe(...$args)
     return $args ? $f($args[0]) : $f;
 }
 
-function mkNothing(...$args)
+function mkNothing(...$args): Nothing
 {
     $f = function ($_): Nothing {
-        return new Nothing();
+        return $value instanceof Nothing ? $value : new Nothing();
     };
 
     return $args ? $f($args[0]) : $f;

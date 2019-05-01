@@ -43,19 +43,19 @@ function either(callable $f = null, callable $g = null, Either $e)
     throw new Exception('This should not be possible');
 }
 
-function mkLeft(...$args)
+function mkLeft(...$args): Left
 {
     $f = function ($value): Left {
-        return new Left($value);
+        return $value instanceof Left ? $value : new Left($value);
     };
 
     return $args ? $f($args[0]) : $f;
 }
 
-function mkRight(...$args)
+function mkRight(...$args): Right
 {
     $f = function ($value): Right {
-        return new Right($value);
+        return $value instanceof Right ? $value : new Right($value);
     };
 
     return $args ? $f($args[0]) : $f;

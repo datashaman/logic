@@ -28,5 +28,5 @@ class Chain extends Either\Either
 
 function mkChain($value): Chain
 {
-    return new Chain($value);
+    return $value instanceof Chain ? $value : new Chain($value);
 }
