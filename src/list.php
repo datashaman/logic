@@ -57,7 +57,7 @@ class List_ extends Monad
         return mkList(array_filter($this->value, $p));
     }
 
-    public function first(callable $p = null, $default = null)
+    public function first(callable $p = null, $default = null): Maybe
     {
         if (count($this->value) === 0) {
             return $default;
@@ -70,10 +70,10 @@ class List_ extends Monad
         $key = $this->search($p);
 
         if ($key === false) {
-            return $default;
+            return mkMaybe($default);
         }
 
-        return $this->value[$key];
+        return mkMaybe($this->value[$key]);
     }
 
     public function flip(): List_

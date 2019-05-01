@@ -24,13 +24,8 @@ class Right extends Either
 
 function either(callable $f = null, callable $g = null, Either $e)
 {
-    if (is_null($f)) {
-        $f = I();
-    }
-
-    if (is_null($g)) {
-        $g = I();
-    }
+    $f = $f ?: I();
+    $g = $g ?: I();
 
     if ($e->isLeft()) {
         return $f($e);
@@ -89,31 +84,27 @@ function isRight(Either $e)
     return $e instanceof Right;
 }
 
-function lefts(array $es)
+function lefts($es): List_
 {
-    return array_filter(
-        $es,
-        'isLeft'
-    );
+    return mkList($es)->filter('isLeft');
 }
 
-function rights(array $es)
+function rights($es): List_
 {
-    return array_filter(
-        $es,
-        'isRight'
-    );
+    return mkList($es)->filter('isRight');
 }
 
-function partitionEithers(array $es)
+function partitionEithers($es): List_
 {
-    return array_reduce(
-        $es,
-        function (array $acc, Either $e) {
-            $acc[isLeft($e) ? 0 : 1][] = $e;
+    $partitions = mkList($es)
+        ->reduce(
+            function ($acc, Either $e) {
+                $acc[isLeft($e) ? 0 : 1][] = $e;
 
-            return $acc;
-        },
-        [[], []]
-    );
+                return $acc;
+            },
+            [[], []]
+        );
+
+    return mkList($partitions);
 }

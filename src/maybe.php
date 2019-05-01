@@ -61,18 +61,18 @@ function fromMaybe($d, Maybe $m)
     return $d;
 }
 
-function maybeToList($m): array
+function maybeToList($m): List_
 {
     if (isJust($m)) {
-        return [$m()];
+        return mkList([$m()]);
     }
 
-    return [];
+    return mkList();
 }
 
-function listToMaybe(array $x): Maybe
+function listToMaybe($x): Maybe
 {
-    return mkMaybe(count($x) ? $x[0] : null);
+    return mkList($x)->first();
 }
 
 function catMaybes(array $ms): array
