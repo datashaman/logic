@@ -69,11 +69,11 @@ class List_ extends Monad
 
         $key = $this->search($p);
 
-        if ($key === false) {
+        if (isNothing($key)) {
             return mkMaybe($default);
         }
 
-        return mkMaybe($this->value[$key]);
+        return mkMaybe($this->value[fromJust($key)]);
     }
 
     public function flip(): List_
@@ -181,7 +181,7 @@ class List_ extends Monad
         return array_reduce($this->value, $f, $initial);
     }
 
-    public function search($value, $strict = false)
+    public function search($value, $strict = false): Maybe
     {
         if (!is_callable($value)) {
             return array_search($value, $this->value, $strict);
@@ -189,11 +189,11 @@ class List_ extends Monad
 
         foreach ($this->value as $key => $item) {
             if ($value($item, $key)) {
-                return $key;
+                return mkJust($key);
             }
         }
 
-        return false;
+        return mkNothing();
     }
 
     public function shift()
