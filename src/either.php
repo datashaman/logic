@@ -1,6 +1,6 @@
 <?php
 
-namespace Datashaman\Logic\Either;
+namespace Datashaman\Logic;
 
 use function Datashaman\Logic\I;
 use Datashaman\Logic\Monad;

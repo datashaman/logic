@@ -2,7 +2,7 @@
 
 namespace Datashaman\Logic;
 
-class Chain extends Either\Either
+class Chain extends Either
 {
     public function then(
         callable $done = null,

@@ -4,7 +4,7 @@
             "arguments": [
                 {
                     "default": null,
-                    "description": "",
+                    "description": null,
                     "name": "class",
                     "type": "string",
                     "variadic": false
@@ -16,44 +16,40 @@
             "href": "#C",
             "shortName": "C",
             "description": "",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates a predicate function for checking the class of a value<\/p>"
+            "example": "use function Datashaman\\Logic\\C;\n\n$now = new DateTime();\n\n$p = C('DateTime');\n\nvar_dump($p($now));\nvar_dump($p(12));\n",
+            "output": "bool(true)\nbool(false)\n",
+            "return": null,
+            "summary": "<p>Creates a predicate function for checking the class of a value<\/p>",
+            "gist": "https:\/\/gist.github.com\/ff0549e47f49e913dd611f7996293998"
         },
         {
             "arguments": [
                 {
                     "default": null,
-                    "description": "",
+                    "description": null,
                     "name": "d",
-                    "type": "mixed",
+                    "type": false,
                     "variadic": false
                 },
                 {
                     "default": "null",
-                    "description": "",
+                    "description": null,
                     "name": "f",
-                    "type": "null|callable",
+                    "type": "callable",
                     "variadic": false
                 }
             ],
             "file": "shortcuts",
-            "header": "D(mixed $d, $f = null)",
+            "header": "D($d, callable $f = null)",
             "name": "Datashaman\\Logic\\D",
             "href": "#D",
             "shortName": "D",
             "description": "",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates a function that calls a function on a Just (it should return the value)\nand returns a default on a Nothing value.<\/p>"
+            "example": "use function Datashaman\\Logic\\D;\nuse function Datashaman\\Logic\\mkMaybe;\n\n$f = D(0);\necho $f(mkMaybe(null)) . PHP_EOL;\necho $f(mkMaybe(12)) . PHP_EOL;\n\n$f = D(0, function ($value) {\n    return $value * 2;\n});\necho $f(mkMaybe(null)) . PHP_EOL;\necho $f(mkMaybe(12)) . PHP_EOL;\n",
+            "output": "0\n12\n0\n24\n",
+            "return": null,
+            "summary": "<p>Creates a function that calls a function on a Just (it should return the value)\nand returns a default on a Nothing value.<\/p>",
+            "gist": "https:\/\/gist.github.com\/ea26db70ac47acde36b76fb481085d42"
         },
         {
             "arguments": [],
@@ -63,37 +59,33 @@
             "href": "#I",
             "shortName": "I",
             "description": "",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates an identity function (returns its value unchanged).<\/p>"
+            "example": "use function Datashaman\\Logic\\I;\n\n$f = I();\n\nvar_dump($f(null));\nvar_dump($f(12));\nvar_dump($f('hello world'));\n",
+            "output": "NULL\nint(12)\nstring(11) \"hello world\"\n",
+            "return": null,
+            "summary": "<p>Creates an identity function (returns its value unchanged).<\/p>",
+            "gist": "https:\/\/gist.github.com\/d3d702b626e9e3a3c0e30fd01a24278d"
         },
         {
             "arguments": [
                 {
                     "default": null,
-                    "description": "",
+                    "description": null,
                     "name": "arg",
-                    "type": "mixed",
+                    "type": false,
                     "variadic": false
                 }
             ],
             "file": "shortcuts",
-            "header": "K(mixed $arg)",
+            "header": "K($arg)",
             "name": "Datashaman\\Logic\\K",
             "href": "#K",
             "shortName": "K",
             "description": "",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates a constant function (returns the same value regardless of argument).<\/p>"
+            "example": "use function Datashaman\\Logic\\K;\n\n$f = K(12);\n\nvar_dump($f(null));\nvar_dump($f(0));\nvar_dump($f('hello world'));\n",
+            "output": "int(12)\nint(12)\nint(12)\n",
+            "return": null,
+            "summary": "<p>Creates a constant function (returns the same value regardless of argument).<\/p>",
+            "gist": "https:\/\/gist.github.com\/75e4c7b7006600c76c60085967d3ca64"
         },
         {
             "arguments": [
@@ -111,13 +103,11 @@
             "href": "#M",
             "shortName": "M",
             "description": "<ul>\n<li>loops through the provided conditions<\/li>\n<li>calls the first array item (the predicate function) with the subject<\/li>\n<li>if the result is true, call the second array item (the callback function) with the subject<\/li>\n<li>if the result is false, go down the list of conditions<\/li>\n<li>all cases must be handled or an exception is thrown<\/li>\n<\/ul>",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates a match function which takes one parameter (the subject):<\/p>"
+            "example": "use Datashaman\\Logic\\Just;\nuse Datashaman\\Logic\\Nothing;\n\nuse function Datashaman\\Logic\\K;\nuse function Datashaman\\Logic\\M;\nuse function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\mkNothing;\nuse function Datashaman\\Logic\\repr;\n\n\/\/ If a null value is matched, return Nothing\n\/\/ Else return a new Just value\n$match = M(\n    [\n        'is_null',\n        function () {\n            return new Nothing();\n        }\n    ],\n    [\n        function () {\n            return true;\n        },\n        function ($value) {\n            return new Just($value);\n        }\n    ]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n\n\/\/ The above can be written more succinctly using\n\/\/ shortcuts. K makes a function that returns the supplied\n\/\/ parameter to every function call, always returning a\n\/\/ constant value. Here it will always evaluates to true,\n\/\/ which makes it perfect for the else branch in a conditional\n\/\/ expression.\n\n\/\/ mkJust and mkNothing, when called with no parameters, return\n\/\/ a factory function that does the same as the above.\n\n$match = M(\n    ['is_null', mkNothing()],\n    [K(true), mkJust()]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n",
+            "output": "<Nothing>\n<Just 12>\n<Nothing>\n<Just 12>\n",
+            "return": null,
+            "summary": "<p>Creates a match function which takes one parameter (the subject):<\/p>",
+            "gist": "https:\/\/gist.github.com\/f04b7ee06e0a2ddadff2a0970066610c"
         },
         {
             "arguments": [
@@ -185,7 +175,7 @@
             "arguments": [
                 {
                     "default": null,
-                    "description": "",
+                    "description": null,
                     "name": "type",
                     "type": "string",
                     "variadic": false
@@ -197,13 +187,11 @@
             "href": "#T",
             "shortName": "T",
             "description": "",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates a predicate function for checking the type of a value.<\/p>"
+            "example": "use function Datashaman\\Logic\\T;\n\n$f = T('string');\n\nvar_dump($f(null));\nvar_dump($f(12));\nvar_dump($f('hello world'));\n",
+            "output": "bool(false)\nbool(false)\nbool(true)\n",
+            "return": null,
+            "summary": "<p>Creates a predicate function for checking the type of a value.<\/p>",
+            "gist": "https:\/\/gist.github.com\/20f35cd66bbc25f3b60df6ba980f1bbc"
         },
         {
             "arguments": [],
@@ -213,13 +201,11 @@
             "href": "#V",
             "shortName": "V",
             "description": "",
-            "example": null,
-            "output": "",
-            "return": {
-                "type": "callable",
-                "description": ""
-            },
-            "summary": "<p>Creates a function which returns the value of the monad.<\/p>"
+            "example": "use function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\V;\n\n$f = V();\n$j = mkJust(12);\n\nvar_dump($j);\nvar_dump($f($j));\n",
+            "output": "object(Datashaman\\Logic\\Just)#89 (1) {\n  [\"value\"]=>\n  int(12)\n}\nint(12)\n",
+            "return": null,
+            "summary": "<p>Creates a function which returns the unwrapped monad value.<\/p>",
+            "gist": "https:\/\/gist.github.com\/70d129072d7e0fd717b925e832dd3a5f"
         }
     ],
     "maybe": [
@@ -235,7 +221,7 @@
             ],
             "file": "maybe",
             "header": "catMaybes(array $ms)",
-            "name": "Datashaman\\Logic\\Maybe\\catMaybes",
+            "name": "Datashaman\\Logic\\catMaybes",
             "href": "#catMaybes",
             "shortName": "catMaybes"
         },
@@ -245,13 +231,13 @@
                     "default": null,
                     "description": null,
                     "name": "m",
-                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "type": "Datashaman\\Logic\\Maybe",
                     "variadic": false
                 }
             ],
             "file": "maybe",
-            "header": "fromJust(Datashaman\\Logic\\Maybe\\Maybe $m)",
-            "name": "Datashaman\\Logic\\Maybe\\fromJust",
+            "header": "fromJust(Datashaman\\Logic\\Maybe $m)",
+            "name": "Datashaman\\Logic\\fromJust",
             "href": "#fromJust",
             "shortName": "fromJust"
         },
@@ -268,13 +254,13 @@
                     "default": null,
                     "description": null,
                     "name": "m",
-                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "type": "Datashaman\\Logic\\Maybe",
                     "variadic": false
                 }
             ],
             "file": "maybe",
-            "header": "fromMaybe($d, Datashaman\\Logic\\Maybe\\Maybe $m)",
-            "name": "Datashaman\\Logic\\Maybe\\fromMaybe",
+            "header": "fromMaybe($d, Datashaman\\Logic\\Maybe $m)",
+            "name": "Datashaman\\Logic\\fromMaybe",
             "href": "#fromMaybe",
             "shortName": "fromMaybe"
         },
@@ -284,13 +270,13 @@
                     "default": null,
                     "description": null,
                     "name": "m",
-                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "type": "Datashaman\\Logic\\Maybe",
                     "variadic": false
                 }
             ],
             "file": "maybe",
-            "header": "isJust(Datashaman\\Logic\\Maybe\\Maybe $m)",
-            "name": "Datashaman\\Logic\\Maybe\\isJust",
+            "header": "isJust(Datashaman\\Logic\\Maybe $m)",
+            "name": "Datashaman\\Logic\\isJust",
             "href": "#isJust",
             "shortName": "isJust"
         },
@@ -300,13 +286,13 @@
                     "default": null,
                     "description": null,
                     "name": "m",
-                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "type": "Datashaman\\Logic\\Maybe",
                     "variadic": false
                 }
             ],
             "file": "maybe",
-            "header": "isNothing(Datashaman\\Logic\\Maybe\\Maybe $m)",
-            "name": "Datashaman\\Logic\\Maybe\\isNothing",
+            "header": "isNothing(Datashaman\\Logic\\Maybe $m)",
+            "name": "Datashaman\\Logic\\isNothing",
             "href": "#isNothing",
             "shortName": "isNothing"
         },
@@ -322,7 +308,7 @@
             ],
             "file": "maybe",
             "header": "listToMaybe($x)",
-            "name": "Datashaman\\Logic\\Maybe\\listToMaybe",
+            "name": "Datashaman\\Logic\\listToMaybe",
             "href": "#listToMaybe",
             "shortName": "listToMaybe"
         },
@@ -345,7 +331,7 @@
             ],
             "file": "maybe",
             "header": "mapMaybe(callable $f, array $a)",
-            "name": "Datashaman\\Logic\\Maybe\\mapMaybe",
+            "name": "Datashaman\\Logic\\mapMaybe",
             "href": "#mapMaybe",
             "shortName": "mapMaybe"
         },
@@ -369,13 +355,13 @@
                     "default": null,
                     "description": null,
                     "name": "a",
-                    "type": "Datashaman\\Logic\\Maybe\\Maybe",
+                    "type": "Datashaman\\Logic\\Maybe",
                     "variadic": false
                 }
             ],
             "file": "maybe",
-            "header": "maybe($b, callable $f, Datashaman\\Logic\\Maybe\\Maybe $a)",
-            "name": "Datashaman\\Logic\\Maybe\\maybe",
+            "header": "maybe($b, callable $f, Datashaman\\Logic\\Maybe $a)",
+            "name": "Datashaman\\Logic\\maybe",
             "href": "#maybe",
             "shortName": "maybe"
         },
@@ -391,7 +377,7 @@
             ],
             "file": "maybe",
             "header": "maybeToList($m)",
-            "name": "Datashaman\\Logic\\Maybe\\maybeToList",
+            "name": "Datashaman\\Logic\\maybeToList",
             "href": "#maybeToList",
             "shortName": "maybeToList"
         },
@@ -407,7 +393,7 @@
             ],
             "file": "maybe",
             "header": "mkJust(...$args)",
-            "name": "Datashaman\\Logic\\Maybe\\mkJust",
+            "name": "Datashaman\\Logic\\mkJust",
             "href": "#mkJust",
             "shortName": "mkJust"
         },
@@ -423,7 +409,7 @@
             ],
             "file": "maybe",
             "header": "mkMaybe(...$args)",
-            "name": "Datashaman\\Logic\\Maybe\\mkMaybe",
+            "name": "Datashaman\\Logic\\mkMaybe",
             "href": "#mkMaybe",
             "shortName": "mkMaybe"
         },
@@ -439,7 +425,7 @@
             ],
             "file": "maybe",
             "header": "mkNothing(...$args)",
-            "name": "Datashaman\\Logic\\Maybe\\mkNothing",
+            "name": "Datashaman\\Logic\\mkNothing",
             "href": "#mkNothing",
             "shortName": "mkNothing"
         }
@@ -465,13 +451,13 @@
                     "default": null,
                     "description": null,
                     "name": "e",
-                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "type": "Datashaman\\Logic\\Either",
                     "variadic": false
                 }
             ],
             "file": "either",
-            "header": "either(callable $f = null, callable $g = null, Datashaman\\Logic\\Either\\Either $e)",
-            "name": "Datashaman\\Logic\\Either\\either",
+            "header": "either(callable $f = null, callable $g = null, Datashaman\\Logic\\Either $e)",
+            "name": "Datashaman\\Logic\\either",
             "href": "#either",
             "shortName": "either"
         },
@@ -488,13 +474,13 @@
                     "default": null,
                     "description": null,
                     "name": "e",
-                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "type": "Datashaman\\Logic\\Either",
                     "variadic": false
                 }
             ],
             "file": "either",
-            "header": "fromLeft($d, Datashaman\\Logic\\Either\\Either $e)",
-            "name": "Datashaman\\Logic\\Either\\fromLeft",
+            "header": "fromLeft($d, Datashaman\\Logic\\Either $e)",
+            "name": "Datashaman\\Logic\\fromLeft",
             "href": "#fromLeft",
             "shortName": "fromLeft"
         },
@@ -511,13 +497,13 @@
                     "default": null,
                     "description": null,
                     "name": "e",
-                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "type": "Datashaman\\Logic\\Either",
                     "variadic": false
                 }
             ],
             "file": "either",
-            "header": "fromRight($d, Datashaman\\Logic\\Either\\Either $e)",
-            "name": "Datashaman\\Logic\\Either\\fromRight",
+            "header": "fromRight($d, Datashaman\\Logic\\Either $e)",
+            "name": "Datashaman\\Logic\\fromRight",
             "href": "#fromRight",
             "shortName": "fromRight"
         },
@@ -527,13 +513,13 @@
                     "default": null,
                     "description": null,
                     "name": "e",
-                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "type": "Datashaman\\Logic\\Either",
                     "variadic": false
                 }
             ],
             "file": "either",
-            "header": "isLeft(Datashaman\\Logic\\Either\\Either $e)",
-            "name": "Datashaman\\Logic\\Either\\isLeft",
+            "header": "isLeft(Datashaman\\Logic\\Either $e)",
+            "name": "Datashaman\\Logic\\isLeft",
             "href": "#isLeft",
             "shortName": "isLeft"
         },
@@ -543,13 +529,13 @@
                     "default": null,
                     "description": null,
                     "name": "e",
-                    "type": "Datashaman\\Logic\\Either\\Either",
+                    "type": "Datashaman\\Logic\\Either",
                     "variadic": false
                 }
             ],
             "file": "either",
-            "header": "isRight(Datashaman\\Logic\\Either\\Either $e)",
-            "name": "Datashaman\\Logic\\Either\\isRight",
+            "header": "isRight(Datashaman\\Logic\\Either $e)",
+            "name": "Datashaman\\Logic\\isRight",
             "href": "#isRight",
             "shortName": "isRight"
         },
@@ -565,7 +551,7 @@
             ],
             "file": "either",
             "header": "lefts($es)",
-            "name": "Datashaman\\Logic\\Either\\lefts",
+            "name": "Datashaman\\Logic\\lefts",
             "href": "#lefts",
             "shortName": "lefts"
         },
@@ -581,7 +567,7 @@
             ],
             "file": "either",
             "header": "mkLeft(...$args)",
-            "name": "Datashaman\\Logic\\Either\\mkLeft",
+            "name": "Datashaman\\Logic\\mkLeft",
             "href": "#mkLeft",
             "shortName": "mkLeft"
         },
@@ -597,7 +583,7 @@
             ],
             "file": "either",
             "header": "mkRight(...$args)",
-            "name": "Datashaman\\Logic\\Either\\mkRight",
+            "name": "Datashaman\\Logic\\mkRight",
             "href": "#mkRight",
             "shortName": "mkRight"
         },
@@ -613,7 +599,7 @@
             ],
             "file": "either",
             "header": "partitionEithers($es)",
-            "name": "Datashaman\\Logic\\Either\\partitionEithers",
+            "name": "Datashaman\\Logic\\partitionEithers",
             "href": "#partitionEithers",
             "shortName": "partitionEithers"
         },
@@ -629,9 +615,73 @@
             ],
             "file": "either",
             "header": "rights($es)",
-            "name": "Datashaman\\Logic\\Either\\rights",
+            "name": "Datashaman\\Logic\\rights",
             "href": "#rights",
             "shortName": "rights"
+        }
+    ],
+    "predicates": [
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "x",
+                    "type": false,
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "class",
+                    "type": "string",
+                    "variadic": false
+                }
+            ],
+            "file": "predicates",
+            "header": "isClass($x, string $class)",
+            "name": "Datashaman\\Logic\\isClass",
+            "href": "#isClass",
+            "shortName": "isClass"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "x",
+                    "type": false,
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "type",
+                    "type": "string",
+                    "variadic": false
+                }
+            ],
+            "file": "predicates",
+            "header": "isType($x, string $type)",
+            "name": "Datashaman\\Logic\\isType",
+            "href": "#isType",
+            "shortName": "isType"
+        },
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "predicates",
+            "header": "mkPredicate(...$args)",
+            "name": "Datashaman\\Logic\\mkPredicate",
+            "href": "#mkPredicate",
+            "shortName": "mkPredicate"
         }
     ],
     "chain": [

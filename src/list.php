@@ -57,7 +57,7 @@ class List_ extends Monad
         return mkList(array_filter($this->value, $p));
     }
 
-    public function first(callable $p = null, $default = null): Maybe
+    public function first(callable $p = null, $default = null)
     {
         if (count($this->value) === 0) {
             return $default;
@@ -69,11 +69,11 @@ class List_ extends Monad
 
         $key = $this->search($p);
 
-        if (isNothing($key)) {
-            return mkMaybe($default);
+        if ($key === false) {
+            return $default;
         }
 
-        return mkMaybe($this->value[fromJust($key)]);
+        return $this->value[$key];
     }
 
     public function flip(): List_
@@ -181,7 +181,7 @@ class List_ extends Monad
         return array_reduce($this->value, $f, $initial);
     }
 
-    public function search($value, $strict = false): Maybe
+    public function search($value, $strict = false)
     {
         if (!is_callable($value)) {
             return array_search($value, $this->value, $strict);
@@ -189,11 +189,11 @@ class List_ extends Monad
 
         foreach ($this->value as $key => $item) {
             if ($value($item, $key)) {
-                return mkJust($key);
+                return $key;
             }
         }
 
-        return mkNothing();
+        return false;
     }
 
     public function shift()
@@ -206,7 +206,7 @@ class List_ extends Monad
         return mkList(array_shuffle($this->values));
     }
 
-    public function slice($offset, int $length)
+    public function slice($offset, int $length = null)
     {
         return mkList(array_slice($this->value, $offset, $length, true));
     }
@@ -234,13 +234,13 @@ class List_ extends Monad
         );
     }
 
-    public function tail(): List_
+    public function tail()
     {
         if (count($this->value) === 0) {
             throw new Exception('List must not be empty');
         }
 
-        return $this->slice(1);
+        return array_slice($this->value, 1);
     }
 
     public function uncons(): Maybe

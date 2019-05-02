@@ -1,5 +1,7 @@
 <?php
 
+namespace Datashaman\Logic;
+
 function isClass($x, string $class): bool
 {
     return $x instanceof $class;

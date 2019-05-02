@@ -1,19 +1,22 @@
 <?php
 
-namespace Datashaman\Logic\Maybe;
+namespace Datashaman\Logic;
 
-use Datashaman\Logic\Monad;
 use Exception;
+use Icecave\Repr\Generator;
+use Icecave\Repr\RepresentableInterface;
 
-use function Datashaman\Logic\K;
-use function Datashaman\Logic\M;
-
-abstract class Maybe extends Monad
+abstract class Maybe extends Monad implements
+    RepresentableInterface
 {
 }
 
 class Just extends Maybe
 {
+    public function stringRepresentation(Generator $generator, $currentDepth = 0)
+    {
+        return '<Just ' . $this->value . '>';
+    }
 }
 
 final class Nothing extends Maybe
@@ -26,11 +29,16 @@ final class Nothing extends Maybe
     {
         return $this;
     }
+
+    public function stringRepresentation(Generator $generator, $currentDepth = 0)
+    {
+        return '<Nothing>';
+    }
 }
 
 function maybe($b, callable $f, Maybe $a)
 {
-    return isNothing($a) ? $b : $a($f);
+    return isNothing($a) ? $b : $f($a());
 }
 
 function fromJust(Maybe $m)
@@ -109,7 +117,7 @@ function mapMaybe(
     );
 }
 
-function mkJust(...$args): Just
+function mkJust(...$args)
 {
     $f = function ($value): Just {
         return $value instanceof Just ? $value : new Just($value);
@@ -118,7 +126,7 @@ function mkJust(...$args): Just
     return $args ? $f($args[0]) : $f;
 }
 
-function mkMaybe(...$args): Maybe
+function mkMaybe(...$args)
 {
     $f = function ($value): Maybe {
         if ($value instanceof Maybe) {
@@ -134,9 +142,9 @@ function mkMaybe(...$args): Maybe
     return $args ? $f($args[0]) : $f;
 }
 
-function mkNothing(...$args): Nothing
+function mkNothing(...$args)
 {
-    $f = function ($_): Nothing {
+    $f = function ($value): Nothing {
         return $value instanceof Nothing ? $value : new Nothing();
     };
 

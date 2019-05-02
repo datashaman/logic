@@ -5,28 +5,50 @@ namespace Datashaman\Logic;
 /**
  * Creates a predicate function for checking the class of a value
  *
- * @param string $class
+ * <pre>
+ * use function Datashaman\Logic\C;
  *
- * @return callable
+ * $now = new DateTime();
+ *
+ * $p = C('DateTime');
+ *
+ * var_dump($p($now));
+ * var_dump($p(12));
+ * </pre>
  */
 function C(string $class): callable
 {
-    return P('isClass', $class);
+    return P(
+        function ($value) use ($class) {
+            return isClass($value, $class);
+        },
+        $class
+    );
 }
 
 /**
  * Creates a function that calls a function on a Just (it should return the value)
  * and returns a default on a Nothing value.
  *
- * @param mixed $d
- * @param null|callable $f
+ * <pre>
+ * use function Datashaman\Logic\D;
+ * use function Datashaman\Logic\mkMaybe;
  *
- * @return callable
+ * $f = D(0);
+ * echo $f(mkMaybe(null)) . PHP_EOL;
+ * echo $f(mkMaybe(12)) . PHP_EOL;
+ *
+ * $f = D(0, function ($value) {
+ *     return $value * 2;
+ * });
+ * echo $f(mkMaybe(null)) . PHP_EOL;
+ * echo $f(mkMaybe(12)) . PHP_EOL;
+ * </pre>
  */
 function D($d, callable $f = null): callable
 {
     if (is_null($f)) {
-        $f = V();
+        $f = I();
     }
 
     return function (Maybe $x) use ($d, $f) {
@@ -37,7 +59,15 @@ function D($d, callable $f = null): callable
 /**
  * Creates an identity function (returns its value unchanged).
  *
- * @return callable
+ * <pre>
+ * use function Datashaman\Logic\I;
+ *
+ * $f = I();
+ *
+ * var_dump($f(null));
+ * var_dump($f(12));
+ * var_dump($f('hello world'));
+ * </pre>
  */
 function I(): callable
 {
@@ -47,13 +77,22 @@ function I(): callable
 }
 
 /**
- * Creates a function which returns the value of the monad.
+ * Creates a function which returns the unwrapped monad value.
  *
- * @return callable
+ * <pre>
+ * use function Datashaman\Logic\mkJust;
+ * use function Datashaman\Logic\V;
+ *
+ * $f = V();
+ * $j = mkJust(12);
+ *
+ * var_dump($j);
+ * var_dump($f($j));
+ * </pre>
  */
 function V(): callable
 {
-    return function ($x) {
+    return function (Monad $x) {
         return $x();
     };
 }
@@ -61,9 +100,15 @@ function V(): callable
 /**
  * Creates a constant function (returns the same value regardless of argument).
  *
- * @param mixed $arg
+ * <pre>
+ * use function Datashaman\Logic\K;
  *
- * @return callable
+ * $f = K(12);
+ *
+ * var_dump($f(null));
+ * var_dump($f(0));
+ * var_dump($f('hello world'));
+ * </pre>
  */
 function K($arg): callable
 {
@@ -101,13 +146,24 @@ function S(callable $x, callable $y, $z): callable
 /**
  * Creates a predicate function for checking the type of a value.
  *
- * @param string $type
+ * <pre>
+ * use function Datashaman\Logic\T;
  *
- * @return callable
+ * $f = T('string');
+ *
+ * var_dump($f(null));
+ * var_dump($f(12));
+ * var_dump($f('hello world'));
+ * </pre>
  */
 function T(string $type): callable
 {
-    return P('isType', $type);
+    return P(
+        function ($value) use ($type) {
+            return isType($value, $type);
+        },
+        $type
+    );
 }
 
 /**
@@ -119,9 +175,58 @@ function T(string $type): callable
  * - if the result is false, go down the list of conditions
  * - all cases must be handled or an exception is thrown
  *
- * @return callable
+ * <pre>
+ * use Datashaman\Logic\Just;
+ * use Datashaman\Logic\Nothing;
+ *
+ * use function Datashaman\Logic\K;
+ * use function Datashaman\Logic\M;
+ * use function Datashaman\Logic\mkJust;
+ * use function Datashaman\Logic\mkNothing;
+ * use function Datashaman\Logic\repr;
+ *
+ * // If a null value is matched, return Nothing
+ * // Else return a new Just value
+ * $match = M(
+ *     [
+ *         'is_null',
+ *         function () {
+ *             return new Nothing();
+ *         }
+ *     ],
+ *     [
+ *         function () {
+ *             return true;
+ *         },
+ *         function ($value) {
+ *             return new Just($value);
+ *         }
+ *     ]
+ * );
+ *
+ * echo repr($match(null)) . PHP_EOL;
+ * echo repr($match(12)) . PHP_EOL;
+ *
+ * // The above can be written more succinctly using
+ * // shortcuts. K makes a function that returns the supplied
+ * // parameter to every function call, always returning a
+ * // constant value. Here it will always evaluates to true,
+ * // which makes it perfect for the else branch in a conditional
+ * // expression.
+ *
+ * // mkJust and mkNothing, when called with no parameters, return
+ * // a factory function that does the same as the above.
+ *
+ * $match = M(
+ *     ['is_null', mkNothing()],
+ *     [K(true), mkJust()]
+ * );
+ *
+ * echo repr($match(null)) . PHP_EOL;
+ * echo repr($match(12)) . PHP_EOL;
+ * </pre>
  */
-function M(...$conditions)
+function M(...$conditions): callable
 {
     return function ($subject) use ($conditions) {
         foreach ($conditions as $condition) {

@@ -235,7 +235,7 @@ if (isset($options['gists'])) {
 <?php
 <<<CONFIG
 packages:
-    - "datashaman/logic: *"
+    - "datashaman/logic: dev-master"
 CONFIG;
 #
 # This is a Melody script. http://melody.sensiolabs.org/
