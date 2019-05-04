@@ -14,12 +14,12 @@ class Chain extends Either
     public function then(
         callable $done = null,
         callable $fail = null
-    ) {
-        return either(
+    ): Chain {
+        return mkChain(either(
             $fail,
             $done,
             $this
-        );
+        ));
     }
 
     public function done(callable $done)

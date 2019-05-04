@@ -6,7 +6,7 @@ module.exports = {
     entry: './resources/scripts/app.js',
     output: {
         chunkFilename: '[name].bundle.js',
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'docs'),
         filename: '[name].bundle.js'
     },
     module: {
@@ -43,6 +43,6 @@ module.exports = {
         optimizationBailout: true
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist')
+        contentBase: path.join(__dirname, 'docs')
     }
 }
