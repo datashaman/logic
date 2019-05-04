@@ -15,6 +15,31 @@ use Icecave\Repr\Repr;
 use Symfony\Component\Console\Output\StreamOutput;
 
 /**
+ * Curry a callable.
+ *
+ * <pre>
+ * use function Datashaman\Logic\curry;
+ *
+ * $times = function ($x, $y) {
+ *     return $x * $y;
+ * };
+ *
+ * $double = curry($times, 2);
+ * $triple = curry($times, 3);
+ *
+ * echo $double(4) . PHP_EOL;
+ * echo $triple(4) . PHP_EOL;
+ * </pre>
+ */
+function curry(callable $f, ...$args) {
+    return function (...$rest) use ($f, $args) {
+        $merged = array_merge($args, $rest);
+
+        return $f(...$merged);
+    };
+}
+
+/**
  * Evaluate an expression of PHP code embedded in a doc block.
  *
  * Yes, I know it's eval. But it's developer input, not user input

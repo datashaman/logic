@@ -268,12 +268,13 @@ function M(...$conditions): callable
  * Create a function that always returns true
  *
  * <pre>
- * use Datashaman\Logic\T;
+ * use function Datashaman\Logic\T;
  *
  * $f = T();
  *
  * var_dump($f(12));
  * var_dump($f(null));
+ * </pre>
  */
 function T()
 {
@@ -284,14 +285,80 @@ function T()
  * Create a function that always returns false
  *
  * <pre>
- * use Datashaman\Logic\F;
+ * use function Datashaman\Logic\F;
  *
  * $f = F();
  *
  * var_dump($f(12));
  * var_dump($f(null));
+ * </pre>
  */
 function F()
 {
     return K(false);
+}
+
+/**
+ * Resolve a chain of monadic values into a context and call a result function with that context.
+ *
+ * <pre>
+ * use function Datashaman\Logic\Do_;
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ * use function Datashaman\Logic\repr;
+ *
+ * function resolveEither($value) {
+ *     return is_numeric($value) ? mkRight($value) : mkLeft('parse error');
+ * }
+ *
+ * echo repr(Do_(
+ *     [
+ *         'x' => resolveEither(3),
+ *         'y' => resolveEither(5),
+ *     ],
+ *     function ($c) {
+ *         return mkRight($c['x'] + $c['y']);
+ *     }
+ * )) . PHP_EOL;
+ *
+ * echo repr(Do_(
+ *     [
+ *         'x' => resolveEither('m'),
+ *         'y' => resolveEither(5),
+ *     ],
+ *     function ($c) {
+ *         return mkRight($c['x'] + $c['y']);
+ *     }
+ * )) . PHP_EOL;
+ * </pre>
+ */
+function Do_(...$args)
+{
+    if (count($args) === 2) {
+        $ctx = [];
+        array_unshift($args, $ctx);
+    }
+
+    [$ctx, $args, $func] = $args;
+
+    if ($args) {
+        $name = array_keys($args)[0];
+        $monad = array_values($args)[0];
+
+        if (!$monad instanceof Monad && is_callable($monad)) {
+            $monad = $monad($ctx);
+        }
+
+        array_shift($args);
+
+        return $monad->bind(
+            function ($value) use ($ctx, $name, $args, $func) {
+                $ctx[$name] = $value;
+
+                return do_($ctx, $args, $func);
+            }
+        );
+    }
+
+    return $func($ctx);
 }

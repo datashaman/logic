@@ -52,17 +52,40 @@
             "gist": "https:\/\/gist.github.com\/ea26db70ac47acde36b76fb481085d42"
         },
         {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "shortcuts",
+            "header": "Do_(...$args)",
+            "name": "Datashaman\\Logic\\Do_",
+            "href": "#Do_",
+            "shortName": "Do_",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\Do_;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\nfunction resolveEither($value) {\n    return is_numeric($value) ? mkRight($value) : mkLeft('parse error');\n}\n\necho repr(Do_(\n    [\n        'x' => resolveEither(3),\n        'y' => resolveEither(5),\n    ],\n    function ($c) {\n        return mkRight($c['x'] + $c['y']);\n    }\n)) . PHP_EOL;\n\necho repr(Do_(\n    [\n        'x' => resolveEither('m'),\n        'y' => resolveEither(5),\n    ],\n    function ($c) {\n        return mkRight($c['x'] + $c['y']);\n    }\n)) . PHP_EOL;\n",
+            "output": "<Right 8>\n<Left \"parse error\">\n",
+            "return": null,
+            "summary": "<p>Resolve a chain of monadic values into a context and call a result function with that context.<\/p>",
+            "gist": "https:\/\/gist.github.com\/406f4cd552687fdea3ed383df02bc485"
+        },
+        {
             "arguments": [],
             "file": "shortcuts",
             "header": "F()",
             "name": "Datashaman\\Logic\\F",
             "href": "#F",
             "shortName": "F",
-            "description": "<pre>\nuse Datashaman\\Logic\\F;\n\n$f = F();\n\nvar_dump($f(12));\nvar_dump($f(null));",
-            "example": null,
-            "output": "",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\F;\n\n$f = F();\n\nvar_dump($f(12));\nvar_dump($f(null));\n",
+            "output": "bool(false)\nbool(false)\n",
             "return": null,
-            "summary": "<p>Create a function that always returns false<\/p>"
+            "summary": "<p>Create a function that always returns false<\/p>",
+            "gist": "https:\/\/gist.github.com\/e7fe67fe09c4ee73ad177ad44d43e548"
         },
         {
             "arguments": [],
@@ -219,11 +242,12 @@
             "name": "Datashaman\\Logic\\T",
             "href": "#T",
             "shortName": "T",
-            "description": "<pre>\nuse Datashaman\\Logic\\T;\n\n$f = T();\n\nvar_dump($f(12));\nvar_dump($f(null));",
-            "example": null,
-            "output": "",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\T;\n\n$f = T();\n\nvar_dump($f(12));\nvar_dump($f(null));\n",
+            "output": "bool(true)\nbool(true)\n",
             "return": null,
-            "summary": "<p>Create a function that always returns true<\/p>"
+            "summary": "<p>Create a function that always returns true<\/p>",
+            "gist": "https:\/\/gist.github.com\/20f35cd66bbc25f3b60df6ba980f1bbc"
         },
         {
             "arguments": [],
@@ -462,6 +486,37 @@
             "shortName": "mkNothing"
         }
     ],
+    "helpers": [
+        {
+            "arguments": [
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "f",
+                    "type": "callable",
+                    "variadic": false
+                },
+                {
+                    "default": null,
+                    "description": null,
+                    "name": "args",
+                    "type": false,
+                    "variadic": true
+                }
+            ],
+            "file": "helpers",
+            "header": "curry(callable $f, ...$args)",
+            "name": "Datashaman\\Logic\\curry",
+            "href": "#curry",
+            "shortName": "curry",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\curry;\n\n$times = function ($x, $y) {\n    return $x * $y;\n};\n\n$double = curry($times, 2);\n$triple = curry($times, 3);\n\necho $double(4) . PHP_EOL;\necho $triple(4) . PHP_EOL;\n",
+            "output": "8\n12\n",
+            "return": null,
+            "summary": "<p>Curry a callable.<\/p>",
+            "gist": "https:\/\/gist.github.com\/0fc03b73bc222322e0ce43cda6fa2c09"
+        }
+    ],
     "either": [
         {
             "arguments": [
@@ -491,7 +546,13 @@
             "header": "either(callable $f = null, callable $g = null, Datashaman\\Logic\\Either $e)",
             "name": "Datashaman\\Logic\\either",
             "href": "#either",
-            "shortName": "either"
+            "shortName": "either",
+            "description": "<p>If the either monad is a right, call the second callable with the monad value.<\/p>",
+            "example": "use function Datashaman\\Logic\\curry;\nuse function Datashaman\\Logic\\either;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$s = mkLeft('foo');\n$n = mkRight(3);\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $s\n) . PHP_EOL;\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $n\n) . PHP_EOL;\n\n\/\/ Or use currying\n\n$f = curry(\n    function (...$args) {\n        return either(...$args);\n    },\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    }\n);\n\necho $f($s) . PHP_EOL;\necho $f($n) . PHP_EOL;\n",
+            "output": "3\n6\n3\n6\n",
+            "return": null,
+            "summary": "<p>If the either monad is a Left, call the first callable with the monad value.<\/p>",
+            "gist": "https:\/\/gist.github.com\/2fcc5e72297e0f60022557f801020ce8"
         },
         {
             "arguments": [
@@ -601,7 +662,13 @@
             "header": "mkLeft(...$args)",
             "name": "Datashaman\\Logic\\mkLeft",
             "href": "#mkLeft",
-            "shortName": "mkLeft"
+            "shortName": "mkLeft",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\repr;\n\n$err = mkLeft('You are not authorized');\n\necho repr($err) . PHP_EOL;\n\n$f = mkLeft();\n\necho repr($f('You are not authorized')) . PHP_EOL;\n",
+            "output": "<Left \"You are not authorized\">\n<Left \"You are not authorized\">\n",
+            "return": null,
+            "summary": "<p>Make a Left value. If no arguments are supplied, return a function which creates Left values.<\/p>",
+            "gist": "https:\/\/gist.github.com\/15946adb29bb8c294f11bd165a53a9a8"
         },
         {
             "arguments": [
@@ -617,7 +684,13 @@
             "header": "mkRight(...$args)",
             "name": "Datashaman\\Logic\\mkRight",
             "href": "#mkRight",
-            "shortName": "mkRight"
+            "shortName": "mkRight",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\n$ok = mkRight('You are authorized');\n\necho repr($ok) . PHP_EOL;\n\n$f = mkRight();\n\necho repr($f('You are authorized')) . PHP_EOL;\n",
+            "output": "<Right \"You are authorized\">\n<Right \"You are authorized\">\n",
+            "return": null,
+            "summary": "<p>Make a Right value. If no arguments are supplied, return a function which creates Right values.<\/p>",
+            "gist": "https:\/\/gist.github.com\/da479da4f36f004629f3dc6022fc91dc"
         },
         {
             "arguments": [
