@@ -6,6 +6,14 @@ watch:
 watch-playground:
 	while inotifywait -e close_write -r composer.* ./src ./checks ./functions ./playground ./tests; do php playground/test.php; done
 
+classes:
+	mkdir -p resources/json/
+	./generate-classes > resources/json/classes.json
+
+classes-gists:
+	mkdir -p resources/json/
+	./generate-classes --gists > resources/json/classes.json
+
 functions:
 	mkdir -p resources/json/
 	./generate-functions > resources/json/functions.json

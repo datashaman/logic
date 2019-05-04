@@ -1,25 +1,16 @@
 <template>
     <div>
-        <div v-for="file in files" :key="file">
-            <h2 :id="file">{{ file.toUpperCase() }}</h2>
-            <function-list :functions="functions(file)"></function-list>
-        </div>
+        <h2>Classes</h2>
+
+        <ul>
+            <li v-for="c in classes" :key="c">
+            </li>
+        </ul>
+        <h2>Functions</h2>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
-    computed: {
-        ...mapGetters([
-            'files'
-        ])
-    },
-    methods: {
-        functions(file) {
-            return this.$store.getters.functions[file]
-        }
-    }
 }
 </script>

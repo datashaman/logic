@@ -1,0 +1,2919 @@
+{
+    "chain": [
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "chain",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "then": {
+                    "name": "then",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "done",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "fail",
+                            "position": 1,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "done": {
+                    "name": "done",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "done",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "fail": {
+                    "name": "fail",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "fail",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "always": {
+                    "name": "always",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "always",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": false,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Chain",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Chain"
+        }
+    ],
+    "either": [
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "either",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": true,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": true,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Either",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Either"
+        },
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "either",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "_",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": false,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Left",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Left"
+        },
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "either",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": false,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Right",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Right"
+        }
+    ],
+    "maybe": [
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "maybe",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": false,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Just",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Just"
+        },
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "maybe",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": true,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": true,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Maybe",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Maybe"
+        },
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [],
+                "returnType": null
+            },
+            "file": "maybe",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "_",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": false,
+                "final": true,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Nothing",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Nothing"
+        }
+    ],
+    "list": [
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": [],
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": true,
+                            "defaultValueConstant": false,
+                            "optional": true,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "list",
+            "interfaces": [
+                "Icecave\\Repr\\RepresentableInterface"
+            ],
+            "methods": {
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": [],
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "stringRepresentation": {
+                    "name": "stringRepresentation",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": "Icecave\\Repr\\Generator",
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "generator",
+                            "position": 0,
+                            "type": "Icecave\\Repr\\Generator",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": 0,
+                            "defaultValueConstantName": null,
+                            "name": "currentDepth",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "chunk": {
+                    "name": "chunk",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "size",
+                            "position": 0,
+                            "type": "int",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "combine": {
+                    "name": "combine",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "values",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "contains": {
+                    "name": "contains",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "count": {
+                    "name": "count",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "diff": {
+                    "name": "diff",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "items",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "filter": {
+                    "name": "filter",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "p",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "first": {
+                    "name": "first",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "p",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "default",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "flip": {
+                    "name": "flip",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "head": {
+                    "name": "head",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "hasKey": {
+                    "name": "hasKey",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "key",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "implode": {
+                    "name": "implode",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "delimiter",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "init": {
+                    "name": "init",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "intersect": {
+                    "name": "intersect",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "items",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "intersectKey": {
+                    "name": "intersectKey",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "items",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "isEmpty": {
+                    "name": "isEmpty",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "keys": {
+                    "name": "keys",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "last": {
+                    "name": "last",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "map": {
+                    "name": "map",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "merge": {
+                    "name": "merge",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "items",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "pad": {
+                    "name": "pad",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "size",
+                            "position": 0,
+                            "type": "int",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "pop": {
+                    "name": "pop",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "push": {
+                    "name": "push",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": {}
+                },
+                "reverse": {
+                    "name": "reverse",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "reduce": {
+                    "name": "reduce",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "initial",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "search": {
+                    "name": "search",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": false,
+                            "defaultValueConstantName": null,
+                            "name": "strict",
+                            "position": 1,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "shift": {
+                    "name": "shift",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "shuffle": {
+                    "name": "shuffle",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "slice": {
+                    "name": "slice",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "offset",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "length",
+                            "position": 1,
+                            "type": "int",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "splice": {
+                    "name": "splice",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "offset",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "length",
+                            "position": 1,
+                            "type": "int",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "class": null,
+                            "defaultValue": [],
+                            "defaultValueConstantName": null,
+                            "name": "replacement",
+                            "position": 2,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "sum": {
+                    "name": "sum",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "tail": {
+                    "name": "tail",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": null
+                },
+                "uncons": {
+                    "name": "uncons",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "values": {
+                    "name": "values",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": {}
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": false,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\List_",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "List_"
+        }
+    ],
+    "monad": [
+        {
+            "constants": [],
+            "constructor": {
+                "name": "__construct",
+                "modifiers": {
+                    "abstract": false,
+                    "final": false,
+                    "generator": false,
+                    "private": false,
+                    "protected": false,
+                    "public": true,
+                    "static": false,
+                    "variadic": false
+                },
+                "parameters": [
+                    {
+                        "class": null,
+                        "defaultValue": null,
+                        "defaultValueConstantName": null,
+                        "name": "value",
+                        "position": 0,
+                        "type": "",
+                        "modifiers": {
+                            "array": false,
+                            "callable": false,
+                            "defaultValueAvailable": false,
+                            "defaultValueConstant": false,
+                            "optional": false,
+                            "passedByReference": false,
+                            "variadic": false
+                        }
+                    }
+                ],
+                "returnType": null
+            },
+            "file": "monad",
+            "interfaces": [],
+            "methods": {
+                "__construct": {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "value",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "__invoke": {
+                    "name": "__invoke",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": true
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "args",
+                            "position": 0,
+                            "type": "",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": true
+                            }
+                        }
+                    ],
+                    "returnType": null
+                },
+                "bind": {
+                    "name": "bind",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "class": null,
+                            "defaultValue": null,
+                            "defaultValueConstantName": null,
+                            "name": "f",
+                            "position": 0,
+                            "type": "callable",
+                            "modifiers": {
+                                "array": false,
+                                "callable": true,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": null
+                }
+            },
+            "modifiers": {
+                "abstract": true,
+                "final": false,
+                "interface": false,
+                "trait": false
+            },
+            "name": "Datashaman\\Logic\\Monad",
+            "properties": {
+                "value": {
+                    "name": "value",
+                    "modifiers": {
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": false
+                    }
+                }
+            },
+            "shortName": "Monad"
+        }
+    ]
+}

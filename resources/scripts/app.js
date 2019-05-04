@@ -62,11 +62,20 @@ Vue.component('b-row', BRow)
 require('lolight')
 require('../styles/app.scss')
 
+import classes from '../json/classes.json'
 import functions from '../json/functions.json'
 
 Vue.use(VueClipboard)
 Vue.use(VueRouter)
 Vue.use(Vuex)
+
+let allClasses = {}
+
+Object
+	.entries(classes)
+	.forEach(function (entry) {
+		allClasses[entry[0]] = new FuzzySearch(entry[1], ['shortName', 'summary'])
+	})
 
 let allFunctions = {}
 
