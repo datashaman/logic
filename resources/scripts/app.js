@@ -99,7 +99,7 @@ const router = new VueRouter({
     routes
 })
 
-router.replace({ name: 'home' })
+// router.replace({ name: 'home' })
 
 const store = new Vuex.Store({
     state: {
