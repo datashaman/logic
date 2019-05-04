@@ -88,13 +88,12 @@ files.keys().map(
 const routes = [
     {
         name: 'home',
-        path: '*',
+        path: '/',
         component: Vue.component('Home'),
     }
 ]
 
 const router = new VueRouter({
-    base: '/logic/',
     mode: 'history',
     routes
 })
