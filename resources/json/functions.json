@@ -54,6 +54,19 @@
         {
             "arguments": [],
             "file": "shortcuts",
+            "header": "F()",
+            "name": "Datashaman\\Logic\\F",
+            "href": "#F",
+            "shortName": "F",
+            "description": "<pre>\nuse Datashaman\\Logic\\F;\n\n$f = F();\n\nvar_dump($f(12));\nvar_dump($f(null));",
+            "example": null,
+            "output": "",
+            "return": null,
+            "summary": "<p>Create a function that always returns false<\/p>"
+        },
+        {
+            "arguments": [],
+            "file": "shortcuts",
             "header": "I()",
             "name": "Datashaman\\Logic\\I",
             "href": "#I",
@@ -64,6 +77,20 @@
             "return": null,
             "summary": "<p>Creates an identity function (returns its value unchanged).<\/p>",
             "gist": "https:\/\/gist.github.com\/d3d702b626e9e3a3c0e30fd01a24278d"
+        },
+        {
+            "arguments": [],
+            "file": "shortcuts",
+            "header": "J()",
+            "name": "Datashaman\\Logic\\J",
+            "href": "#J",
+            "shortName": "J",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\J;\nuse function Datashaman\\Logic\\repr;\n\n$f = J();\n\necho repr($f(12)) . PHP_EOL;\n",
+            "output": "<Just 12>\n",
+            "return": null,
+            "summary": "<p>Creates a function which wraps a value with Just.<\/p>",
+            "gist": "https:\/\/gist.github.com\/b4bbb7a46707309611a9911f14f3d0fe"
         },
         {
             "arguments": [
@@ -103,11 +130,25 @@
             "href": "#M",
             "shortName": "M",
             "description": "<ul>\n<li>loops through the provided conditions<\/li>\n<li>calls the first array item (the predicate function) with the subject<\/li>\n<li>if the result is true, call the second array item (the callback function) with the subject<\/li>\n<li>if the result is false, go down the list of conditions<\/li>\n<li>all cases must be handled or an exception is thrown<\/li>\n<\/ul>",
-            "example": "use Datashaman\\Logic\\Just;\nuse Datashaman\\Logic\\Nothing;\n\nuse function Datashaman\\Logic\\K;\nuse function Datashaman\\Logic\\M;\nuse function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\mkNothing;\nuse function Datashaman\\Logic\\repr;\n\n\/\/ If a null value is matched, return Nothing\n\/\/ Else return a new Just value\n$match = M(\n    [\n        'is_null',\n        function () {\n            return new Nothing();\n        }\n    ],\n    [\n        function () {\n            return true;\n        },\n        function ($value) {\n            return new Just($value);\n        }\n    ]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n\n\/\/ The above can be written more succinctly using\n\/\/ shortcuts. K makes a function that returns the supplied\n\/\/ parameter to every function call, always returning a\n\/\/ constant value. Here it will always evaluates to true,\n\/\/ which makes it perfect for the else branch in a conditional\n\/\/ expression.\n\n\/\/ mkJust and mkNothing, when called with no parameters, return\n\/\/ a factory function that does the same as the above.\n\n$match = M(\n    ['is_null', mkNothing()],\n    [K(true), mkJust()]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n",
-            "output": "<Nothing>\n<Just 12>\n<Nothing>\n<Just 12>\n",
+            "example": "use Datashaman\\Logic\\Just;\nuse Datashaman\\Logic\\Nothing;\n\nuse function Datashaman\\Logic\\{K, J, M, N, T};\nuse function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\mkNothing;\nuse function Datashaman\\Logic\\repr;\n\n\/\/ If a null value is matched, return Nothing\n\/\/ Else return a new Just value\n$match = M(\n    [\n        'is_null',\n        function () {\n            return new Nothing();\n        }\n    ],\n    [\n        function () {\n            return true;\n        },\n        function ($value) {\n            return new Just($value);\n        }\n    ]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n\n\/\/ The above can be written more succinctly using\n\/\/ shortcuts. K makes a function that returns the supplied\n\/\/ parameter to every function call, always returning a\n\/\/ constant value. Here it always evaluates to true, which\n\/\/ makes it perfect for the else branch in a conditional\n\/\/ expression.\n\n\/\/ mkJust and mkNothing, when called with no parameters, return\n\/\/ a factory function that does the same as the above.\n\n$match = M(\n    ['is_null', mkNothing()],\n    [K(true), mkJust()]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n\n\/\/ The above can be written even MORE succinctly as follows.\n\/\/ Whether this is wise is another question...\n$match = M(\n    ['is_null', N()],\n    [T(), J()]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n",
+            "output": "<Nothing>\n<Just 12>\n<Nothing>\n<Just 12>\n<Nothing>\n<Just 12>\n",
             "return": null,
             "summary": "<p>Creates a match function which takes one parameter (the subject):<\/p>",
             "gist": "https:\/\/gist.github.com\/f04b7ee06e0a2ddadff2a0970066610c"
+        },
+        {
+            "arguments": [],
+            "file": "shortcuts",
+            "header": "N()",
+            "name": "Datashaman\\Logic\\N",
+            "href": "#N",
+            "shortName": "N",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\N;\nuse function Datashaman\\Logic\\repr;\n\n$f = N();\n\necho repr($f(12)) . PHP_EOL;\n",
+            "output": "<Nothing>\n",
+            "return": null,
+            "summary": "<p>Creates a function which returns Nothing<\/p>",
+            "gist": "https:\/\/gist.github.com\/8a0f21064e9a1d86ad88f51d194c5def"
         },
         {
             "arguments": [
@@ -172,26 +213,17 @@
             "summary": "<p>Application (not sure what to do with this yet)<\/p>"
         },
         {
-            "arguments": [
-                {
-                    "default": null,
-                    "description": null,
-                    "name": "type",
-                    "type": "string",
-                    "variadic": false
-                }
-            ],
+            "arguments": [],
             "file": "shortcuts",
-            "header": "T(string $type)",
+            "header": "T()",
             "name": "Datashaman\\Logic\\T",
             "href": "#T",
             "shortName": "T",
-            "description": "",
-            "example": "use function Datashaman\\Logic\\T;\n\n$f = T('string');\n\nvar_dump($f(null));\nvar_dump($f(12));\nvar_dump($f('hello world'));\n",
-            "output": "bool(false)\nbool(false)\nbool(true)\n",
+            "description": "<pre>\nuse Datashaman\\Logic\\T;\n\n$f = T();\n\nvar_dump($f(12));\nvar_dump($f(null));",
+            "example": null,
+            "output": "",
             "return": null,
-            "summary": "<p>Creates a predicate function for checking the type of a value.<\/p>",
-            "gist": "https:\/\/gist.github.com\/20f35cd66bbc25f3b60df6ba980f1bbc"
+            "summary": "<p>Create a function that always returns true<\/p>"
         },
         {
             "arguments": [],
@@ -202,10 +234,10 @@
             "shortName": "V",
             "description": "",
             "example": "use function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\V;\n\n$f = V();\n$j = mkJust(12);\n\nvar_dump($j);\nvar_dump($f($j));\n",
-            "output": "object(Datashaman\\Logic\\Just)#89 (1) {\n  [\"value\"]=>\n  int(12)\n}\nint(12)\n",
+            "output": "object(Datashaman\\Logic\\Just)#96 (1) {\n  [\"value\"]=>\n  int(12)\n}\nint(12)\n",
             "return": null,
             "summary": "<p>Creates a function which returns the unwrapped monad value.<\/p>",
-            "gist": "https:\/\/gist.github.com\/70d129072d7e0fd717b925e832dd3a5f"
+            "gist": "https:\/\/gist.github.com\/301ba3226597d3d4fc26e102ad168fea"
         }
     ],
     "maybe": [

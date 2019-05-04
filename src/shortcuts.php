@@ -77,6 +77,44 @@ function I(): callable
 }
 
 /**
+ * Creates a function which wraps a value with Just.
+ *
+ * <pre>
+ * use function Datashaman\Logic\J;
+ * use function Datashaman\Logic\repr;
+ *
+ * $f = J();
+ *
+ * echo repr($f(12)) . PHP_EOL;
+ * </pre>
+ */
+function J(): callable
+{
+    return function ($arg) {
+        return mkJust($arg);
+    };
+}
+
+/**
+ * Creates a function which returns Nothing
+ *
+ * <pre>
+ * use function Datashaman\Logic\N;
+ * use function Datashaman\Logic\repr;
+ *
+ * $f = N();
+ *
+ * echo repr($f(12)) . PHP_EOL;
+ * </pre>
+ */
+function N(): callable
+{
+    return function ($arg = null) {
+        return mkMaybe(null);
+    };
+}
+
+/**
  * Creates a function which returns the unwrapped monad value.
  *
  * <pre>
@@ -144,29 +182,6 @@ function S(callable $x, callable $y, $z): callable
 }
 
 /**
- * Creates a predicate function for checking the type of a value.
- *
- * <pre>
- * use function Datashaman\Logic\T;
- *
- * $f = T('string');
- *
- * var_dump($f(null));
- * var_dump($f(12));
- * var_dump($f('hello world'));
- * </pre>
- */
-function T(string $type): callable
-{
-    return P(
-        function ($value) use ($type) {
-            return isType($value, $type);
-        },
-        $type
-    );
-}
-
-/**
  * Creates a match function which takes one parameter (the subject):
  *
  * - loops through the provided conditions
@@ -179,8 +194,7 @@ function T(string $type): callable
  * use Datashaman\Logic\Just;
  * use Datashaman\Logic\Nothing;
  *
- * use function Datashaman\Logic\K;
- * use function Datashaman\Logic\M;
+ * use function Datashaman\Logic\{K, J, M, N, T};
  * use function Datashaman\Logic\mkJust;
  * use function Datashaman\Logic\mkNothing;
  * use function Datashaman\Logic\repr;
@@ -210,8 +224,8 @@ function T(string $type): callable
  * // The above can be written more succinctly using
  * // shortcuts. K makes a function that returns the supplied
  * // parameter to every function call, always returning a
- * // constant value. Here it will always evaluates to true,
- * // which makes it perfect for the else branch in a conditional
+ * // constant value. Here it always evaluates to true, which
+ * // makes it perfect for the else branch in a conditional
  * // expression.
  *
  * // mkJust and mkNothing, when called with no parameters, return
@@ -220,6 +234,16 @@ function T(string $type): callable
  * $match = M(
  *     ['is_null', mkNothing()],
  *     [K(true), mkJust()]
+ * );
+ *
+ * echo repr($match(null)) . PHP_EOL;
+ * echo repr($match(12)) . PHP_EOL;
+ *
+ * // The above can be written even MORE succinctly as follows.
+ * // Whether this is wise is another question...
+ * $match = M(
+ *     ['is_null', N()],
+ *     [T(), J()]
  * );
  *
  * echo repr($match(null)) . PHP_EOL;
@@ -238,4 +262,36 @@ function M(...$conditions): callable
 
         throw new Exception('Unhandled match condition');
     };
+}
+
+/**
+ * Create a function that always returns true
+ *
+ * <pre>
+ * use Datashaman\Logic\T;
+ *
+ * $f = T();
+ *
+ * var_dump($f(12));
+ * var_dump($f(null));
+ */
+function T()
+{
+    return K(true);
+}
+
+/**
+ * Create a function that always returns false
+ *
+ * <pre>
+ * use Datashaman\Logic\F;
+ *
+ * $f = F();
+ *
+ * var_dump($f(12));
+ * var_dump($f(null));
+ */
+function F()
+{
+    return K(false);
 }
