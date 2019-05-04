@@ -88,7 +88,7 @@ files.keys().map(
 const routes = [
     {
         name: 'home',
-        path: '/',
+        path: '*',
         component: Vue.component('Home'),
     }
 ]
@@ -98,8 +98,6 @@ const router = new VueRouter({
     mode: 'history',
     routes
 })
-
-// router.replace({ name: 'home' })
 
 const store = new Vuex.Store({
     state: {
