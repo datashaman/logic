@@ -94,9 +94,11 @@ const routes = [
 ]
 
 const router = new VueRouter({
+    base: '/logic/',
     mode: 'history',
     routes
 })
+
 router.replace({ name: 'home' })
 
 const store = new Vuex.Store({
