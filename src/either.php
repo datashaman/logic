@@ -20,10 +20,6 @@ class Left extends Either
 
 class Right extends Either
 {
-    public function bind(callable $f)
-    {
-        return mkRight($f($this->value));
-    }
 }
 
 function either(callable $f = null, callable $g = null, Either $e)
