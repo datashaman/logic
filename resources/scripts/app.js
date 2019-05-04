@@ -97,7 +97,7 @@ const router = new VueRouter({
     mode: 'history',
     routes
 })
-router.replace('/')
+router.replace({ name: 'home' })
 
 const store = new Vuex.Store({
     state: {
