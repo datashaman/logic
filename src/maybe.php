@@ -41,13 +41,29 @@ function maybe($b, callable $f, Maybe $a)
     return isNothing($a) ? $b : $f($a());
 }
 
+/**
+ * The fromJust function extracts the element out of a Just and throws an error if its argument is Nothing.
+ *
+ * <pre>
+ * use function Datashaman\Logic\fromJust;
+ * use function Datashaman\Logic\mkMaybe;
+ * use function Datashaman\Logic\repr;
+ *
+ * $s = mkMaybe('hello');
+ * $n = mkMaybe(null);
+ *
+ * echo repr(fromJust($s)) . PHP_EOL;
+ *
+ * fromJust($n);
+ * </pre>
+ */
 function fromJust(Maybe $m)
 {
     if (isJust($m)) {
         return $m();
     }
 
-    throw new Exception('Nothing is nothing');
+    throw new Exception('Maybe.fromJust: Nothing');
 }
 
 function isJust(Maybe $m): bool
@@ -60,6 +76,18 @@ function isNothing(Maybe $m): bool
     return $m instanceof Nothing;
 }
 
+/**
+ * The fromMaybe function takes a default value and and Maybe value. If the Maybe is Nothing, it returns the default values; otherwise, it returns the value contained in the Maybe.
+ *
+ * <pre>
+ * use function Datashaman\Logic\fromMaybe;
+ * use function Datashaman\Logic\mkMaybe;
+ * use function Datashaman\Logic\repr;
+ *
+ * echo repr(fromMaybe("", mkMaybe('Hello World'))) . PHP_EOL;
+ * echo repr(fromMaybe("", mkMaybe(null))) . PHP_EOL;
+ * </pre>
+ */
 function fromMaybe($d, Maybe $m)
 {
     if (isJust($m)) {
@@ -83,14 +111,24 @@ function listToMaybe($x): Maybe
     return mkList($x)->first();
 }
 
-function catMaybes(array $ms): array
+/**
+ * The catMaybes function takes a list of Maybes and returns a List_ of all the Just values.
+ *
+ * <pre>
+ * use function Datashaman\Logic\catMaybes;
+ * use function Datashaman\Logic\mkMaybe;
+ * use function Datashaman\Logic\repr;
+ *
+ * $ms = [mkMaybe(null), mkMaybe(12), mkMaybe(23), mkMaybe(null), mkMaybe(null)];
+ *
+ * echo repr(catMaybes($ms)) . PHP_EOL;
+ * </pre>
+ */
+function catMaybes(array $ms): List_
 {
-    return array_filter(
-        $ms,
-        function ($m) {
-            return $m->isJust();
-        }
-    );
+    return mkList($ms)
+        ->filter(isJust::class)
+        ->values();
 }
 
 function mapMaybe(

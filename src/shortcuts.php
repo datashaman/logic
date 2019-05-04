@@ -18,12 +18,7 @@ namespace Datashaman\Logic;
  */
 function C(string $class): callable
 {
-    return P(
-        function ($value) use ($class) {
-            return isClass($value, $class);
-        },
-        $class
-    );
+    return curry(isClass::class, $class);
 }
 
 /**
@@ -51,9 +46,7 @@ function D($d, callable $f = null): callable
         $f = I();
     }
 
-    return function (Maybe $x) use ($d, $f) {
-        return maybe($d, $f, $x);
-    };
+    return curry(maybe::class, $d, $f);
 }
 
 /**
@@ -90,9 +83,7 @@ function I(): callable
  */
 function J(): callable
 {
-    return function ($arg) {
-        return mkJust($arg);
-    };
+    return curry(mkJust::class);
 }
 
 /**
@@ -109,9 +100,7 @@ function J(): callable
  */
 function N(): callable
 {
-    return function ($arg = null) {
-        return mkMaybe(null);
-    };
+    return curry(mkMaybe::class, null);
 }
 
 /**
@@ -119,13 +108,14 @@ function N(): callable
  *
  * <pre>
  * use function Datashaman\Logic\mkJust;
+ * use function Datashaman\Logic\repr;
  * use function Datashaman\Logic\V;
  *
  * $f = V();
  * $j = mkJust(12);
  *
- * var_dump($j);
- * var_dump($f($j));
+ * echo repr($j) . PHP_EOL;
+ * echo repr($f($j)) . PHP_EOL;
  * </pre>
  */
 function V(): callable

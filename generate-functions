@@ -189,9 +189,23 @@ $functions = array_filter(
                 $example = getExample($docBlock);
 
                 ob_start();
-                eval($example);
-                $output = ob_get_contents();
-                ob_end_clean();
+
+                $output = '';
+
+                try {
+                    eval($example);
+                }
+
+                catch (Exception $e) {
+                    $output .= (string) $e . "\n";
+                }
+
+                finally {
+                    // dump("FINALLY", $output);
+                    $output = ob_get_contents() . $output;
+                    // dump("FINALLY AFTER", $output);
+                    ob_end_clean();
+                }
 
                 $result = array_merge(
                     $result,

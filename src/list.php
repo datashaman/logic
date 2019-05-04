@@ -2,11 +2,20 @@
 
 namespace Datashaman\Logic;
 
-class List_ extends Monad
+use Icecave\Repr\Generator;
+use Icecave\Repr\RepresentableInterface;
+
+class List_ extends Monad implements
+    RepresentableInterface
 {
     public function __construct($value = [])
     {
         return parent::__construct((array) $value);
+    }
+
+    public function stringRepresentation(Generator $generator, $currentDepth = 0)
+    {
+        return '<List_ ' . $generator->generate($this->value) . '>';
     }
 
     public function bind(callable $f)

@@ -2,12 +2,12 @@
 
 namespace Datashaman\Logic;
 
-function isClass($x, string $class): bool
+function isClass(string $class, $x): bool
 {
     return $x instanceof $class;
 }
 
-function isType($x, string $type): bool
+function isType(string $type, $x): bool
 {
     return gettype($x) === $type;
 }

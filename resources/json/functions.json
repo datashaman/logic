@@ -257,8 +257,8 @@
             "href": "#V",
             "shortName": "V",
             "description": "",
-            "example": "use function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\V;\n\n$f = V();\n$j = mkJust(12);\n\nvar_dump($j);\nvar_dump($f($j));\n",
-            "output": "object(Datashaman\\Logic\\Just)#96 (1) {\n  [\"value\"]=>\n  int(12)\n}\nint(12)\n",
+            "example": "use function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\repr;\nuse function Datashaman\\Logic\\V;\n\n$f = V();\n$j = mkJust(12);\n\necho repr($j) . PHP_EOL;\necho repr($f($j)) . PHP_EOL;\n",
+            "output": "<Just 12>\n12\n",
             "return": null,
             "summary": "<p>Creates a function which returns the unwrapped monad value.<\/p>",
             "gist": "https:\/\/gist.github.com\/301ba3226597d3d4fc26e102ad168fea"
@@ -279,7 +279,13 @@
             "header": "catMaybes(array $ms)",
             "name": "Datashaman\\Logic\\catMaybes",
             "href": "#catMaybes",
-            "shortName": "catMaybes"
+            "shortName": "catMaybes",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\catMaybes;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\n$ms = [mkMaybe(null), mkMaybe(12), mkMaybe(23), mkMaybe(null), mkMaybe(null)];\n\necho repr(catMaybes($ms)) . PHP_EOL;\n",
+            "output": "<List_ [<Just 12>, <Just 23>]>\n",
+            "return": null,
+            "summary": "<p>The catMaybes function takes a list of Maybes and returns a List_ of all the Just values.<\/p>",
+            "gist": "https:\/\/gist.github.com\/23c511a38a2d506e6d89313025b77d0c"
         },
         {
             "arguments": [
@@ -295,7 +301,13 @@
             "header": "fromJust(Datashaman\\Logic\\Maybe $m)",
             "name": "Datashaman\\Logic\\fromJust",
             "href": "#fromJust",
-            "shortName": "fromJust"
+            "shortName": "fromJust",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\fromJust;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\n$s = mkMaybe('hello');\n$n = mkMaybe(null);\n\necho repr(fromJust($s)) . PHP_EOL;\n\nfromJust($n);\n",
+            "output": "\"hello\"\nException: Maybe.fromJust: Nothing in \/home\/marlinf\/Desktop\/logic\/src\/maybe.php:66\nStack trace:\n#0 \/home\/marlinf\/Desktop\/logic\/generate-functions(196) : eval()'d code(10): Datashaman\\Logic\\fromJust(Object(Datashaman\\Logic\\Nothing))\n#1 \/home\/marlinf\/Desktop\/logic\/generate-functions(196): eval()\n#2 [internal function]: {closure}('datashaman\\\\logi...')\n#3 \/home\/marlinf\/Desktop\/logic\/generate-functions(228): array_map(Object(Closure), Array)\n#4 {main}\n",
+            "return": null,
+            "summary": "<p>The fromJust function extracts the element out of a Just and throws an error if its argument is Nothing.<\/p>",
+            "gist": "https:\/\/gist.github.com\/50607eac2ef927494a6cc0de3062766b"
         },
         {
             "arguments": [
@@ -318,7 +330,13 @@
             "header": "fromMaybe($d, Datashaman\\Logic\\Maybe $m)",
             "name": "Datashaman\\Logic\\fromMaybe",
             "href": "#fromMaybe",
-            "shortName": "fromMaybe"
+            "shortName": "fromMaybe",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\fromMaybe;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\necho repr(fromMaybe(\"\", mkMaybe('Hello World'))) . PHP_EOL;\necho repr(fromMaybe(\"\", mkMaybe(null))) . PHP_EOL;\n",
+            "output": "\"Hello World\"\n\"\"\n",
+            "return": null,
+            "summary": "<p>The fromMaybe function takes a default value and and Maybe value. If the Maybe is Nothing, it returns the default values; otherwise, it returns the value contained in the Maybe.<\/p>",
+            "gist": "https:\/\/gist.github.com\/49e9c78bc0b2479856514f2526bfc7e5"
         },
         {
             "arguments": [
@@ -548,7 +566,7 @@
             "href": "#either",
             "shortName": "either",
             "description": "<p>If the either monad is a right, call the second callable with the monad value.<\/p>",
-            "example": "use function Datashaman\\Logic\\curry;\nuse function Datashaman\\Logic\\either;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$s = mkLeft('foo');\n$n = mkRight(3);\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $s\n) . PHP_EOL;\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $n\n) . PHP_EOL;\n\n\/\/ Or use currying\n\n$f = curry(\n    function (...$args) {\n        return either(...$args);\n    },\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    }\n);\n\necho $f($s) . PHP_EOL;\necho $f($n) . PHP_EOL;\n",
+            "example": "use function Datashaman\\Logic\\curry;\nuse function Datashaman\\Logic\\either;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$s = mkLeft('foo');\n$n = mkRight(3);\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $s\n) . PHP_EOL;\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $n\n) . PHP_EOL;\n\n\/\/ Or use currying\n\n$f = curry(\n    'Datashaman\\Logic\\either',\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    }\n);\n\necho $f($s) . PHP_EOL;\necho $f($n) . PHP_EOL;\n",
             "output": "3\n6\n3\n6\n",
             "return": null,
             "summary": "<p>If the either monad is a Left, call the first callable with the monad value.<\/p>",
@@ -575,7 +593,13 @@
             "header": "fromLeft($d, Datashaman\\Logic\\Either $e)",
             "name": "Datashaman\\Logic\\fromLeft",
             "href": "#fromLeft",
-            "shortName": "fromLeft"
+            "shortName": "fromLeft",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\fromLeft;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$err = mkLeft('You are not authorized');\n$ok = mkRight('You are authorized');\n\necho fromLeft('There was no error', $err) . PHP_EOL;\necho fromLeft('There was no error', $ok) . PHP_EOL;\n",
+            "output": "You are not authorized\nThere was no error\n",
+            "return": null,
+            "summary": "<p>Return a Left value or a default if not Left.<\/p>",
+            "gist": "https:\/\/gist.github.com\/9a781ad5668df95a77244acf7aa530bd"
         },
         {
             "arguments": [
@@ -598,7 +622,13 @@
             "header": "fromRight($d, Datashaman\\Logic\\Either $e)",
             "name": "Datashaman\\Logic\\fromRight",
             "href": "#fromRight",
-            "shortName": "fromRight"
+            "shortName": "fromRight",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\fromRight;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$err = mkLeft('You are not authorized');\n$ok = mkRight('You are authorized');\n\necho fromRight('There was an error', $err) . PHP_EOL;\necho fromRight('There was an error', $ok) . PHP_EOL;\n",
+            "output": "There was an error\nYou are authorized\n",
+            "return": null,
+            "summary": "<p>Return a Right value or a default if not Right.<\/p>",
+            "gist": "https:\/\/gist.github.com\/b7e5b52198343d618b59cc8c63e435cd"
         },
         {
             "arguments": [
@@ -614,7 +644,13 @@
             "header": "isLeft(Datashaman\\Logic\\Either $e)",
             "name": "Datashaman\\Logic\\isLeft",
             "href": "#isLeft",
-            "shortName": "isLeft"
+            "shortName": "isLeft",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\isLeft;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$err = mkLeft('Error');\n$ok = mkRight('OK');\n\nvar_dump(isLeft($err));\nvar_dump(isLeft($ok));\n",
+            "output": "bool(true)\nbool(false)\n",
+            "return": null,
+            "summary": "<p>Is an either value a Left value.<\/p>",
+            "gist": "https:\/\/gist.github.com\/b5a6dbc24e23cbc1dbec0af010c70bcd"
         },
         {
             "arguments": [
@@ -630,7 +666,13 @@
             "header": "isRight(Datashaman\\Logic\\Either $e)",
             "name": "Datashaman\\Logic\\isRight",
             "href": "#isRight",
-            "shortName": "isRight"
+            "shortName": "isRight",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\isRight;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$err = mkLeft('Error');\n$ok = mkRight('OK');\n\nvar_dump(isRight($err));\nvar_dump(isRight($ok));\n",
+            "output": "bool(false)\nbool(true)\n",
+            "return": null,
+            "summary": "<p>Is an either value a Right value.<\/p>",
+            "gist": "https:\/\/gist.github.com\/0755a7cf6fbe527e58a37ce73631fac2"
         },
         {
             "arguments": [
@@ -646,7 +688,13 @@
             "header": "lefts($es)",
             "name": "Datashaman\\Logic\\lefts",
             "href": "#lefts",
-            "shortName": "lefts"
+            "shortName": "lefts",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\lefts;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\n$es = [mkLeft('ERR'), mkRight('OK'), mkRight('OK Too'), mkLeft('ERR 13')];\n\necho repr(lefts($es)) . PHP_EOL;\n",
+            "output": "<List_ [<Left \"ERR\">, <Left \"ERR 13\">]>\n",
+            "return": null,
+            "summary": "<p>Return a List_ of the lefts in a list of eithers.<\/p>",
+            "gist": "https:\/\/gist.github.com\/3cf16096f1c5f651c88d82dd608171eb"
         },
         {
             "arguments": [
@@ -722,7 +770,13 @@
             "header": "rights($es)",
             "name": "Datashaman\\Logic\\rights",
             "href": "#rights",
-            "shortName": "rights"
+            "shortName": "rights",
+            "description": "",
+            "example": "use function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\nuse function Datashaman\\Logic\\rights;\n\n$es = [mkLeft('ERR'), mkRight('OK'), mkRight('OK Too'), mkLeft('ERR 13')];\n\necho repr(rights($es)) . PHP_EOL;\n",
+            "output": "<List_ [<Right \"OK\">, <Right \"OK Too\">]>\n",
+            "return": null,
+            "summary": "<p>Return a List_ of the rights in a list of eithers.<\/p>",
+            "gist": "https:\/\/gist.github.com\/6008a24085546d0364d0d10a31e24053"
         }
     ],
     "predicates": [
@@ -731,20 +785,20 @@
                 {
                     "default": null,
                     "description": null,
-                    "name": "x",
-                    "type": false,
+                    "name": "class",
+                    "type": "string",
                     "variadic": false
                 },
                 {
                     "default": null,
                     "description": null,
-                    "name": "class",
-                    "type": "string",
+                    "name": "x",
+                    "type": false,
                     "variadic": false
                 }
             ],
             "file": "predicates",
-            "header": "isClass($x, string $class)",
+            "header": "isClass(string $class, $x)",
             "name": "Datashaman\\Logic\\isClass",
             "href": "#isClass",
             "shortName": "isClass"
@@ -754,20 +808,20 @@
                 {
                     "default": null,
                     "description": null,
-                    "name": "x",
-                    "type": false,
+                    "name": "type",
+                    "type": "string",
                     "variadic": false
                 },
                 {
                     "default": null,
                     "description": null,
-                    "name": "type",
-                    "type": "string",
+                    "name": "x",
+                    "type": false,
                     "variadic": false
                 }
             ],
             "file": "predicates",
-            "header": "isType($x, string $type)",
+            "header": "isType(string $type, $x)",
             "name": "Datashaman\\Logic\\isType",
             "href": "#isType",
             "shortName": "isType"

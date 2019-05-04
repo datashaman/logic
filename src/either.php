@@ -70,9 +70,7 @@ class Right extends Either
  * // Or use currying
  *
  * $f = curry(
- *     function (...$args) {
- *         return either(...$args);
- *     },
+ *     'Datashaman\Logic\either',
  *     function ($value) {
  *         return strlen($value);
  *     },
@@ -151,6 +149,21 @@ function mkRight(...$args)
     return $args ? $f($args[0]) : $f;
 }
 
+/**
+ * Return a Left value or a default if not Left.
+ *
+ * <pre>
+ * use function Datashaman\Logic\fromLeft;
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ *
+ * $err = mkLeft('You are not authorized');
+ * $ok = mkRight('You are authorized');
+ *
+ * echo fromLeft('There was no error', $err) . PHP_EOL;
+ * echo fromLeft('There was no error', $ok) . PHP_EOL;
+ * </pre>
+ */
 function fromLeft($d, Either $e)
 {
     if (isLeft($e)) {
@@ -160,6 +173,21 @@ function fromLeft($d, Either $e)
     return $d;
 }
 
+/**
+ * Return a Right value or a default if not Right.
+ *
+ * <pre>
+ * use function Datashaman\Logic\fromRight;
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ *
+ * $err = mkLeft('You are not authorized');
+ * $ok = mkRight('You are authorized');
+ *
+ * echo fromRight('There was an error', $err) . PHP_EOL;
+ * echo fromRight('There was an error', $ok) . PHP_EOL;
+ * </pre>
+ */
 function fromRight($d, Either $e)
 {
     if (isRight($e)) {
@@ -169,24 +197,86 @@ function fromRight($d, Either $e)
     return $d;
 }
 
+/**
+ * Is an either value a Left value.
+ *
+ * <pre>
+ * use function Datashaman\Logic\isLeft;
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ *
+ * $err = mkLeft('Error');
+ * $ok = mkRight('OK');
+ *
+ * var_dump(isLeft($err));
+ * var_dump(isLeft($ok));
+ * </pre>
+ */
 function isLeft(Either $e)
 {
     return $e instanceof Left;
 }
 
+/**
+ * Is an either value a Right value.
+ *
+ * <pre>
+ * use function Datashaman\Logic\isRight;
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ *
+ * $err = mkLeft('Error');
+ * $ok = mkRight('OK');
+ *
+ * var_dump(isRight($err));
+ * var_dump(isRight($ok));
+ * </pre>
+ */
 function isRight(Either $e)
 {
     return $e instanceof Right;
 }
 
+/**
+ * Return a List_ of the lefts in a list of eithers.
+ *
+ * <pre>
+ * use function Datashaman\Logic\lefts;
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ * use function Datashaman\Logic\repr;
+ *
+ * $es = [mkLeft('ERR'), mkRight('OK'), mkRight('OK Too'), mkLeft('ERR 13')];
+ *
+ * echo repr(lefts($es)) . PHP_EOL;
+ * </pre>
+ */
 function lefts($es): List_
 {
-    return mkList($es)->filter('isLeft');
+    return mkList($es)
+        ->filter(isLeft::class)
+        ->values();
 }
 
+/**
+ * Return a List_ of the rights in a list of eithers.
+ *
+ * <pre>
+ * use function Datashaman\Logic\mkLeft;
+ * use function Datashaman\Logic\mkRight;
+ * use function Datashaman\Logic\repr;
+ * use function Datashaman\Logic\rights;
+ *
+ * $es = [mkLeft('ERR'), mkRight('OK'), mkRight('OK Too'), mkLeft('ERR 13')];
+ *
+ * echo repr(rights($es)) . PHP_EOL;
+ * </pre>
+ */
 function rights($es): List_
 {
-    return mkList($es)->filter('isRight');
+    return mkList($es)
+        ->filter(isRight::class)
+        ->values();
 }
 
 function partitionEithers($es): List_
