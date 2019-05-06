@@ -83,10 +83,14 @@ class Right extends Either
  * echo $f($n) . PHP_EOL;
  * </pre>
  */
-function either(callable $f = null, callable $g = null, Either $e)
+function either(callable $f = null, callable $g = null, Either $e = null)
 {
     $f = $f ?: I();
     $g = $g ?: I();
+
+    if (is_null($e)) {
+        throw new Exception('Either must not be null');
+    }
 
     if (isLeft($e)) {
         return $f($e());

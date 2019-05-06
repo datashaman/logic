@@ -1,0 +1,4316 @@
+{
+    "Webmozart\\Assert": [
+        {
+            "_type": "class",
+            "endLine": 1187,
+            "filename": "vendor\/webmozart\/assert\/src\/Assert.php",
+            "interfaces": [],
+            "methods": [
+                {
+                    "name": "string",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "stringNotEmpty",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "integer",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "integerish",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "float",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "numeric",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "natural",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "boolean",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "scalar",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "object",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "resource",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "type",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isCallable",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isArray",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isTraversable",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isArrayAccessible",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isCountable",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isIterable",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isInstanceOf",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "class",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notInstanceOf",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "class",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isInstanceOfAny",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "classes",
+                            "position": 1,
+                            "type": "array",
+                            "modifiers": {
+                                "array": true,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isEmpty",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notEmpty",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "null",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notNull",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "true",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "false",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "ip",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "ipv4",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "ipv6",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "eq",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "value2",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notEq",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "value2",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "same",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "value2",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notSame",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "value2",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "greaterThan",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "limit",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "greaterThanEq",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "limit",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "lessThan",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "limit",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "lessThanEq",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "limit",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "range",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "min",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "max",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 3,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "oneOf",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "values",
+                            "position": 1,
+                            "type": "array",
+                            "modifiers": {
+                                "array": true,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "contains",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "subString",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notContains",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "subString",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notWhitespaceOnly",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "startsWith",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "prefix",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "startsWithLetter",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "endsWith",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "suffix",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "regex",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "pattern",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "notRegex",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "pattern",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "alpha",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "digits",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "alnum",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "lower",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "upper",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "length",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "length",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "minLength",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "min",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "maxLength",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "max",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "lengthBetween",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "min",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "max",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 3,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "fileExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "file",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "directory",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "readable",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "writable",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "classExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "subclassOf",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "class",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "interfaceExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "implementsInterface",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "interface",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "propertyExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "classOrObject",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "property",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "propertyNotExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "classOrObject",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "property",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "methodExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "classOrObject",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "method",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "methodNotExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "classOrObject",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "method",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "keyExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "key",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "keyNotExists",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "key",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "count",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "minCount",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "min",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "maxCount",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "max",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "countBetween",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "min",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "max",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 3,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isList",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "isMap",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "array",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "uuid",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "throws",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "expression",
+                            "position": 0,
+                            "type": "Closure",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "class": "Closure"
+                        },
+                        {
+                            "name": "class",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": "Exception"
+                        },
+                        {
+                            "name": "message",
+                            "position": 2,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": true,
+                                "defaultValueConstant": false,
+                                "optional": true,
+                                "passedByReference": false,
+                                "variadic": false
+                            },
+                            "defaultValue": ""
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "__callStatic",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": false,
+                        "public": true,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        },
+                        {
+                            "name": "arguments",
+                            "position": 1,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "valueToString",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": true,
+                        "public": false,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "typeToString",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": true,
+                        "public": false,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "strlen",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": true,
+                        "public": false,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "reportInvalidArgument",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": false,
+                        "protected": true,
+                        "public": false,
+                        "static": true,
+                        "variadic": false
+                    },
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "position": 0,
+                            "type": "mixed",
+                            "modifiers": {
+                                "array": false,
+                                "callable": false,
+                                "defaultValueAvailable": false,
+                                "defaultValueConstant": false,
+                                "optional": false,
+                                "passedByReference": false,
+                                "variadic": false
+                            }
+                        }
+                    ],
+                    "returnType": ""
+                },
+                {
+                    "name": "__construct",
+                    "modifiers": {
+                        "abstract": false,
+                        "final": false,
+                        "generator": false,
+                        "private": true,
+                        "protected": false,
+                        "public": false,
+                        "static": false,
+                        "variadic": false
+                    },
+                    "parameters": [],
+                    "returnType": ""
+                }
+            ],
+            "name": "Webmozart\\Assert\\Assert",
+            "properties": [],
+            "shortName": "Assert",
+            "startLine": 187,
+            "traits": [],
+            "summary": "Efficient assertions to validate the input\/output of your methods.",
+            "ns": "Webmozart\\Assert"
+        }
+    ]
+}

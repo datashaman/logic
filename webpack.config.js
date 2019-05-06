@@ -3,7 +3,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-    entry: './resources/scripts/app.js',
+    entry: './resources/js/app.js',
     output: {
         chunkFilename: '[name].bundle.js',
         path: path.join(__dirname, 'docs'),
@@ -43,6 +43,7 @@ module.exports = {
         optimizationBailout: true
     },
     devServer: {
-        contentBase: path.join(__dirname, 'docs')
+        contentBase: path.join(__dirname, 'docs'),
+        historyApiFallback: true
     }
 }

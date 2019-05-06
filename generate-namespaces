@@ -1,0 +1,323 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'vendor/autoload.php';
+
+use Dotenv\Dotenv;
+use phpDocumentor\Reflection\DocBlockFactory;
+use Webmozart\Assert\Assert;
+
+Assert::eq(1, 1);
+
+$cwd = getcwd();
+
+$dotenv = Dotenv::create($cwd);
+$dotenv->load();
+
+$options = getopt('o');
+
+if ($argc != 2) {
+    print "Usage: {$argv[0]} 'root namespace'\n";
+    exit(1);
+}
+
+$root = $argv[1];
+$namespaces = [];
+
+function getDocBlock($function)
+{
+    $factory = DocBlockFactory::createInstance();
+    $docComment = $function->getDocComment();
+
+    return $docComment
+        ? $factory->create($docComment)
+        : null;
+}
+
+function recursive_sort(&$array) {
+    foreach ($array as $k => &$v) {
+        if (is_array($v)) {
+            recursive_sort($v);
+        }
+    }
+
+    return sort($array);
+}
+
+function transformClass($class, $depth = null, $maxDepth = null)
+{
+    global $cwd;
+
+    $classDocBlock = getDocBlock($class);
+
+    $filename = preg_replace("#^{$cwd}/#", '', $class->getFilename());
+
+    $classType = 'class';
+
+    if ($class->isInterface()) {
+        $classType = 'interface';
+    }
+
+    if ($class->isTrait()) {
+        $classType = 'trait';
+    }
+
+    $properties = [];
+
+    foreach ($class->getProperties() as $property) {
+        $result = [
+            'name' => $property->getName(),
+            'modifiers' => [
+                'private' => $property->isPrivate(),
+                'protected' => $property->isProtected(),
+                'public' => $property->isPublic(),
+                'static' => $property->isStatic(),
+            ],
+            'type' => 'mixed',
+        ];
+
+        $docBlock = getDocBlock($property);
+
+        if ($docBlock) {
+            $tags = $docBlock->getTagsByName('var');
+
+            if ($tags) {
+                $result['type'] = (string) $tags[0]->getType();
+            }
+
+            $result['summary'] = $docBlock->getSummary();
+        }
+
+        $properties[] = $result;
+    }
+
+    $methods = [];
+
+    foreach ($class->getMethods() as $method) {
+        $methods[] = transformMethod($method);
+    }
+
+    $result = [
+        '_type' => $classType,
+        'endLine' => $class->getEndLine(),
+        'filename' => $filename,
+        'interfaces' => array_map(
+            function ($i) {
+                return transformClass($i, 1, 1);
+            },
+            $class->getInterfaces()
+        ),
+        'methods' => $methods,
+        'name' => $class->getName(),
+        'properties' => $properties,
+        'shortName' => $class->getShortName(),
+        'startLine' => $class->getStartLine(),
+        'traits' => array_map(
+            function ($t) {
+                return transformClass($t, 1, 1);
+            },
+            $class->getTraits()
+        ),
+    ];
+
+    if ($depth < $maxDepth) {
+        $parentClass = $class->getParentClass();
+
+        if ($parentClass) {
+            $result['parent'] = transformClass($parentClass, $depth + 1, $maxDepth);
+        }
+    }
+
+    if ($classDocBlock) {
+        $result['summary'] = $classDocBlock->getSummary();
+    }
+
+    return $result;
+}
+
+function getParamTag($function, $name)
+{
+    $docBlock = getDocBlock($function);
+
+    if ($docBlock) {
+        $tags = $docBlock->getTagsByName('param');
+
+        $tags = array_values(array_filter(
+            $tags,
+            function ($tag) use ($name) {
+                return $tag->getVariableName() === $name;
+            }
+        ));
+
+        if ($tags) {
+            return $tags[0];
+        }
+    }
+}
+
+function transformParameter($param, $function)
+{
+    $result = [
+        'name' => $param->getName(),
+        'position' => $param->getPosition(),
+        'type' => (string) $param->getType() ?: 'mixed',
+        'modifiers' => [
+            'array' => $param->isArray(),
+            'callable' => $param->isCallable(),
+            'defaultValueAvailable' => $param->isDefaultValueAvailable(),
+            'defaultValueConstant' => $param->isDefaultValueAvailable() && $param->isDefaultValueConstant(),
+            'optional' => $param->isOptional(),
+            'passedByReference' => $param->isPassedByReference(),
+            'variadic' => $param->isVariadic(),
+        ],
+    ];
+
+    $tag = getParamTag($function, $param->getName());
+
+    if ($tag) {
+        $tagType = (string) $tag->getType();
+
+        if ($tagType) {
+            $result['type'] = $tagType;
+        }
+
+        $result['description'] = (string) $tag->getDescription();
+    }
+
+    $class = $param->getClass();
+
+    if ($class) {
+        $result['class'] = $class->getName();
+    }
+
+    if ($param->isDefaultValueAvailable()) {
+        $result['defaultValue'] = $param->getDefaultValue();
+    }
+
+    if ($param->isDefaultValueAvailable() && $param->isDefaultValueConstant()) {
+        $result['defaultValueConstantName'] = $param->getDefaultValueConstantName();
+    }
+
+    return $result;
+}
+
+function transformFunction($function)
+{
+    global $cwd;
+
+    $filename = preg_replace("#^{$cwd}/#", '', $function->getFilename());
+
+    $result = [
+        '_type' => 'function',
+        'endLine' => $function->getEndLine(),
+        'filename' => $filename,
+        'name' => $function->getName(),
+        'parameters' => array_map(
+            function ($param) use ($function) {
+                return transformParameter($param, $function);
+            },
+            $function->getParameters()
+        ),
+        'returnType' => (string) $function->getReturnType(),
+        'shortName' => $function->getShortName(),
+        'startLine' => $function->getStartLine(),
+    ];
+
+    $docBlock = getDocBlock($function);
+
+    if ($docBlock) {
+        $result['summary'] = $docBlock->getSummary();
+
+        $tags = $docBlock->getTagsByName('return');
+
+        if ($tags) {
+            $result['returnType'] = (string) $tags[0]->getType();
+        }
+    }
+
+    return $result;
+}
+
+function transformMethod($method)
+{
+    $result = [
+        'name' => $method->getName(),
+        'modifiers' => [
+            'abstract' => $method->isAbstract(),
+            'final' => $method->isFinal(),
+            'generator' => $method->isGenerator(),
+            'private' => $method->isPrivate(),
+            'protected' => $method->isProtected(),
+            'public' => $method->isPublic(),
+            'static' => $method->isStatic(),
+            'variadic' => $method->isVariadic(),
+        ],
+        'parameters' => array_map(
+            function ($param) use ($method) {
+                return transformParameter($param, $method);
+            },
+            $method->getParameters()
+        ),
+        'returnType' => (string) $method->getReturnType(),
+    ];
+
+    $docBlock = getDocBlock($method);
+
+    if ($docBlock) {
+        $result['summary'] = $docBlock->getSummary();
+        $result['description'] = (string) $docBlock->getDescription();
+
+        $tags = $docBlock->getTagsByName('return');
+
+        if ($tags) {
+            $result['returnType'] = (string) $tags[0]->getType();
+        }
+    }
+
+    return $result;
+}
+
+function processReflector($reflector, callable $f)
+{
+    global $namespaces;
+
+    $namespace = $reflector->getNamespaceName();
+    if (!isset($namespaces[$namespace])) {
+        $namespaces[$namespace] = [];
+    }
+    $result = $f($reflector);
+    $result['ns'] = $namespace;
+    $namespaces[$namespace][] = $result;
+}
+
+foreach(get_declared_classes() as $name) {
+    if (preg_match("#^{$root}#", $name)) {
+        $class = new ReflectionClass($name);
+        processReflector($class, 'transformClass');
+    }
+}
+
+$functions = get_defined_functions(true);
+
+foreach($functions['user'] as $name) {
+    if (preg_match("#^{$root}#i", $name)) {
+        $function = new ReflectionFunction($name);
+        processReflector($function, 'transformFunction');
+    }
+}
+
+foreach (get_declared_interfaces() as $name) {
+    // TODO
+}
+
+foreach (get_declared_traits() as $name) {
+    // TODO
+}
+
+$json = json_encode($namespaces, JSON_PRETTY_PRINT);
+
+if (isset($options['o'])) {
+    file_put_contents($options['o'], $json);
+} else {
+    echo $json . PHP_EOL;
+}

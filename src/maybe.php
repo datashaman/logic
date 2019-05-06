@@ -6,6 +6,9 @@ use Exception;
 use Icecave\Repr\Generator;
 use Icecave\Repr\RepresentableInterface;
 
+/**
+ * Abstract base class for Maybe monads.
+ */
 abstract class Maybe extends Monad implements
     RepresentableInterface
 {

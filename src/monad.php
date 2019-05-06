@@ -6,8 +6,18 @@ use Exception;
 
 abstract class Monad
 {
-    public $value;
+    /**
+     * The value that is wrapped inside the monad.
+     *
+     * @var mixed
+     */
+    protected $value;
 
+    /**
+     * Create a new Monad instance.
+     *
+     * @return void
+     */
     public function __construct($value)
     {
         $this->value = $value;

@@ -22,6 +22,10 @@ functions-gists:
 	mkdir -p resources/json/
 	./generate-functions --gists > resources/json/functions.json
 
+namespaces:
+	mkdir -p resources/json/
+	./generate-namespaces 'Datashaman\\Logic' > resources/json/namespaces.json
+
 phpcheck:
 	@phpcheck
 
