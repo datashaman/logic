@@ -40,32 +40,6 @@ function curry(callable $f, ...$args) {
 }
 
 /**
- * Evaluate an expression of PHP code embedded in a doc block.
- *
- * Yes, I know it's eval. But it's developer input, not user input
- * and it's run in a testing context only.
- *
- * <pre>
- * use function Datashaman\Logic\evalWithArgs;
- * use function Datashaman\Logic\repr;
- *
- * print repr(evalWithArgs('strtoupper("Hi $name!")', ['name' => 'Bob'])) . PHP_EOL;
- * </pre>
- *
- * @param string $expression PHP string expression to be evaluated. Must not include semi-colon.
- * @param array  $args       local arguments defined while the expression is evaluated
- * @nodocs
- *
- */
-function evalWithArgs(string $expression, $args = [])
-{
-    \extract($args);
-    $expression = "namespace Datashaman\Logic; return $expression;";
-
-    return eval($expression);
-}
-
-/**
  * Return a simple string representation of the value for display and logging.
  *
  * <pre>

@@ -7,6 +7,14 @@ use Dotenv\Dotenv;
 use phpDocumentor\Reflection\DocBlockFactory;
 use Webmozart\Assert\Assert;
 
+function evalWithArgs(string $expression, $args = [])
+{
+    \extract($args);
+    $expression = "namespace Datashaman\Logic; return $expression;";
+
+    return eval($expression);
+}
+
 Assert::eq(1, 1);
 
 $cwd = getcwd();
@@ -213,6 +221,15 @@ function transformParameter($param, $function)
     return $result;
 }
 
+function getExample($docBlock)
+{
+    $description = (string) $docBlock->getDescription();
+
+    if (preg_match('#<pre>\s*(.*)\s*</pre>#s', $description, $match)) {
+        return str_replace('\\/', '/', $match[1]);
+    }
+}
+
 function transformFunction($function)
 {
     global $cwd;
@@ -244,6 +261,13 @@ function transformFunction($function)
 
         if ($tags) {
             $result['returnType'] = (string) $tags[0]->getType();
+        }
+
+        $example = getExample($docBlock);
+
+        if ($example) {
+            $result['example'] = $example;
+            $result['output'] = evalWithArgs($result['example']);
         }
     }
 
