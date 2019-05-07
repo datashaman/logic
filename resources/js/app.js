@@ -93,19 +93,14 @@ files.keys().map(
 
 const routes = [
     {
-        name: 'home',
-        path: '/',
-        component: Vue.component('Home'),
-    },
-    {
         name: 'namespace',
         path: '/ns/:name',
         component: Vue.component('Namespace'),
         props: true,
     },
     {
-        name: 'namespaces',
-        path: '/namespaces',
+        name: 'home',
+        path: '/',
         component: Vue.component('Namespaces'),
     },
     {

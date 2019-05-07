@@ -122,8 +122,8 @@
             "_type": "class",
             "endLine": 14,
             "filename": "src\/either.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -185,9 +185,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "__construct",
@@ -349,14 +350,134 @@
             "shortName": "Either",
             "startLine": 11,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Monad",
+            "parentClassShortName": "Monad",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 49,
+                "filename": "src\/monad.php",
+                "interfaces": [],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Monad",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Monad",
+                "startLine": 7,
+                "traits": [],
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "class",
             "endLine": 27,
             "filename": "src\/either.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -418,9 +539,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "bind",
@@ -578,14 +700,370 @@
             "shortName": "Left",
             "startLine": 16,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Either",
+            "parentClassShortName": "Either",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 14,
+                "filename": "src\/either.php",
+                "interfaces": [
+                    {
+                        "_type": "interface",
+                        "endLine": 20,
+                        "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
+                        "interfaces": [],
+                        "methods": [
+                            {
+                                "name": "stringRepresentation",
+                                "modifiers": {
+                                    "abstract": true,
+                                    "final": false,
+                                    "generator": false,
+                                    "private": false,
+                                    "protected": false,
+                                    "public": true,
+                                    "static": false,
+                                    "variadic": false
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "generator",
+                                        "position": 0,
+                                        "type": "\\Generator",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": false,
+                                            "defaultValueConstant": false,
+                                            "optional": false,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The object being used to generate the string representation.",
+                                        "class": "Icecave\\Repr\\Generator"
+                                    },
+                                    {
+                                        "name": "currentDepth",
+                                        "position": 1,
+                                        "type": "int",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": true,
+                                            "defaultValueConstant": false,
+                                            "optional": true,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The current depth in the object hierarchy.",
+                                        "defaultValue": 0
+                                    }
+                                ],
+                                "returnType": "string",
+                                "summary": "Generate this object's string representation.",
+                                "description": ""
+                            }
+                        ],
+                        "name": "Icecave\\Repr\\RepresentableInterface",
+                        "properties": [],
+                        "shortName": "RepresentableInterface",
+                        "startLine": 9,
+                        "traits": [],
+                        "summary": "Interface for objects that provide their own string representation.",
+                        "ns": "Icecave\\Repr"
+                    }
+                ],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "stringRepresentation",
+                        "modifiers": {
+                            "abstract": true,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "generator",
+                                "position": 0,
+                                "type": "\\Generator",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The object being used to generate the string representation.",
+                                "class": "Icecave\\Repr\\Generator"
+                            },
+                            {
+                                "name": "currentDepth",
+                                "position": 1,
+                                "type": "int",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": true,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The current depth in the object hierarchy.",
+                                "defaultValue": 0
+                            }
+                        ],
+                        "returnType": "string",
+                        "summary": "Generate this object's string representation.",
+                        "description": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Either",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Either",
+                "startLine": 11,
+                "traits": [],
+                "parentClassName": "Datashaman\\Logic\\Monad",
+                "parentClassShortName": "Monad",
+                "parentClass": {
+                    "_type": "class",
+                    "endLine": 49,
+                    "filename": "src\/monad.php",
+                    "interfaces": [],
+                    "methods": [
+                        {
+                            "name": "__construct",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "value",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": "void",
+                            "summary": "Create a new Monad instance.",
+                            "description": ""
+                        },
+                        {
+                            "name": "__invoke",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": true
+                            },
+                            "parameters": [
+                                {
+                                    "name": "args",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": true,
+                                        "passedByReference": false,
+                                        "variadic": true
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        },
+                        {
+                            "name": "bind",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "f",
+                                    "position": 0,
+                                    "type": "callable",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": true,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        }
+                    ],
+                    "name": "Datashaman\\Logic\\Monad",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "modifiers": {
+                                "private": false,
+                                "protected": true,
+                                "public": false,
+                                "static": false
+                            },
+                            "type": "mixed",
+                            "summary": "The value that is wrapped inside the monad."
+                        }
+                    ],
+                    "shortName": "Monad",
+                    "startLine": 7,
+                    "traits": [],
+                    "ns": "Datashaman\\Logic"
+                },
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "class",
             "endLine": 35,
             "filename": "src\/either.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -647,9 +1125,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "stringRepresentation",
@@ -807,14 +1286,370 @@
             "shortName": "Right",
             "startLine": 29,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Either",
+            "parentClassShortName": "Either",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 14,
+                "filename": "src\/either.php",
+                "interfaces": [
+                    {
+                        "_type": "interface",
+                        "endLine": 20,
+                        "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
+                        "interfaces": [],
+                        "methods": [
+                            {
+                                "name": "stringRepresentation",
+                                "modifiers": {
+                                    "abstract": true,
+                                    "final": false,
+                                    "generator": false,
+                                    "private": false,
+                                    "protected": false,
+                                    "public": true,
+                                    "static": false,
+                                    "variadic": false
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "generator",
+                                        "position": 0,
+                                        "type": "\\Generator",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": false,
+                                            "defaultValueConstant": false,
+                                            "optional": false,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The object being used to generate the string representation.",
+                                        "class": "Icecave\\Repr\\Generator"
+                                    },
+                                    {
+                                        "name": "currentDepth",
+                                        "position": 1,
+                                        "type": "int",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": true,
+                                            "defaultValueConstant": false,
+                                            "optional": true,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The current depth in the object hierarchy.",
+                                        "defaultValue": 0
+                                    }
+                                ],
+                                "returnType": "string",
+                                "summary": "Generate this object's string representation.",
+                                "description": ""
+                            }
+                        ],
+                        "name": "Icecave\\Repr\\RepresentableInterface",
+                        "properties": [],
+                        "shortName": "RepresentableInterface",
+                        "startLine": 9,
+                        "traits": [],
+                        "summary": "Interface for objects that provide their own string representation.",
+                        "ns": "Icecave\\Repr"
+                    }
+                ],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "stringRepresentation",
+                        "modifiers": {
+                            "abstract": true,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "generator",
+                                "position": 0,
+                                "type": "\\Generator",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The object being used to generate the string representation.",
+                                "class": "Icecave\\Repr\\Generator"
+                            },
+                            {
+                                "name": "currentDepth",
+                                "position": 1,
+                                "type": "int",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": true,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The current depth in the object hierarchy.",
+                                "defaultValue": 0
+                            }
+                        ],
+                        "returnType": "string",
+                        "summary": "Generate this object's string representation.",
+                        "description": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Either",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Either",
+                "startLine": 11,
+                "traits": [],
+                "parentClassName": "Datashaman\\Logic\\Monad",
+                "parentClassShortName": "Monad",
+                "parentClass": {
+                    "_type": "class",
+                    "endLine": 49,
+                    "filename": "src\/monad.php",
+                    "interfaces": [],
+                    "methods": [
+                        {
+                            "name": "__construct",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "value",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": "void",
+                            "summary": "Create a new Monad instance.",
+                            "description": ""
+                        },
+                        {
+                            "name": "__invoke",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": true
+                            },
+                            "parameters": [
+                                {
+                                    "name": "args",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": true,
+                                        "passedByReference": false,
+                                        "variadic": true
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        },
+                        {
+                            "name": "bind",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "f",
+                                    "position": 0,
+                                    "type": "callable",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": true,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        }
+                    ],
+                    "name": "Datashaman\\Logic\\Monad",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "modifiers": {
+                                "private": false,
+                                "protected": true,
+                                "public": false,
+                                "static": false
+                            },
+                            "type": "mixed",
+                            "summary": "The value that is wrapped inside the monad."
+                        }
+                    ],
+                    "shortName": "Monad",
+                    "startLine": 7,
+                    "traits": [],
+                    "ns": "Datashaman\\Logic"
+                },
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "class",
             "endLine": 39,
             "filename": "src\/chain.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -876,9 +1711,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "stringRepresentation",
@@ -1172,14 +2008,370 @@
             "shortName": "Chain",
             "startLine": 7,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Either",
+            "parentClassShortName": "Either",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 14,
+                "filename": "src\/either.php",
+                "interfaces": [
+                    {
+                        "_type": "interface",
+                        "endLine": 20,
+                        "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
+                        "interfaces": [],
+                        "methods": [
+                            {
+                                "name": "stringRepresentation",
+                                "modifiers": {
+                                    "abstract": true,
+                                    "final": false,
+                                    "generator": false,
+                                    "private": false,
+                                    "protected": false,
+                                    "public": true,
+                                    "static": false,
+                                    "variadic": false
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "generator",
+                                        "position": 0,
+                                        "type": "\\Generator",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": false,
+                                            "defaultValueConstant": false,
+                                            "optional": false,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The object being used to generate the string representation.",
+                                        "class": "Icecave\\Repr\\Generator"
+                                    },
+                                    {
+                                        "name": "currentDepth",
+                                        "position": 1,
+                                        "type": "int",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": true,
+                                            "defaultValueConstant": false,
+                                            "optional": true,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The current depth in the object hierarchy.",
+                                        "defaultValue": 0
+                                    }
+                                ],
+                                "returnType": "string",
+                                "summary": "Generate this object's string representation.",
+                                "description": ""
+                            }
+                        ],
+                        "name": "Icecave\\Repr\\RepresentableInterface",
+                        "properties": [],
+                        "shortName": "RepresentableInterface",
+                        "startLine": 9,
+                        "traits": [],
+                        "summary": "Interface for objects that provide their own string representation.",
+                        "ns": "Icecave\\Repr"
+                    }
+                ],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "stringRepresentation",
+                        "modifiers": {
+                            "abstract": true,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "generator",
+                                "position": 0,
+                                "type": "\\Generator",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The object being used to generate the string representation.",
+                                "class": "Icecave\\Repr\\Generator"
+                            },
+                            {
+                                "name": "currentDepth",
+                                "position": 1,
+                                "type": "int",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": true,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The current depth in the object hierarchy.",
+                                "defaultValue": 0
+                            }
+                        ],
+                        "returnType": "string",
+                        "summary": "Generate this object's string representation.",
+                        "description": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Either",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Either",
+                "startLine": 11,
+                "traits": [],
+                "parentClassName": "Datashaman\\Logic\\Monad",
+                "parentClassShortName": "Monad",
+                "parentClass": {
+                    "_type": "class",
+                    "endLine": 49,
+                    "filename": "src\/monad.php",
+                    "interfaces": [],
+                    "methods": [
+                        {
+                            "name": "__construct",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "value",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": "void",
+                            "summary": "Create a new Monad instance.",
+                            "description": ""
+                        },
+                        {
+                            "name": "__invoke",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": true
+                            },
+                            "parameters": [
+                                {
+                                    "name": "args",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": true,
+                                        "passedByReference": false,
+                                        "variadic": true
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        },
+                        {
+                            "name": "bind",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "f",
+                                    "position": 0,
+                                    "type": "callable",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": true,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        }
+                    ],
+                    "name": "Datashaman\\Logic\\Monad",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "modifiers": {
+                                "private": false,
+                                "protected": true,
+                                "public": false,
+                                "static": false
+                            },
+                            "type": "mixed",
+                            "summary": "The value that is wrapped inside the monad."
+                        }
+                    ],
+                    "shortName": "Monad",
+                    "startLine": 7,
+                    "traits": [],
+                    "ns": "Datashaman\\Logic"
+                },
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "class",
             "endLine": 268,
             "filename": "src\/list.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -1241,9 +2433,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "__construct",
@@ -2287,14 +3480,134 @@
             "shortName": "List_",
             "startLine": 8,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Monad",
+            "parentClassShortName": "Monad",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 49,
+                "filename": "src\/monad.php",
+                "interfaces": [],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Monad",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Monad",
+                "startLine": 7,
+                "traits": [],
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "class",
             "endLine": 15,
             "filename": "src\/maybe.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -2356,9 +3669,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "__construct",
@@ -2520,6 +3834,126 @@
             "shortName": "Maybe",
             "startLine": 12,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Monad",
+            "parentClassShortName": "Monad",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 49,
+                "filename": "src\/monad.php",
+                "interfaces": [],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Monad",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Monad",
+                "startLine": 7,
+                "traits": [],
+                "ns": "Datashaman\\Logic"
+            },
             "summary": "Abstract base class for Maybe monads.",
             "ns": "Datashaman\\Logic"
         },
@@ -2527,8 +3961,8 @@
             "_type": "class",
             "endLine": 23,
             "filename": "src\/maybe.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -2590,9 +4024,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "stringRepresentation",
@@ -2750,14 +4185,371 @@
             "shortName": "Just",
             "startLine": 17,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Maybe",
+            "parentClassShortName": "Maybe",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 15,
+                "filename": "src\/maybe.php",
+                "interfaces": [
+                    {
+                        "_type": "interface",
+                        "endLine": 20,
+                        "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
+                        "interfaces": [],
+                        "methods": [
+                            {
+                                "name": "stringRepresentation",
+                                "modifiers": {
+                                    "abstract": true,
+                                    "final": false,
+                                    "generator": false,
+                                    "private": false,
+                                    "protected": false,
+                                    "public": true,
+                                    "static": false,
+                                    "variadic": false
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "generator",
+                                        "position": 0,
+                                        "type": "\\Generator",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": false,
+                                            "defaultValueConstant": false,
+                                            "optional": false,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The object being used to generate the string representation.",
+                                        "class": "Icecave\\Repr\\Generator"
+                                    },
+                                    {
+                                        "name": "currentDepth",
+                                        "position": 1,
+                                        "type": "int",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": true,
+                                            "defaultValueConstant": false,
+                                            "optional": true,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The current depth in the object hierarchy.",
+                                        "defaultValue": 0
+                                    }
+                                ],
+                                "returnType": "string",
+                                "summary": "Generate this object's string representation.",
+                                "description": ""
+                            }
+                        ],
+                        "name": "Icecave\\Repr\\RepresentableInterface",
+                        "properties": [],
+                        "shortName": "RepresentableInterface",
+                        "startLine": 9,
+                        "traits": [],
+                        "summary": "Interface for objects that provide their own string representation.",
+                        "ns": "Icecave\\Repr"
+                    }
+                ],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "stringRepresentation",
+                        "modifiers": {
+                            "abstract": true,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "generator",
+                                "position": 0,
+                                "type": "\\Generator",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The object being used to generate the string representation.",
+                                "class": "Icecave\\Repr\\Generator"
+                            },
+                            {
+                                "name": "currentDepth",
+                                "position": 1,
+                                "type": "int",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": true,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The current depth in the object hierarchy.",
+                                "defaultValue": 0
+                            }
+                        ],
+                        "returnType": "string",
+                        "summary": "Generate this object's string representation.",
+                        "description": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Maybe",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Maybe",
+                "startLine": 12,
+                "traits": [],
+                "parentClassName": "Datashaman\\Logic\\Monad",
+                "parentClassShortName": "Monad",
+                "parentClass": {
+                    "_type": "class",
+                    "endLine": 49,
+                    "filename": "src\/monad.php",
+                    "interfaces": [],
+                    "methods": [
+                        {
+                            "name": "__construct",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "value",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": "void",
+                            "summary": "Create a new Monad instance.",
+                            "description": ""
+                        },
+                        {
+                            "name": "__invoke",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": true
+                            },
+                            "parameters": [
+                                {
+                                    "name": "args",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": true,
+                                        "passedByReference": false,
+                                        "variadic": true
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        },
+                        {
+                            "name": "bind",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "f",
+                                    "position": 0,
+                                    "type": "callable",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": true,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        }
+                    ],
+                    "name": "Datashaman\\Logic\\Monad",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "modifiers": {
+                                "private": false,
+                                "protected": true,
+                                "public": false,
+                                "static": false
+                            },
+                            "type": "mixed",
+                            "summary": "The value that is wrapped inside the monad."
+                        }
+                    ],
+                    "shortName": "Monad",
+                    "startLine": 7,
+                    "traits": [],
+                    "ns": "Datashaman\\Logic"
+                },
+                "summary": "Abstract base class for Maybe monads.",
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "class",
             "endLine": 40,
             "filename": "src\/maybe.php",
-            "interfaces": {
-                "Icecave\\Repr\\RepresentableInterface": {
+            "interfaces": [
+                {
                     "_type": "interface",
                     "endLine": 20,
                     "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
@@ -2819,9 +4611,10 @@
                     "shortName": "RepresentableInterface",
                     "startLine": 9,
                     "traits": [],
-                    "summary": "Interface for objects that provide their own string representation."
+                    "summary": "Interface for objects that provide their own string representation.",
+                    "ns": "Icecave\\Repr"
                 }
-            },
+            ],
             "methods": [
                 {
                     "name": "__construct",
@@ -2962,6 +4755,363 @@
             "shortName": "Nothing",
             "startLine": 25,
             "traits": [],
+            "parentClassName": "Datashaman\\Logic\\Maybe",
+            "parentClassShortName": "Maybe",
+            "parentClass": {
+                "_type": "class",
+                "endLine": 15,
+                "filename": "src\/maybe.php",
+                "interfaces": [
+                    {
+                        "_type": "interface",
+                        "endLine": 20,
+                        "filename": "vendor\/icecave\/repr\/src\/RepresentableInterface.php",
+                        "interfaces": [],
+                        "methods": [
+                            {
+                                "name": "stringRepresentation",
+                                "modifiers": {
+                                    "abstract": true,
+                                    "final": false,
+                                    "generator": false,
+                                    "private": false,
+                                    "protected": false,
+                                    "public": true,
+                                    "static": false,
+                                    "variadic": false
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "generator",
+                                        "position": 0,
+                                        "type": "\\Generator",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": false,
+                                            "defaultValueConstant": false,
+                                            "optional": false,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The object being used to generate the string representation.",
+                                        "class": "Icecave\\Repr\\Generator"
+                                    },
+                                    {
+                                        "name": "currentDepth",
+                                        "position": 1,
+                                        "type": "int",
+                                        "modifiers": {
+                                            "array": false,
+                                            "callable": false,
+                                            "defaultValueAvailable": true,
+                                            "defaultValueConstant": false,
+                                            "optional": true,
+                                            "passedByReference": false,
+                                            "variadic": false
+                                        },
+                                        "description": "The current depth in the object hierarchy.",
+                                        "defaultValue": 0
+                                    }
+                                ],
+                                "returnType": "string",
+                                "summary": "Generate this object's string representation.",
+                                "description": ""
+                            }
+                        ],
+                        "name": "Icecave\\Repr\\RepresentableInterface",
+                        "properties": [],
+                        "shortName": "RepresentableInterface",
+                        "startLine": 9,
+                        "traits": [],
+                        "summary": "Interface for objects that provide their own string representation.",
+                        "ns": "Icecave\\Repr"
+                    }
+                ],
+                "methods": [
+                    {
+                        "name": "__construct",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "value",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": "void",
+                        "summary": "Create a new Monad instance.",
+                        "description": ""
+                    },
+                    {
+                        "name": "__invoke",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": true
+                        },
+                        "parameters": [
+                            {
+                                "name": "args",
+                                "position": 0,
+                                "type": "mixed",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": true
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "bind",
+                        "modifiers": {
+                            "abstract": false,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "f",
+                                "position": 0,
+                                "type": "callable",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": true,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                }
+                            }
+                        ],
+                        "returnType": ""
+                    },
+                    {
+                        "name": "stringRepresentation",
+                        "modifiers": {
+                            "abstract": true,
+                            "final": false,
+                            "generator": false,
+                            "private": false,
+                            "protected": false,
+                            "public": true,
+                            "static": false,
+                            "variadic": false
+                        },
+                        "parameters": [
+                            {
+                                "name": "generator",
+                                "position": 0,
+                                "type": "\\Generator",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": false,
+                                    "defaultValueConstant": false,
+                                    "optional": false,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The object being used to generate the string representation.",
+                                "class": "Icecave\\Repr\\Generator"
+                            },
+                            {
+                                "name": "currentDepth",
+                                "position": 1,
+                                "type": "int",
+                                "modifiers": {
+                                    "array": false,
+                                    "callable": false,
+                                    "defaultValueAvailable": true,
+                                    "defaultValueConstant": false,
+                                    "optional": true,
+                                    "passedByReference": false,
+                                    "variadic": false
+                                },
+                                "description": "The current depth in the object hierarchy.",
+                                "defaultValue": 0
+                            }
+                        ],
+                        "returnType": "string",
+                        "summary": "Generate this object's string representation.",
+                        "description": ""
+                    }
+                ],
+                "name": "Datashaman\\Logic\\Maybe",
+                "properties": [
+                    {
+                        "name": "value",
+                        "modifiers": {
+                            "private": false,
+                            "protected": true,
+                            "public": false,
+                            "static": false
+                        },
+                        "type": "mixed",
+                        "summary": "The value that is wrapped inside the monad."
+                    }
+                ],
+                "shortName": "Maybe",
+                "startLine": 12,
+                "traits": [],
+                "parentClassName": "Datashaman\\Logic\\Monad",
+                "parentClassShortName": "Monad",
+                "parentClass": {
+                    "_type": "class",
+                    "endLine": 49,
+                    "filename": "src\/monad.php",
+                    "interfaces": [],
+                    "methods": [
+                        {
+                            "name": "__construct",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "value",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": "void",
+                            "summary": "Create a new Monad instance.",
+                            "description": ""
+                        },
+                        {
+                            "name": "__invoke",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": true
+                            },
+                            "parameters": [
+                                {
+                                    "name": "args",
+                                    "position": 0,
+                                    "type": "mixed",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": false,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": true,
+                                        "passedByReference": false,
+                                        "variadic": true
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        },
+                        {
+                            "name": "bind",
+                            "modifiers": {
+                                "abstract": false,
+                                "final": false,
+                                "generator": false,
+                                "private": false,
+                                "protected": false,
+                                "public": true,
+                                "static": false,
+                                "variadic": false
+                            },
+                            "parameters": [
+                                {
+                                    "name": "f",
+                                    "position": 0,
+                                    "type": "callable",
+                                    "modifiers": {
+                                        "array": false,
+                                        "callable": true,
+                                        "defaultValueAvailable": false,
+                                        "defaultValueConstant": false,
+                                        "optional": false,
+                                        "passedByReference": false,
+                                        "variadic": false
+                                    }
+                                }
+                            ],
+                            "returnType": ""
+                        }
+                    ],
+                    "name": "Datashaman\\Logic\\Monad",
+                    "properties": [
+                        {
+                            "name": "value",
+                            "modifiers": {
+                                "private": false,
+                                "protected": true,
+                                "public": false,
+                                "static": false
+                            },
+                            "type": "mixed",
+                            "summary": "The value that is wrapped inside the monad."
+                        }
+                    ],
+                    "shortName": "Monad",
+                    "startLine": 7,
+                    "traits": [],
+                    "ns": "Datashaman\\Logic"
+                },
+                "summary": "Abstract base class for Maybe monads.",
+                "ns": "Datashaman\\Logic"
+            },
             "ns": "Datashaman\\Logic"
         },
         {

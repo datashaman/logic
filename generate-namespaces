@@ -14,14 +14,20 @@ $cwd = getcwd();
 $dotenv = Dotenv::create($cwd);
 $dotenv->load();
 
+$whitelist = explode(',', getenv('WHITELIST'));
+
 $options = getopt('o');
 
-if ($argc != 2) {
-    print "Usage: {$argv[0]} 'root namespace'\n";
+if (empty($whitelist) && $argc < 2) {
+    print "Usage: {$argv[0]} [namespace ...]\n";
     exit(1);
 }
 
-$root = $argv[1];
+$whitelist = array_merge(
+    $whitelist,
+    array_slice($argv, 1)
+);
+
 $namespaces = [];
 
 function getDocBlock($function)
@@ -44,7 +50,7 @@ function recursive_sort(&$array) {
     return sort($array);
 }
 
-function transformClass($class, $depth = null, $maxDepth = null)
+function transformClass($class)
 {
     global $cwd;
 
@@ -103,9 +109,9 @@ function transformClass($class, $depth = null, $maxDepth = null)
         'filename' => $filename,
         'interfaces' => array_map(
             function ($i) {
-                return transformClass($i, 1, 1);
+                return transform($i, 'transformClass', 1, 1);
             },
-            $class->getInterfaces()
+            array_values($class->getInterfaces())
         ),
         'methods' => $methods,
         'name' => $class->getName(),
@@ -114,17 +120,19 @@ function transformClass($class, $depth = null, $maxDepth = null)
         'startLine' => $class->getStartLine(),
         'traits' => array_map(
             function ($t) {
-                return transformClass($t, 1, 1);
+                return transform($t, 'transformClass', 1, 1);
             },
             $class->getTraits()
         ),
     ];
 
-    if ($depth < $maxDepth) {
-        $parentClass = $class->getParentClass();
+    $parentClass = $class->getParentClass();
+    if ($parentClass) {
+        $result['parentClassName'] = $parentClass->getName();
+        $result['parentClassShortName'] = $parentClass->getShortName();
 
-        if ($parentClass) {
-            $result['parent'] = transformClass($parentClass, $depth + 1, $maxDepth);
+        if (inWhitelist($parentClass->getName())) {
+            $result['parentClass'] = transform($parentClass, 'transformClass');
         }
     }
 
@@ -277,32 +285,57 @@ function transformMethod($method)
     return $result;
 }
 
-function processReflector($reflector, callable $f)
+function transform($entity, callable $f, ...$args)
+{
+    $namespace = $entity->getNamespaceName();
+
+    $result = $f($entity, ...$args);
+    $result['ns'] = $namespace;
+
+    return $result;
+}
+
+function addToNamespaces($entity)
 {
     global $namespaces;
 
-    $namespace = $reflector->getNamespaceName();
+    $namespace = $entity['ns'];
+
     if (!isset($namespaces[$namespace])) {
         $namespaces[$namespace] = [];
     }
-    $result = $f($reflector);
-    $result['ns'] = $namespace;
-    $namespaces[$namespace][] = $result;
+
+    $namespaces[$namespace][] = $entity;
+}
+
+function inWhitelist($name)
+{
+    global $whitelist;
+
+    foreach ($whitelist as $ns) {
+        $ns = str_replace('\\', '\\\\', $ns);
+
+        if (preg_match("#^{$ns}#i", $name)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 foreach(get_declared_classes() as $name) {
-    if (preg_match("#^{$root}#", $name)) {
+    if (inWhitelist($name)) {
         $class = new ReflectionClass($name);
-        processReflector($class, 'transformClass');
+        addToNamespaces(transform($class, 'transformClass'));
     }
 }
 
 $functions = get_defined_functions(true);
 
 foreach($functions['user'] as $name) {
-    if (preg_match("#^{$root}#i", $name)) {
+    if (inWhitelist($name)) {
         $function = new ReflectionFunction($name);
-        processReflector($function, 'transformFunction');
+        addToNamespaces(transform($function, 'transformFunction'));
     }
 }
 

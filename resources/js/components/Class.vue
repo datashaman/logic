@@ -4,18 +4,18 @@
 
         <p>
             class <strong>{{ shortName }}</strong>
-            <span v-if="nsClass.parent">
+            <span v-if="nsClass.parentClass || nsClass.parentClassName">
                 extends
-                <template v-if="nsClass.ns === nsClass.parent.ns">
-                    <b-link :to="{ name: 'class', params: { ns: nsClass.parent.ns, shortName: nsClass.parent.shortName }}">
-                        {{ nsClass.parent.shortName }}
+                <template v-if="nsClass.parentClass">
+                    <b-link :to="{ name: 'class', params: { ns: nsClass.parentClass.ns, shortName: nsClass.parentClass.shortName }}">
+                        {{ nsClass.parentClass.shortName }}
                     </b-link>
                 </template>
                 <template v-else>
-                    <code>{{ nsClass.parent.name }}</code>
+                    <code>{{ nsClass.parentClassName }}</code>
                 </template>
             </span>
-            <span v-if="nsClass.interfaces">
+            <span v-if="nsClass.interfaces.length">
                 implements
                 <template v-for="i in nsClass.interfaces">
                     <template v-if="nsClass.ns === i.ns">
