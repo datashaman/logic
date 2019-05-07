@@ -3,6 +3,7 @@
         <b-navbar toggleable="lg" type="dark" variant="info">
             <b-navbar-brand href="#">Logic</b-navbar-brand>
 
+<!--
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
@@ -16,6 +17,7 @@
                     <b-nav-item :to="{ name: 'search' }">Search</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
+-->
         </b-navbar>
 
         <router-view class="p-3"></router-view>
