@@ -77,9 +77,11 @@ webpack-dev-server:
 
 webpack-development:
 	webpack --mode=development
+	cp resources/favicon/* docs/
 
 webpack-production:
 	webpack --mode=production
+	cp resources/favicon/* docs/
 
 webpack-watch:
 	webpack --mode=development --watch
