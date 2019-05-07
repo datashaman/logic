@@ -28,7 +28,7 @@ namespaces:
 
 namespaces-gists:
 	mkdir -p resources/json/
-	./generate-namespaces 'Datashaman\\Logic' --gists > resources/json/namespaces.json
+	./generate-namespaces --gists 'Datashaman\\Logic' > resources/json/namespaces.json
 
 phpcheck:
 	@phpcheck

@@ -15,17 +15,21 @@ $dotenv = Dotenv::create($cwd);
 $dotenv->load();
 
 $whitelist = explode(',', getenv('WHITELIST'));
+$options = getopt('o:', ['gists']);
 
-$options = getopt('o');
+$args = array_merge(
+    [$argv[0]],
+    array_slice($argv, count($options) + 1)
+);
 
-if (empty($whitelist) && $argc < 2) {
-    print "Usage: {$argv[0]} [namespace ...]\n";
+if (empty($whitelist) && count($args) < 2) {
+    print "Usage: {$argv[0]} [-o filename] [--gists] [namespace ...]\n";
     exit(1);
 }
 
 $whitelist = array_merge(
     $whitelist,
-    array_slice($argv, 1)
+    array_slice($args, 1)
 );
 
 $namespaces = [];
