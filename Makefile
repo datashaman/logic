@@ -77,11 +77,11 @@ webpack-dev-server:
 
 webpack-development:
 	webpack --mode=development
-	cp resources/favicon/* docs/
+	cp resources/favicon/* resources/robots.txt docs/
 
 webpack-production:
 	webpack --mode=production
-	cp resources/favicon/* docs/
+	cp resources/favicon/* resources/robots.txt docs/
 
 webpack-watch:
 	webpack --mode=development --watch
