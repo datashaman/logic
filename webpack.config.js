@@ -1,13 +1,16 @@
 const path = require('path')
+const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     entry: './resources/js/app.js',
     output: {
-        chunkFilename: '[name].bundle.js',
+        chunkFilename: '[name].[contenthash].bundle.js',
         path: path.join(__dirname, 'docs'),
-        filename: '[name].bundle.js'
+        filename: '[name].[contenthash].bundle.js'
     },
     module: {
         rules: [{
@@ -35,9 +38,28 @@ module.exports = {
         }]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new CompressionPlugin(),
-        new VueLoaderPlugin()
+        new HtmlWebpackPlugin({
+            inject: 'body',
+            template: 'resources/index.html',
+            title: 'Logic'
+        }),
+        new VueLoaderPlugin(),
+        new webpack.HashedModuleIdsPlugin()
     ],
+    optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
+    },
     stats: {
         maxModules: Infinity,
         optimizationBailout: true
