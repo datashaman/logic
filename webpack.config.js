@@ -42,6 +42,7 @@ module.exports = {
         new CompressionPlugin(),
         new HtmlWebpackPlugin({
             inject: 'body',
+            publicPath: '/',
             template: 'resources/index.html',
             title: 'Logic'
         }),
