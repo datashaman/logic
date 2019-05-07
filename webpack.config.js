@@ -10,6 +10,7 @@ module.exports = {
     output: {
         chunkFilename: '[name].[contenthash].bundle.js',
         path: path.join(__dirname, 'docs'),
+        publicPath: '/',
         filename: '[name].[contenthash].bundle.js'
     },
     module: {
@@ -42,7 +43,6 @@ module.exports = {
         new CompressionPlugin(),
         new HtmlWebpackPlugin({
             inject: 'body',
-            publicPath: '/',
             template: 'resources/index.html',
             title: 'Logic'
         }),
