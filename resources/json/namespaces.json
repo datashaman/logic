@@ -5631,7 +5631,7 @@
             "startLine": 62,
             "summary": "Return a simple string representation of the value for display and logging.",
             "example": "use function Datashaman\\Logic\\repr;\nuse Ds\\Map;\n\nprint repr([1, 2, 3]) . PHP_EOL;\nprint repr(['a' => 'A', 'b' => 'B', 'c' => 'C']) . PHP_EOL;\nprint repr(new Ds\\Map(['a' => 'A', 'b' => 'B', 'c' => 'C'])) . PHP_EOL;\nprint repr(\"string\") . PHP_EOL;\nprint repr(100) . PHP_EOL;\nprint repr(new DateTime()) . PHP_EOL;\n",
-            "output": "[1, 2, 3]\n[\"a\" => \"A\", \"b\" => \"B\", \"c\" => \"C\"]\n<Ds\\Map @ 0000000071b8905a00000000332061c8>\n\"string\"\n100\n<DateTime @ 0000000071b8905a00000000332061c8>\n",
+            "output": "[1, 2, 3]\n[\"a\" => \"A\", \"b\" => \"B\", \"c\" => \"C\"]\n<Ds\\Map @ 00000000739e00b2000000006d07fcc2>\n\"string\"\n100\n<DateTime @ 00000000739e00b2000000006d07fcc2>\n",
             "gist": "https:\/\/gist.github.com\/9f56652ab4a105db2197555c8b4d1bed",
             "ns": "Datashaman\\Logic"
         },
@@ -6130,7 +6130,7 @@
             "startLine": 63,
             "summary": "The fromJust function extracts the element out of a Just and throws an error if its argument is Nothing.",
             "example": "use function Datashaman\\Logic\\fromJust;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\n$s = mkMaybe('hello');\n$n = mkMaybe(null);\n\necho repr(fromJust($s)) . PHP_EOL;\n\nfromJust($n);\n",
-            "output": "\"hello\"\nException: Maybe.fromJust: Nothing in \/home\/marlinf\/Desktop\/logic\/src\/maybe.php:69\nStack trace:\n#0 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(254) : eval()'d code(10): Datashaman\\Logic\\fromJust(Object(Datashaman\\Logic\\Nothing))\n#1 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(254): eval()\n#2 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(349): getOutput('use function Da...')\n#3 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(416): transformFunction(Object(ReflectionFunction))\n#4 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(462): transform(Object(ReflectionFunction), 'transformFuncti...')\n#5 {main}\n",
+            "output": "\"hello\"\nException: Maybe.fromJust: Nothing in \/home\/marlinf\/Desktop\/logic\/src\/maybe.php:69\nStack trace:\n#0 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(259) : eval()'d code(10): Datashaman\\Logic\\fromJust(Object(Datashaman\\Logic\\Nothing))\n#1 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(259): eval()\n#2 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(354): getOutput('use function Da...')\n#3 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(421): transformFunction(Object(ReflectionFunction))\n#4 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(467): transform(Object(ReflectionFunction), 'transformFuncti...')\n#5 {main}\n",
             "gist": "https:\/\/gist.github.com\/50607eac2ef927494a6cc0de3062766b",
             "ns": "Datashaman\\Logic"
         },

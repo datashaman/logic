@@ -102,49 +102,7 @@ const routes = [
         name: 'home',
         path: '/',
         component: Vue.component('Namespaces'),
-    },
-    {
-        name: 'interfaces',
-        path: '/interfaces',
-        component: Vue.component('Interfaces'),
-    },
-    {
-        name: 'class',
-        path: '/cl/:ns/:shortName',
-        component: Vue.component('Class'),
-        props: true,
-    },
-    {
-        name: 'classes',
-        path: '/classes',
-        component: Vue.component('Classes'),
-    },
-    {
-        name: 'traits',
-        path: '/traits',
-        component: Vue.component('Traits'),
-    },
-    {
-        name: 'function',
-        path: '/f/:name',
-        component: Vue.component('Function'),
-        props: true,
-    },
-    {
-        name: 'functions',
-        path: '/functions',
-        component: Vue.component('Functions'),
-    },
-    {
-        name: 'index',
-        path: '/index',
-        component: Vue.component('Index'),
-    },
-    {
-        name: 'search',
-        path: '/search',
-        component: Vue.component('Search'),
-    },
+    }
 ]
 
 const router = new VueRouter({

@@ -127,8 +127,8 @@ export default {
     },
     methods: {
         confirmCopy() {
-            this.$bvToast.toast('Copied!', {
-                title: 'PHPCheck',
+            this.$bvToast.toast('Copied command-line!', {
+                title: 'Documentation',
                 autoHideDelay: 500,
                 isStatus: true
             })

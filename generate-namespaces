@@ -14,7 +14,7 @@ $cwd = getcwd();
 $dotenv = Dotenv::create($cwd);
 $dotenv->load();
 
-$whitelist = explode(',', getenv('WHITELIST'));
+$whitelist = explode(',', getenv('DOCS_NAMESPACE_WHITELIST'));
 $options = getopt('o:', ['gists']);
 
 $args = array_merge(
@@ -36,15 +36,20 @@ if (isset($options['gists'])) {
     $client = new Client();
     $client->addCache($pool);
 
-    $client->authenticate(getenv('GITHUB_TOKEN'), null, Client::AUTH_URL_TOKEN);
+    $client->authenticate(getenv('DOCS_GITHUB_TOKEN'), null, Client::AUTH_URL_TOKEN);
 
-    $gists = $client->api('user')->gists('datashaman');
+    $gists = $client->api('user')->gists(getenv('DOCS_GITHUB_USERNAME'));
 
     $indexedGists = [];
 
     foreach ($gists as $gist) {
-        if (preg_match('#^(Datashaman\\\\Logic\\\\.+) Example$#', $gist['description'], $match)) {
-            $indexedGists[$match[1]] = $gist;
+        foreach ($whitelist as $ns) {
+            $ns = str_replace('\\', '\\\\', $ns);
+
+            if (preg_match("#^($ns\\\\.+) Example$#", $gist['description'], $match)) {
+                $indexedGists[$match[1]] = $gist;
+                break;
+            }
         }
     }
 }
