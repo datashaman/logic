@@ -7,13 +7,14 @@ namespace Datashaman\Logic;
  *
  * <pre>
  * use function Datashaman\Logic\C;
+ * use function Datashaman\Logic\repr;
  *
  * $now = new DateTime();
  *
  * $p = C('DateTime');
  *
- * var_dump($p($now));
- * var_dump($p(12));
+ * echo repr($p($now)) . PHP_EOL;
+ * echo repr($p(12)) . PHP_EOL;
  * </pre>
  */
 function C(string $class): callable
@@ -54,12 +55,13 @@ function D($d, callable $f = null): callable
  *
  * <pre>
  * use function Datashaman\Logic\I;
+ * use function Datashaman\Logic\repr;
  *
  * $f = I();
  *
- * var_dump($f(null));
- * var_dump($f(12));
- * var_dump($f('hello world'));
+ * echo repr($f(null)) . PHP_EOL;
+ * echo repr($f(12)) . PHP_EOL;
+ * echo repr($f('hello world')) . PHP_EOL;
  * </pre>
  */
 function I(): callable
@@ -130,12 +132,13 @@ function V(): callable
  *
  * <pre>
  * use function Datashaman\Logic\K;
+ * use function Datashaman\Logic\repr;
  *
  * $f = K(12);
  *
- * var_dump($f(null));
- * var_dump($f(0));
- * var_dump($f('hello world'));
+ * echo repr($f(null)) . PHP_EOL;
+ * echo repr($f(0)) . PHP_EOL;
+ * echo repr($f('hello world')) . PHP_EOL;
  * </pre>
  */
 function K($arg): callable
@@ -258,12 +261,13 @@ function M(...$conditions): callable
  * Create a function that always returns true
  *
  * <pre>
+ * use function Datashaman\Logic\repr;
  * use function Datashaman\Logic\T;
  *
  * $f = T();
  *
- * var_dump($f(12));
- * var_dump($f(null));
+ * echo repr($f(12)) . PHP_EOL;
+ * echo repr($f(null)) . PHP_EOL;
  * </pre>
  */
 function T()
@@ -276,11 +280,12 @@ function T()
  *
  * <pre>
  * use function Datashaman\Logic\F;
+ * use function Datashaman\Logic\repr;
  *
  * $f = F();
  *
- * var_dump($f(12));
- * var_dump($f(null));
+ * echo repr($f(12)) . PHP_EOL;
+ * echo repr($f(null)) . PHP_EOL;
  * </pre>
  */
 function F()

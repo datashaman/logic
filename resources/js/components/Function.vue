@@ -1,5 +1,6 @@
 <template>
     <b-card :id="f.shortName" class="card-function">
+        {{ f }}
         <h4 slot="header">{{ f.shortName }}</h4>
 
         <b-card-text v-html="f.summary"></b-card-text>

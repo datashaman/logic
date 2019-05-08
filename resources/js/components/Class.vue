@@ -103,6 +103,18 @@
                             <b-table borderless small :items="[{type: m.returnType}]" thead-class="hide">
                             </b-table>
                         </template>
+
+                        <template v-if="m.example">
+                            <h3>Example</h3>
+
+                            <pre class="lolight">{{ m.example }}</pre>
+                        </template>
+
+                        <template v-if="m.output">
+                            <h3>Output</h3>
+
+                            <pre>{{ m.output }}</pre>
+                        </template>
                     </div>
                 </div>
             </div>

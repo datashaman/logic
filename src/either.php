@@ -208,12 +208,13 @@ function fromRight($d, Either $e)
  * use function Datashaman\Logic\isLeft;
  * use function Datashaman\Logic\mkLeft;
  * use function Datashaman\Logic\mkRight;
+ * use function Datashaman\Logic\repr;
  *
  * $err = mkLeft('Error');
  * $ok = mkRight('OK');
  *
- * var_dump(isLeft($err));
- * var_dump(isLeft($ok));
+ * echo repr(isLeft($err)) . PHP_EOL;
+ * echo repr(isLeft($ok)) . PHP_EOL;
  * </pre>
  */
 function isLeft(Either $e)
@@ -228,12 +229,13 @@ function isLeft(Either $e)
  * use function Datashaman\Logic\isRight;
  * use function Datashaman\Logic\mkLeft;
  * use function Datashaman\Logic\mkRight;
+ * use function Datashaman\Logic\repr;
  *
  * $err = mkLeft('Error');
  * $ok = mkRight('OK');
  *
- * var_dump(isRight($err));
- * var_dump(isRight($ok));
+ * echo repr(isRight($err)) . PHP_EOL;
+ * echo repr(isRight($ok)) . PHP_EOL;
  * </pre>
  */
 function isRight(Either $e)

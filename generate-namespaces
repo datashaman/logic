@@ -3,19 +3,11 @@
 
 require_once 'vendor/autoload.php';
 
+use Cache\Adapter\Redis\RedisCachePool;
 use Dotenv\Dotenv;
+use Github\Client;
 use phpDocumentor\Reflection\DocBlockFactory;
 use Webmozart\Assert\Assert;
-
-function evalWithArgs(string $expression, $args = [])
-{
-    \extract($args);
-    $expression = "namespace Datashaman\Logic; return $expression;";
-
-    return eval($expression);
-}
-
-Assert::eq(1, 1);
 
 $cwd = getcwd();
 
@@ -33,6 +25,28 @@ $args = array_merge(
 if (empty($whitelist) && count($args) < 2) {
     print "Usage: {$argv[0]} [-o filename] [--gists] [namespace ...]\n";
     exit(1);
+}
+
+if (isset($options['gists'])) {
+    $client = new Redis();
+    $client->connect('127.0.0.1', 6379);
+
+    $pool = new RedisCachePool($client);
+
+    $client = new Client();
+    $client->addCache($pool);
+
+    $client->authenticate(getenv('GITHUB_TOKEN'), null, Client::AUTH_URL_TOKEN);
+
+    $gists = $client->api('user')->gists('datashaman');
+
+    $indexedGists = [];
+
+    foreach ($gists as $gist) {
+        if (preg_match('#^(Datashaman\\\\Logic\\\\.+) Example$#', $gist['description'], $match)) {
+            $indexedGists[$match[1]] = $gist;
+        }
+    }
 }
 
 $whitelist = array_merge(
@@ -230,9 +244,74 @@ function getExample($docBlock)
     }
 }
 
+function getOutput(string $example)
+{
+    $output = '';
+
+    ob_start();
+
+    try {
+        eval($example);
+    }
+
+    catch (Exception $e) {
+        $output .= (string) $e . "\n";
+    }
+
+    finally {
+        $output = ob_get_contents() . $output;
+        ob_end_clean();
+    }
+
+    return $output;
+}
+
+function getGist($function)
+{
+    global $client, $indexedGists;
+
+    $code = <<<CODE
+<?php
+<<<CONFIG
+packages:
+- "datashaman/logic: dev-master"
+CONFIG;
+#
+# This is a Melody script. http://melody.sensiolabs.org/
+#
+
+{$function['example']}
+CODE;
+
+    $description = $function['name'] . ' Example';
+
+    $params = [
+        'description' => $description,
+        'files' => [
+            $description => [
+                'content' => $code,
+            ],
+        ],
+        'public' => true,
+    ];
+
+    if (isset($indexedGists[$function['name']])) {
+        $gist = $indexedGists[$function['name']];
+        $contents = file_get_contents($gist['files'][$description]['raw_url']);
+
+        if ($contents !== $code) {
+            $gist = $client->api('gists')->update($gist['id'], $params);
+        }
+    } else {
+        $gist = $client->api('gists')->create($params);
+    }
+
+    return $gist['html_url'];
+}
+
 function transformFunction($function)
 {
-    global $cwd;
+    global $cwd, $options;
 
     $filename = preg_replace("#^{$cwd}/#", '', $function->getFilename());
 
@@ -267,7 +346,11 @@ function transformFunction($function)
 
         if ($example) {
             $result['example'] = $example;
-            $result['output'] = evalWithArgs($result['example']);
+            $result['output'] = getOutput($result['example']);
+
+            if (isset($options['gists'])) {
+                $result['gist'] = getGist($result);
+            }
         }
     }
 
@@ -276,6 +359,8 @@ function transformFunction($function)
 
 function transformMethod($method)
 {
+    global $options;
+
     $result = [
         'name' => $method->getName(),
         'modifiers' => [
@@ -307,6 +392,17 @@ function transformMethod($method)
 
         if ($tags) {
             $result['returnType'] = (string) $tags[0]->getType();
+        }
+
+        $example = getExample($docBlock);
+
+        if ($example) {
+            $result['example'] = $example;
+            $result['output'] = getOutput($result['example']);
+
+            if (isset($options['gists'])) {
+                $result['gist'] = getGist($result);
+            }
         }
     }
 

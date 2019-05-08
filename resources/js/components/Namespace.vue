@@ -39,10 +39,10 @@
                             {{ generateSignature(f) }}
                         </div>
 
-                        <div v-if="f.summary" class="px-4 pt-4" v-html="f.summary"></div>
-                        <div v-if="f.description" class="px-4 pt-4" v-html="f.description"></div>
+                        <div v-if="f.summary" class="p-2" v-html="f.summary"></div>
+                        <div v-if="f.description" class="p-2" v-html="f.description"></div>
 
-                        <div v-if="f.parameters.length" class="px-4 pt-4">
+                        <div v-if="f.parameters.length" class="p-4">
                             <h3 class="details_header">Parameters</h3>
 
                             <b-table borderless small :fields="tableFields.parameters" :items="f.parameters" thead-class="hide" tbody-tr-class="tr-underline">
@@ -54,13 +54,39 @@
                                     <div v-if="data.item.description" v-html="data.item.description"></div>
                                 </template>
                             </b-table>
+                        </div>
 
-                            <template v-if="f.returnType">
-                                <h3 class="details_header">Return Value</h3>
+                        <div v-if="f.returnType" class="p-2">
+                            <h3 class="details_header">Return Value</h3>
 
-                                <b-table borderless small :items="[{type: f.returnType}]" thead-class="hide">
-                                </b-table>
-                            </template>
+                            <b-table borderless small :items="[{type: f.returnType}]" thead-class="hide">
+                            </b-table>
+                        </div>
+
+                        <div v-if="f.example" class="p-2">
+                            <h3 class="details_block_header">Example</h3>
+
+                            <pre class="lolight">{{ f.example }}</pre>
+                        </div>
+
+                        <div v-if="f.output" class="p-2">
+                            <h3 class="details_block_header">Output</h3>
+
+                            <pre>{{ f.output }}</pre>
+                        </div>
+
+                        <div v-if="f.gist" class="p-2">
+                            <b-input-group>
+                                <b-form-input class="flex-grow-1" type="text" :value="'melody run ' + f.gist" readonly />
+                                <b-input-group-append>
+                                    <b-button variant="success" class="btn-copy" v-clipboard:copy="'melody run ' + f.gist" @click="confirmCopy">
+                                        <font-awesome-icon icon="copy"></font-awesome-icon>
+                                    </b-button>
+                                    <b-button variant="outline-info" href="http://melody.sensiolabs.org">
+                                        <font-awesome-icon icon="question"></font-awesome-icon>
+                                    </b-button>
+                                </b-input-group-append>
+                            </b-input-group>
                         </div>
                     </div>
                 </div>
@@ -99,5 +125,14 @@ export default {
             return this.$store.getters.nsFunctions(this.name)
         },
     },
+    methods: {
+        confirmCopy() {
+            this.$bvToast.toast('Copied!', {
+                title: 'PHPCheck',
+                autoHideDelay: 500,
+                isStatus: true
+            })
+        }
+    }
 }
 </script>

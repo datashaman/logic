@@ -43,7 +43,7 @@ function curry(callable $f, ...$args) {
  * Return a simple string representation of the value for display and logging.
  *
  * <pre>
- * use function Datashaman\PHPCheck\repr;
+ * use function Datashaman\Logic\repr;
  * use Ds\Map;
  *
  * print repr([1, 2, 3]) . PHP_EOL;

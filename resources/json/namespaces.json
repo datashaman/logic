@@ -5222,7 +5222,7 @@
         },
         {
             "_type": "function",
-            "endLine": 22,
+            "endLine": 23,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\C",
             "parameters": [
@@ -5243,13 +5243,16 @@
             ],
             "returnType": "callable",
             "shortName": "C",
-            "startLine": 19,
+            "startLine": 20,
             "summary": "Creates a predicate function for checking the class of a value",
+            "example": "use function Datashaman\\Logic\\C;\nuse function Datashaman\\Logic\\repr;\n\n$now = new DateTime();\n\n$p = C('DateTime');\n\necho repr($p($now)) . PHP_EOL;\necho repr($p(12)) . PHP_EOL;\n",
+            "output": "true\nfalse\n",
+            "gist": "https:\/\/gist.github.com\/ff0549e47f49e913dd611f7996293998",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 50,
+            "endLine": 51,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\D",
             "parameters": [
@@ -5285,61 +5288,76 @@
             ],
             "returnType": "callable",
             "shortName": "D",
-            "startLine": 43,
+            "startLine": 44,
             "summary": "Creates a function that calls a function on a Just (it should return the value)\nand returns a default on a Nothing value.",
+            "example": "use function Datashaman\\Logic\\D;\nuse function Datashaman\\Logic\\mkMaybe;\n\n$f = D(0);\necho $f(mkMaybe(null)) . PHP_EOL;\necho $f(mkMaybe(12)) . PHP_EOL;\n\n$f = D(0, function ($value) {\n    return $value * 2;\n});\necho $f(mkMaybe(null)) . PHP_EOL;\necho $f(mkMaybe(12)) . PHP_EOL;\n",
+            "output": "0\n12\n0\n24\n",
+            "gist": "https:\/\/gist.github.com\/ea26db70ac47acde36b76fb481085d42",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 70,
+            "endLine": 72,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\I",
             "parameters": [],
             "returnType": "callable",
             "shortName": "I",
-            "startLine": 65,
+            "startLine": 67,
             "summary": "Creates an identity function (returns its value unchanged).",
+            "example": "use function Datashaman\\Logic\\I;\nuse function Datashaman\\Logic\\repr;\n\n$f = I();\n\necho repr($f(null)) . PHP_EOL;\necho repr($f(12)) . PHP_EOL;\necho repr($f('hello world')) . PHP_EOL;\n",
+            "output": "null\n12\n\"hello world\"\n",
+            "gist": "https:\/\/gist.github.com\/d3d702b626e9e3a3c0e30fd01a24278d",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 87,
+            "endLine": 89,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\J",
             "parameters": [],
             "returnType": "callable",
             "shortName": "J",
-            "startLine": 84,
+            "startLine": 86,
             "summary": "Creates a function which wraps a value with Just.",
+            "example": "use function Datashaman\\Logic\\J;\nuse function Datashaman\\Logic\\repr;\n\n$f = J();\n\necho repr($f(12)) . PHP_EOL;\n",
+            "output": "<Just 12>\n",
+            "gist": "https:\/\/gist.github.com\/b4bbb7a46707309611a9911f14f3d0fe",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 104,
+            "endLine": 106,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\N",
             "parameters": [],
             "returnType": "callable",
             "shortName": "N",
-            "startLine": 101,
+            "startLine": 103,
             "summary": "Creates a function which returns Nothing",
+            "example": "use function Datashaman\\Logic\\N;\nuse function Datashaman\\Logic\\repr;\n\n$f = N();\n\necho repr($f(12)) . PHP_EOL;\n",
+            "output": "<Nothing>\n",
+            "gist": "https:\/\/gist.github.com\/8a0f21064e9a1d86ad88f51d194c5def",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 126,
+            "endLine": 128,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\V",
             "parameters": [],
             "returnType": "callable",
             "shortName": "V",
-            "startLine": 121,
+            "startLine": 123,
             "summary": "Creates a function which returns the unwrapped monad value.",
+            "example": "use function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\repr;\nuse function Datashaman\\Logic\\V;\n\n$f = V();\n$j = mkJust(12);\n\necho repr($j) . PHP_EOL;\necho repr($f($j)) . PHP_EOL;\n",
+            "output": "<Just 12>\n12\n",
+            "gist": "https:\/\/gist.github.com\/301ba3226597d3d4fc26e102ad168fea",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 146,
+            "endLine": 149,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\K",
             "parameters": [
@@ -5360,13 +5378,16 @@
             ],
             "returnType": "callable",
             "shortName": "K",
-            "startLine": 141,
+            "startLine": 144,
             "summary": "Creates a constant function (returns the same value regardless of argument).",
+            "example": "use function Datashaman\\Logic\\K;\nuse function Datashaman\\Logic\\repr;\n\n$f = K(12);\n\necho repr($f(null)) . PHP_EOL;\necho repr($f(0)) . PHP_EOL;\necho repr($f('hello world')) . PHP_EOL;\n",
+            "output": "12\n12\n12\n",
+            "gist": "https:\/\/gist.github.com\/75e4c7b7006600c76c60085967d3ca64",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 156,
+            "endLine": 159,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\P",
             "parameters": [
@@ -5387,13 +5408,13 @@
             ],
             "returnType": "callable",
             "shortName": "P",
-            "startLine": 153,
+            "startLine": 156,
             "summary": "An alias for creating predicate functions.",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 172,
+            "endLine": 175,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\S",
             "parameters": [
@@ -5445,13 +5466,13 @@
             ],
             "returnType": "callable",
             "shortName": "S",
-            "startLine": 167,
+            "startLine": 170,
             "summary": "Application (not sure what to do with this yet)",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 255,
+            "endLine": 258,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\M",
             "parameters": [
@@ -5472,37 +5493,46 @@
             ],
             "returnType": "callable",
             "shortName": "M",
-            "startLine": 243,
+            "startLine": 246,
             "summary": "Creates a match function which takes one parameter (the subject):",
+            "example": "use Datashaman\\Logic\\Just;\nuse Datashaman\\Logic\\Nothing;\n\nuse function Datashaman\\Logic\\{K, J, M, N, T};\nuse function Datashaman\\Logic\\mkJust;\nuse function Datashaman\\Logic\\mkNothing;\nuse function Datashaman\\Logic\\repr;\n\n\/\/ If a null value is matched, return Nothing\n\/\/ Else return a new Just value\n$match = M(\n    [\n        'is_null',\n        function () {\n            return new Nothing();\n        }\n    ],\n    [\n        function () {\n            return true;\n        },\n        function ($value) {\n            return new Just($value);\n        }\n    ]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n\n\/\/ The above can be written more succinctly using\n\/\/ shortcuts. K makes a function that returns the supplied\n\/\/ parameter to every function call, always returning a\n\/\/ constant value. Here it always evaluates to true, which\n\/\/ makes it perfect for the else branch in a conditional\n\/\/ expression.\n\n\/\/ mkJust and mkNothing, when called with no parameters, return\n\/\/ a factory function that does the same as the above.\n\n$match = M(\n    ['is_null', mkNothing()],\n    [K(true), mkJust()]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n\n\/\/ The above can be written even MORE succinctly as follows.\n\/\/ Whether this is wise is another question...\n$match = M(\n    ['is_null', N()],\n    [T(), J()]\n);\n\necho repr($match(null)) . PHP_EOL;\necho repr($match(12)) . PHP_EOL;\n",
+            "output": "<Nothing>\n<Just 12>\n<Nothing>\n<Just 12>\n<Nothing>\n<Just 12>\n",
+            "gist": "https:\/\/gist.github.com\/c7c49850fca8f4594501c65a14c6151b",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 272,
+            "endLine": 276,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\T",
             "parameters": [],
             "returnType": "",
             "shortName": "T",
-            "startLine": 269,
+            "startLine": 273,
             "summary": "Create a function that always returns true",
+            "example": "use function Datashaman\\Logic\\repr;\nuse function Datashaman\\Logic\\T;\n\n$f = T();\n\necho repr($f(12)) . PHP_EOL;\necho repr($f(null)) . PHP_EOL;\n",
+            "output": "true\ntrue\n",
+            "gist": "https:\/\/gist.github.com\/20f35cd66bbc25f3b60df6ba980f1bbc",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 289,
+            "endLine": 294,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\F",
             "parameters": [],
             "returnType": "",
             "shortName": "F",
-            "startLine": 286,
+            "startLine": 291,
             "summary": "Create a function that always returns false",
+            "example": "use function Datashaman\\Logic\\F;\nuse function Datashaman\\Logic\\repr;\n\n$f = F();\n\necho repr($f(12)) . PHP_EOL;\necho repr($f(null)) . PHP_EOL;\n",
+            "output": "false\nfalse\n",
+            "gist": "https:\/\/gist.github.com\/e7fe67fe09c4ee73ad177ad44d43e548",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 354,
+            "endLine": 359,
             "filename": "src\/shortcuts.php",
             "name": "Datashaman\\Logic\\Do_",
             "parameters": [
@@ -5523,8 +5553,11 @@
             ],
             "returnType": "",
             "shortName": "Do_",
-            "startLine": 325,
+            "startLine": 330,
             "summary": "Resolve a chain of monadic values into a context and call a result function with that context.",
+            "example": "use function Datashaman\\Logic\\Do_;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\nfunction resolveEither($value) {\n    return is_numeric($value) ? mkRight($value) : mkLeft('parse error');\n}\n\necho repr(Do_(\n    [\n        'x' => resolveEither(3),\n        'y' => resolveEither(5),\n    ],\n    function ($c) {\n        return mkRight($c['x'] + $c['y']);\n    }\n)) . PHP_EOL;\n\necho repr(Do_(\n    [\n        'x' => resolveEither('m'),\n        'y' => resolveEither(5),\n    ],\n    function ($c) {\n        return mkRight($c['x'] + $c['y']);\n    }\n)) . PHP_EOL;\n",
+            "output": "<Right 8>\n<Left \"parse error\">\n",
+            "gist": "https:\/\/gist.github.com\/406f4cd552687fdea3ed383df02bc485",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -5566,55 +5599,14 @@
             "shortName": "curry",
             "startLine": 34,
             "summary": "Curry a callable.",
+            "example": "use function Datashaman\\Logic\\curry;\n\n$times = function ($x, $y) {\n    return $x * $y;\n};\n\n$double = curry($times, 2);\n$triple = curry($times, 3);\n\necho $double(4) . PHP_EOL;\necho $triple(4) . PHP_EOL;\n",
+            "output": "8\n12\n",
+            "gist": "https:\/\/gist.github.com\/0fc03b73bc222322e0ce43cda6fa2c09",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 66,
-            "filename": "src\/helpers.php",
-            "name": "Datashaman\\Logic\\evalWithArgs",
-            "parameters": [
-                {
-                    "name": "expression",
-                    "position": 0,
-                    "type": "string",
-                    "modifiers": {
-                        "array": false,
-                        "callable": false,
-                        "defaultValueAvailable": false,
-                        "defaultValueConstant": false,
-                        "optional": false,
-                        "passedByReference": false,
-                        "variadic": false
-                    },
-                    "description": "PHP string expression to be evaluated. Must not include semi-colon."
-                },
-                {
-                    "name": "args",
-                    "position": 1,
-                    "type": "array",
-                    "modifiers": {
-                        "array": false,
-                        "callable": false,
-                        "defaultValueAvailable": true,
-                        "defaultValueConstant": false,
-                        "optional": true,
-                        "passedByReference": false,
-                        "variadic": false
-                    },
-                    "description": "local arguments defined while the expression is evaluated",
-                    "defaultValue": []
-                }
-            ],
-            "returnType": "",
-            "shortName": "evalWithArgs",
-            "startLine": 60,
-            "summary": "Evaluate an expression of PHP code embedded in a doc block.",
-            "ns": "Datashaman\\Logic"
-        },
-        {
-            "_type": "function",
-            "endLine": 137,
+            "endLine": 111,
             "filename": "src\/helpers.php",
             "name": "Datashaman\\Logic\\repr",
             "parameters": [
@@ -5636,8 +5628,11 @@
             ],
             "returnType": "string",
             "shortName": "repr",
-            "startLine": 88,
+            "startLine": 62,
             "summary": "Return a simple string representation of the value for display and logging.",
+            "example": "use function Datashaman\\Logic\\repr;\nuse Ds\\Map;\n\nprint repr([1, 2, 3]) . PHP_EOL;\nprint repr(['a' => 'A', 'b' => 'B', 'c' => 'C']) . PHP_EOL;\nprint repr(new Ds\\Map(['a' => 'A', 'b' => 'B', 'c' => 'C'])) . PHP_EOL;\nprint repr(\"string\") . PHP_EOL;\nprint repr(100) . PHP_EOL;\nprint repr(new DateTime()) . PHP_EOL;\n",
+            "output": "[1, 2, 3]\n[\"a\" => \"A\", \"b\" => \"B\", \"c\" => \"C\"]\n<Ds\\Map @ 0000000071b8905a00000000332061c8>\n\"string\"\n100\n<DateTime @ 0000000071b8905a00000000332061c8>\n",
+            "gist": "https:\/\/gist.github.com\/9f56652ab4a105db2197555c8b4d1bed",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -5697,6 +5692,9 @@
             "shortName": "either",
             "startLine": 86,
             "summary": "If the either monad is a Left, call the first callable with the monad value.",
+            "example": "use function Datashaman\\Logic\\curry;\nuse function Datashaman\\Logic\\either;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$s = mkLeft('foo');\n$n = mkRight(3);\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $s\n) . PHP_EOL;\n\necho either(\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    },\n    $n\n) . PHP_EOL;\n\n\/\/ Or use currying\n\n$f = curry(\n    'Datashaman\\Logic\\either',\n    function ($value) {\n        return strlen($value);\n    },\n    function ($value) {\n        return $value * 2;\n    }\n);\n\necho $f($s) . PHP_EOL;\necho $f($n) . PHP_EOL;\n",
+            "output": "3\n6\n3\n6\n",
+            "gist": "https:\/\/gist.github.com\/2fcc5e72297e0f60022557f801020ce8",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -5724,6 +5722,9 @@
             "shortName": "mkLeft",
             "startLine": 122,
             "summary": "Make a Left value. If no arguments are supplied, return a function which creates Left values.",
+            "example": "use function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\repr;\n\n$err = mkLeft('You are not authorized');\n\necho repr($err) . PHP_EOL;\n\n$f = mkLeft();\n\necho repr($f('You are not authorized')) . PHP_EOL;\n",
+            "output": "<Left \"You are not authorized\">\n<Left \"You are not authorized\">\n",
+            "gist": "https:\/\/gist.github.com\/15946adb29bb8c294f11bd165a53a9a8",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -5751,6 +5752,9 @@
             "shortName": "mkRight",
             "startLine": 147,
             "summary": "Make a Right value. If no arguments are supplied, return a function which creates Right values.",
+            "example": "use function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\n$ok = mkRight('You are authorized');\n\necho repr($ok) . PHP_EOL;\n\n$f = mkRight();\n\necho repr($f('You are authorized')) . PHP_EOL;\n",
+            "output": "<Right \"You are authorized\">\n<Right \"You are authorized\">\n",
+            "gist": "https:\/\/gist.github.com\/da479da4f36f004629f3dc6022fc91dc",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -5793,6 +5797,9 @@
             "shortName": "fromLeft",
             "startLine": 171,
             "summary": "Return a Left value or a default if not Left.",
+            "example": "use function Datashaman\\Logic\\fromLeft;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$err = mkLeft('You are not authorized');\n$ok = mkRight('You are authorized');\n\necho fromLeft('There was no error', $err) . PHP_EOL;\necho fromLeft('There was no error', $ok) . PHP_EOL;\n",
+            "output": "You are not authorized\nThere was no error\n",
+            "gist": "https:\/\/gist.github.com\/9a781ad5668df95a77244acf7aa530bd",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -5835,11 +5842,14 @@
             "shortName": "fromRight",
             "startLine": 195,
             "summary": "Return a Right value or a default if not Right.",
+            "example": "use function Datashaman\\Logic\\fromRight;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\n\n$err = mkLeft('You are not authorized');\n$ok = mkRight('You are authorized');\n\necho fromRight('There was an error', $err) . PHP_EOL;\necho fromRight('There was an error', $ok) . PHP_EOL;\n",
+            "output": "There was an error\nYou are authorized\n",
+            "gist": "https:\/\/gist.github.com\/b7e5b52198343d618b59cc8c63e435cd",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 222,
+            "endLine": 223,
             "filename": "src\/either.php",
             "name": "Datashaman\\Logic\\isLeft",
             "parameters": [
@@ -5861,13 +5871,16 @@
             ],
             "returnType": "",
             "shortName": "isLeft",
-            "startLine": 219,
+            "startLine": 220,
             "summary": "Is an either value a Left value.",
+            "example": "use function Datashaman\\Logic\\isLeft;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\n$err = mkLeft('Error');\n$ok = mkRight('OK');\n\necho repr(isLeft($err)) . PHP_EOL;\necho repr(isLeft($ok)) . PHP_EOL;\n",
+            "output": "true\nfalse\n",
+            "gist": "https:\/\/gist.github.com\/b5a6dbc24e23cbc1dbec0af010c70bcd",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 242,
+            "endLine": 244,
             "filename": "src\/either.php",
             "name": "Datashaman\\Logic\\isRight",
             "parameters": [
@@ -5889,13 +5902,16 @@
             ],
             "returnType": "",
             "shortName": "isRight",
-            "startLine": 239,
+            "startLine": 241,
             "summary": "Is an either value a Right value.",
+            "example": "use function Datashaman\\Logic\\isRight;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\n$err = mkLeft('Error');\n$ok = mkRight('OK');\n\necho repr(isRight($err)) . PHP_EOL;\necho repr(isRight($ok)) . PHP_EOL;\n",
+            "output": "false\ntrue\n",
+            "gist": "https:\/\/gist.github.com\/0755a7cf6fbe527e58a37ce73631fac2",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 263,
+            "endLine": 265,
             "filename": "src\/either.php",
             "name": "Datashaman\\Logic\\lefts",
             "parameters": [
@@ -5916,13 +5932,16 @@
             ],
             "returnType": "Datashaman\\Logic\\List_",
             "shortName": "lefts",
-            "startLine": 258,
+            "startLine": 260,
             "summary": "Return a List_ of the lefts in a list of eithers.",
+            "example": "use function Datashaman\\Logic\\lefts;\nuse function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\n\n$es = [mkLeft('ERR'), mkRight('OK'), mkRight('OK Too'), mkLeft('ERR 13')];\n\necho repr(lefts($es)) . PHP_EOL;\n",
+            "output": "<List_ [<Left \"ERR\">, <Left \"ERR 13\">]>\n",
+            "gist": "https:\/\/gist.github.com\/3cf16096f1c5f651c88d82dd608171eb",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 284,
+            "endLine": 286,
             "filename": "src\/either.php",
             "name": "Datashaman\\Logic\\rights",
             "parameters": [
@@ -5943,13 +5962,16 @@
             ],
             "returnType": "Datashaman\\Logic\\List_",
             "shortName": "rights",
-            "startLine": 279,
+            "startLine": 281,
             "summary": "Return a List_ of the rights in a list of eithers.",
+            "example": "use function Datashaman\\Logic\\mkLeft;\nuse function Datashaman\\Logic\\mkRight;\nuse function Datashaman\\Logic\\repr;\nuse function Datashaman\\Logic\\rights;\n\n$es = [mkLeft('ERR'), mkRight('OK'), mkRight('OK Too'), mkLeft('ERR 13')];\n\necho repr(rights($es)) . PHP_EOL;\n",
+            "output": "<List_ [<Right \"OK\">, <Right \"OK Too\">]>\n",
+            "gist": "https:\/\/gist.github.com\/6008a24085546d0364d0d10a31e24053",
             "ns": "Datashaman\\Logic"
         },
         {
             "_type": "function",
-            "endLine": 299,
+            "endLine": 301,
             "filename": "src\/either.php",
             "name": "Datashaman\\Logic\\partitionEithers",
             "parameters": [
@@ -5970,7 +5992,7 @@
             ],
             "returnType": "Datashaman\\Logic\\List_",
             "shortName": "partitionEithers",
-            "startLine": 286,
+            "startLine": 288,
             "ns": "Datashaman\\Logic"
         },
         {
@@ -6107,6 +6129,9 @@
             "shortName": "fromJust",
             "startLine": 63,
             "summary": "The fromJust function extracts the element out of a Just and throws an error if its argument is Nothing.",
+            "example": "use function Datashaman\\Logic\\fromJust;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\n$s = mkMaybe('hello');\n$n = mkMaybe(null);\n\necho repr(fromJust($s)) . PHP_EOL;\n\nfromJust($n);\n",
+            "output": "\"hello\"\nException: Maybe.fromJust: Nothing in \/home\/marlinf\/Desktop\/logic\/src\/maybe.php:69\nStack trace:\n#0 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(254) : eval()'d code(10): Datashaman\\Logic\\fromJust(Object(Datashaman\\Logic\\Nothing))\n#1 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(254): eval()\n#2 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(349): getOutput('use function Da...')\n#3 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(416): transformFunction(Object(ReflectionFunction))\n#4 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(462): transform(Object(ReflectionFunction), 'transformFuncti...')\n#5 {main}\n",
+            "gist": "https:\/\/gist.github.com\/50607eac2ef927494a6cc0de3062766b",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -6203,6 +6228,9 @@
             "shortName": "fromMaybe",
             "startLine": 94,
             "summary": "The fromMaybe function takes a default value and and Maybe value. If the Maybe is Nothing, it returns the default values; otherwise, it returns the value contained in the Maybe.",
+            "example": "use function Datashaman\\Logic\\fromMaybe;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\necho repr(fromMaybe(\"\", mkMaybe('Hello World'))) . PHP_EOL;\necho repr(fromMaybe(\"\", mkMaybe(null))) . PHP_EOL;\n",
+            "output": "\"Hello World\"\n\"\"\n",
+            "gist": "https:\/\/gist.github.com\/49e9c78bc0b2479856514f2526bfc7e5",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -6282,6 +6310,9 @@
             "shortName": "catMaybes",
             "startLine": 130,
             "summary": "The catMaybes function takes a list of Maybes and returns a List_ of all the Just values.",
+            "example": "use function Datashaman\\Logic\\catMaybes;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\n$ms = [mkMaybe(null), mkMaybe(12), mkMaybe(23), mkMaybe(null), mkMaybe(null)];\n\necho repr(catMaybes($ms)) . PHP_EOL;\n",
+            "output": "<List_ [<Just 12>, <Just 23>]>\n",
+            "gist": "https:\/\/gist.github.com\/23c511a38a2d506e6d89313025b77d0c",
             "ns": "Datashaman\\Logic"
         },
         {
