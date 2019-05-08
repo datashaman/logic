@@ -99,6 +99,12 @@ const routes = [
         props: true,
     },
     {
+        name: 'class',
+        path: '/cl/:ns/:shortName',
+        component: Vue.component('Class'),
+        props: true,
+    },
+    {
         name: 'home',
         path: '/',
         component: Vue.component('Namespaces'),

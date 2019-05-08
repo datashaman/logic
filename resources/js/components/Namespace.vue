@@ -39,10 +39,10 @@
                             {{ generateSignature(f) }}
                         </div>
 
-                        <div v-if="f.summary" class="p-2" v-html="f.summary"></div>
-                        <div v-if="f.description" class="p-2" v-html="f.description"></div>
+                        <div v-if="f.summary" class="px-2 py-4" v-html="f.summary"></div>
+                        <div v-if="f.description" class="px-2 py-2" v-html="f.description"></div>
 
-                        <div v-if="f.parameters.length" class="p-4">
+                        <div v-if="f.parameters.length" class="px-4 pt-2">
                             <h3 class="details_header">Parameters</h3>
 
                             <b-table borderless small :fields="tableFields.parameters" :items="f.parameters" thead-class="hide" tbody-tr-class="tr-underline">
@@ -56,26 +56,26 @@
                             </b-table>
                         </div>
 
-                        <div v-if="f.returnType" class="p-2">
+                        <div v-if="f.returnType" class="px-4">
                             <h3 class="details_header">Return Value</h3>
 
                             <b-table borderless small :items="[{type: f.returnType}]" thead-class="hide">
                             </b-table>
                         </div>
 
-                        <div v-if="f.example" class="p-2">
+                        <div v-if="f.example" class="px-2">
                             <h3 class="details_block_header">Example</h3>
 
                             <pre class="lolight">{{ f.example }}</pre>
                         </div>
 
-                        <div v-if="f.output" class="p-2">
+                        <div v-if="f.output" class="px-2">
                             <h3 class="details_block_header">Output</h3>
 
                             <pre>{{ f.output }}</pre>
                         </div>
 
-                        <div v-if="f.gist" class="p-2">
+                        <div v-if="f.gist" class="px-2 pb-4">
                             <b-input-group>
                                 <b-form-input class="flex-grow-1" type="text" :value="'melody run ' + f.gist" readonly />
                                 <b-input-group-append>
