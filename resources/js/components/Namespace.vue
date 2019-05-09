@@ -96,6 +96,7 @@
 </template>
 
 <script>
+import lolight from 'lolight'
 import { mapGetters, mapState } from 'vuex'
 import { functionsMixin } from '../mixins/functions'
 
@@ -133,6 +134,9 @@ export default {
                 isStatus: true
             })
         }
+    },
+    mounted() {
+        lolight()
     }
 }
 </script>

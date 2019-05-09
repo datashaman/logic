@@ -138,6 +138,7 @@
 
 <script>
 import { functionsMixin } from '../mixins/functions'
+import lolight from 'lolight'
 
 export default {
     mixins: [
@@ -182,6 +183,9 @@ export default {
                 isStatus: true
             })
         }
+    },
+    mounted() {
+        lolight()
     }
 }
 </script>

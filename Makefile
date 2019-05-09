@@ -73,6 +73,7 @@ profile:
 	sudo phpdismod xdebug
 
 webpack-dev-server:
+	cp resources/favicon/* resources/robots.txt docs/
 	webpack-dev-server
 
 webpack-development:

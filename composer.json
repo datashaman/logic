@@ -22,6 +22,7 @@
         "php-http/guzzle6-adapter": "^1.1",
         "erusev/parsedown": "^1.7",
         "phpdocumentor/reflection-docblock": "^4.3",
-        "vlucas/phpdotenv": "^3.3"
+        "vlucas/phpdotenv": "^3.3",
+        "nikic/php-parser": "^4.2"
     }
 }

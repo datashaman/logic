@@ -73,7 +73,6 @@ Vue.component('b-nav-item', BNavItem)
 Vue.component('b-row', BRow)
 Vue.component('b-table', BTable)
 
-require('lolight')
 require('../sass/app.scss')
 
 import namespaces from '../json/namespaces.json'
