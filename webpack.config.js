@@ -11,7 +11,7 @@ module.exports = {
     entry: './resources/js/app.js',
     output: {
         chunkFilename: '[name].[contenthash].bundle.js',
-        path: path.join(__dirname, 'docs'),
+        path: path.join(__dirname, 'build'),
         publicPath: '/',
         filename: '[name].[contenthash].bundle.js'
     },
@@ -51,7 +51,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new webpack.HashedModuleIdsPlugin(),
         new CopyPlugin([
-            { from: 'static', dest: 'docs' }
+            { from: 'static', dest: 'build' }
         ]),
         new WorkboxPlugin.GenerateSW({
             navigateFallback: '/index.html',
@@ -75,7 +75,7 @@ module.exports = {
         optimizationBailout: true
     },
     devServer: {
-        contentBase: path.join(__dirname, 'docs'),
+        contentBase: path.join(__dirname, 'build'),
         historyApiFallback: true
     }
 }

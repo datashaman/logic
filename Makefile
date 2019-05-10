@@ -1,7 +1,7 @@
 test: phpcheck-no-defects phpunit
 
 clean:
-	rm -rf docs/*
+	rm -rf build/
 
 watch:
 	while inotifywait -e close_write -r composer.* ./src ./checks ./functions ./tests; do make phpunit phpcheck; done
@@ -81,10 +81,10 @@ deploy:
 webpack-dev-server:
 	webpack-dev-server
 
-webpack-development:
+webpack-development: clean
 	webpack --mode=development
 
-webpack-production:
+webpack-production: clean
 	webpack --mode=production
 
 webpack-watch:

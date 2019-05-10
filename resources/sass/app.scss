@@ -24,6 +24,8 @@
 @import "~bootstrap-vue/src/components/nav/index";
 @import "~bootstrap-vue/src/components/toast/index";
 
+@import "./colours";
+
 #menu {
     height: 100vh;
     position: sticky;
@@ -46,10 +48,11 @@
 }
 
 pre {
-    font-family: 'ubuntu mono', 'monaco', 'lucida sans typewriter', 'monospace';
+    font-family: 'ubuntu mono', monaco, 'lucida sans typewriter', monospace;
     margin: 0 24px 24px 0;
     padding: 16px;
-    background: #f8f8f8;
+    color: #000;
+    background-color: #fff;
     border: 1px solid #eee;
     overflow: auto;
     display: inline-block;
@@ -58,32 +61,34 @@ pre {
 }
 
 .ll-nam { /* words */
-    color: #0C518D;
+    color: #000000;
 }
 
 .ll-num { /* numbers */
-    color: #ec407a;
+    color: $green;
+    font-weight: bold;
 }
 
 .ll-str { /* strings */
-    color: #43a047;
+    color: $green;
+    font-weight: bold;
 }
 
 .ll-rex { /* regular expressions */
-    color: #ef6c00;
+    color: $indigo;
 }
 
 .ll-pct { /* operators, punctation */
-    color: #666;
+    color: $blue;
 }
 
 .ll-key { /* keywords */
-    color: #4F4F4F;
+    color: darken($green, 20%);
     font-weight: bold;
 }
 
 .ll-com { /* comments */
-    color: #aaa;
+    color: $gray-600;
     font-style:italic;
 }
 
