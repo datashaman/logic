@@ -76,7 +76,7 @@ profile:
 	sudo phpdismod xdebug
 
 deploy:
-	ssh $(DEPLOY_HOST) "cd logic; git pull; yarn; node_modules/.bin/webpack --mode=production"
+	ssh $(DEPLOY_HOST) "cd logic && git pull && yarn && node_modules/.bin/webpack --mode=production && mv current previous && mv build current"
 
 webpack-dev-server:
 	webpack-dev-server
