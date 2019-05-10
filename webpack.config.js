@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const { InjectManifest } = require('workbox-webpack-plugin')
 
 module.exports = {
     entry: './resources/js/app.js',
@@ -53,10 +52,7 @@ module.exports = {
             title: 'Logic'
         }),
         new VueLoaderPlugin(),
-        new webpack.HashedModuleIdsPlugin(),
-        new InjectManifest({
-            swSrc: './resources/sw.js'
-        })
+        new webpack.HashedModuleIdsPlugin()
     ],
     optimization: {
         runtimeChunk: 'single',

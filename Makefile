@@ -83,7 +83,7 @@ webpack-dev-server:
 	webpack-dev-server
 
 webpack-development:
-	cp resources/favicon/* resources/robots.txt docs/
+	cp resources/favicon/* resources/robots.txt resources/sw.js docs/
 	webpack --mode=development
 
 webpack-production:
