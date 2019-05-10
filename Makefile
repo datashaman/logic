@@ -87,7 +87,7 @@ webpack-development:
 	webpack --mode=development
 
 webpack-production:
-	cp resources/favicon/* resources/robots.txt docs/
+	cp resources/favicon/* resources/robots.txt resources/sw.js docs/
 	webpack --mode=production
 
 webpack-watch:
