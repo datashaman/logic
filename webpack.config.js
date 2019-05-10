@@ -51,8 +51,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new webpack.HashedModuleIdsPlugin(),
         new CopyPlugin([
-            { from: 'resources/favicon', dest: 'docs' },
-            { from: 'resources/robots.txt', dest: 'docs' }
+            { from: 'static', dest: 'docs' }
         ]),
         new WorkboxPlugin.GenerateSW({
             navigateFallback: '/index.html',
