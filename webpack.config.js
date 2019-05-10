@@ -5,6 +5,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
     entry: './resources/js/app.js',
@@ -51,9 +52,12 @@ module.exports = {
         new webpack.HashedModuleIdsPlugin(),
         new CopyPlugin([
             { from: 'resources/favicon', dest: 'docs' },
-            { from: 'resources/robots.txt', dest: 'docs' },
-            { from: 'resources/sw.js', dest: 'docs' }
-        ])
+            { from: 'resources/robots.txt', dest: 'docs' }
+        ]),
+        new WorkboxPlugin.GenerateSW({
+            navigateFallback: '/index.html',
+            swDest: 'sw.js'
+        })
     ],
     optimization: {
         runtimeChunk: 'single',

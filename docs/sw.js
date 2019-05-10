@@ -1,31 +1,34 @@
-fetch('/')
-    .then(function (response) {
-        return caches.open('v1').then(function(cache) {
-          cache.put('/', response.clone())
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-          return response
-        })
-    })
-    .then(function (response) {
-        self.addEventListener('fetch', function(event) {
-        console.log(event.request)
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-        if (
-            !event.request.url.startsWith('http')
-        ) {
-            return
-        }
+importScripts(
+  "/precache-manifest.beaab79a24268fee85481a6db66a0ef8.js"
+);
 
-        event.respondWith(
-            caches.match(event.request).then(function(resp) {
-            return resp || fetch(event.request).then(function(response) {
-                return caches.open('v1').then(function(cache) {
-                cache.put(event.request, response.clone())
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
-                return response
-                })
-            })
-            })
-        )
-        })
-    })
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"));
