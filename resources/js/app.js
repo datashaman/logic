@@ -179,20 +179,6 @@ const app = new Vue({
     render: h => h(Vue.component('App'))
 })
 
-if (navigator.storage && navigator.storage.persist) {
-    navigator.storage.persist().then(granted => {
-        if (!granted) {
-            alert("Storage not granted")
-        }
-    })
-}
-
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
-        .then(function(reg) {
-            console.log('Registration succeeded. Scope is ' + reg.scope)
-        })
-        .catch(function(error) {
-            console.log('Registration failed with ' + error)
-        })
 }
