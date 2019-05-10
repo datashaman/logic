@@ -58,7 +58,7 @@ pre {
 }
 
 .ll-nam { /* words */
-    color: #2196f3;
+    color: #0C518D;
 }
 
 .ll-num { /* numbers */
@@ -78,7 +78,7 @@ pre {
 }
 
 .ll-key { /* keywords */
-    color: #555;
+    color: #4F4F4F;
     font-weight: bold;
 }
 
@@ -130,4 +130,13 @@ pre {
 
 ul {
     list-style-type: none;
+}
+
+a {
+    color: $indigo;
+}
+
+.bg-logic {
+    color: #ffffff;
+    background-color: #0B5E6A;
 }

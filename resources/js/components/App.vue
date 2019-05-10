@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar toggleable="lg" type="dark" variant="logic">
             <b-navbar-brand :to="{ name: 'home' }">Logic</b-navbar-brand>
         </b-navbar>
 
