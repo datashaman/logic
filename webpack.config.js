@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
@@ -39,12 +40,7 @@ module.exports = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [
-                '*.bundle.js*',
-                'index.html'
-            ]
-        }),
+        new CleanWebpackPlugin(),
         // new CompressionPlugin(),
         new HtmlWebpackPlugin({
             inject: 'body',
@@ -52,7 +48,12 @@ module.exports = {
             title: 'Logic'
         }),
         new VueLoaderPlugin(),
-        new webpack.HashedModuleIdsPlugin()
+        new webpack.HashedModuleIdsPlugin(),
+        new CopyPlugin([
+            { from: 'resources/favicon', dest: 'docs' },
+            { from: 'resources/robots.txt', dest: 'docs' },
+            { from: 'resources/sw.js', dest: 'docs' }
+        ])
     ],
     optimization: {
         runtimeChunk: 'single',
