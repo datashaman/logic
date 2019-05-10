@@ -1,5 +1,8 @@
 test: phpcheck-no-defects phpunit
 
+clean:
+	rm -rf docs/*
+
 watch:
 	while inotifywait -e close_write -r composer.* ./src ./checks ./functions ./tests; do make phpunit phpcheck; done
 
@@ -80,12 +83,12 @@ webpack-dev-server:
 	webpack-dev-server
 
 webpack-development:
+	cp resources/favicon/* resources/robots.txt docs/
 	webpack --mode=development
-	cp resources/favicon/* resources/robots.txt resources/service-worker.js docs/
 
 webpack-production:
-	webpack --mode=production
 	cp resources/favicon/* resources/robots.txt docs/
+	webpack --mode=production
 
 webpack-watch:
 	webpack --mode=development --watch

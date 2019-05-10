@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { InjectManifest } = require('workbox-webpack-plugin')
 
 module.exports = {
     entry: './resources/js/app.js',
@@ -45,14 +46,17 @@ module.exports = {
                 'index.html'
             ]
         }),
-        new CompressionPlugin(),
+        // new CompressionPlugin(),
         new HtmlWebpackPlugin({
             inject: 'body',
             template: 'resources/index.html',
             title: 'Logic'
         }),
         new VueLoaderPlugin(),
-        new webpack.HashedModuleIdsPlugin()
+        new webpack.HashedModuleIdsPlugin(),
+        new InjectManifest({
+            swSrc: './resources/sw.js'
+        })
     ],
     optimization: {
         runtimeChunk: 'single',

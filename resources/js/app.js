@@ -188,7 +188,7 @@ if (navigator.storage && navigator.storage.persist) {
 }
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
+    navigator.serviceWorker.register('/sw.js')
         .then(function(reg) {
             console.log('Registration succeeded. Scope is ' + reg.scope)
         })

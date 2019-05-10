@@ -1,3 +1,5 @@
+import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute.mjs'
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(resp) {
@@ -11,3 +13,5 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+precacheAndRoute(self.__precacheManifest)
