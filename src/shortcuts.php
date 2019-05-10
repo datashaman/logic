@@ -306,6 +306,9 @@ function F()
  *     return is_numeric($value) ? mkRight($value) : mkLeft('parse error');
  * }
  *
+ * // In this case, both values will be Right values (they are both numeric),
+ * // and the execution will result in the final function being called with
+ * // _x_ and _y_ in the _context_ (or _c_ in this case).
  * echo repr(Do_(
  *     [
  *         'x' => resolveEither(3),
@@ -316,6 +319,8 @@ function F()
  *     }
  * )) . PHP_EOL;
  *
+ * // In this case, the parse error caused by _'m'_ shortcircuits the execution
+ * // of the chain. Left values simply return themselves when bound to a function.
  * echo repr(Do_(
  *     [
  *         'x' => resolveEither('m'),
