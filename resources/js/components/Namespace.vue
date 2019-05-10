@@ -17,7 +17,33 @@
                 </b-table>
             </li>
 
-            <li>
+            <li v-if="interfaces.length">
+                <h2>Interfaces</h2>
+
+                <b-table borderless :fields="tableFields.interfaces" :items="interfaces" thead-class="hide" tbody-tr-class="tr-underline">
+                    <template slot="table-colgroup">
+                        <col width="25%"></col>
+                    </template>
+                    <template slot="shortName" slot-scope="data">
+                        <b-link :to="{ name: 'class', params: { ns: name, shortName: data.value }}">{{ data.value }}</b-link>
+                    </template>
+                </b-table>
+            </li>
+
+            <li v-if="traits.length">
+                <h2>Traits</h2>
+
+                <b-table borderless :fields="tableFields.traits" :items="traits" thead-class="hide" tbody-tr-class="tr-underline">
+                    <template slot="table-colgroup">
+                        <col width="25%"></col>
+                    </template>
+                    <template slot="shortName" slot-scope="data">
+                        <b-link :to="{ name: 'class', params: { ns: name, shortName: data.value }}">{{ data.value }}</b-link>
+                    </template>
+                </b-table>
+            </li>
+
+            <li v-if="functions.length">
                 <h2>Functions</h2>
 
                 <b-table borderless :fields="tableFields.functions" :items="functions" thead-class="hide" tbody-tr-class="tr-underline">
@@ -91,6 +117,7 @@
                     </div>
                 </div>
             </li>
+
         </ul>
     </div>
 </template>
@@ -125,6 +152,12 @@ export default {
         functions: function () {
             return this.$store.getters.nsFunctions(this.name)
         },
+        interfaces: function () {
+            return this.$store.getters.nsInterfaces(this.name)
+        },
+        traits: function () {
+            return this.$store.getters.nsTraits(this.name)
+        }
     },
     methods: {
         confirmCopy() {

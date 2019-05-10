@@ -2,7 +2,7 @@
     "Datashaman\\Logic": [
         {
             "_type": "class",
-            "endLine": 49,
+            "endLine": 71,
             "filename": "src\/monad.php",
             "interfaces": [],
             "methods": [
@@ -22,7 +22,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -54,7 +54,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -114,8 +114,9 @@
                 }
             ],
             "shortName": "Monad",
-            "startLine": 7,
+            "startLine": 30,
             "traits": [],
+            "summary": "Just here for testing documentation generation.",
             "ns": "Datashaman\\Logic"
         },
         {
@@ -206,7 +207,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -238,7 +239,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -354,7 +355,7 @@
             "parentClassShortName": "Monad",
             "parentClass": {
                 "_type": "class",
-                "endLine": 49,
+                "endLine": 71,
                 "filename": "src\/monad.php",
                 "interfaces": [],
                 "methods": [
@@ -374,7 +375,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -406,7 +407,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -466,8 +467,9 @@
                     }
                 ],
                 "shortName": "Monad",
-                "startLine": 7,
+                "startLine": 30,
                 "traits": [],
+                "summary": "Just here for testing documentation generation.",
                 "ns": "Datashaman\\Logic"
             },
             "ns": "Datashaman\\Logic"
@@ -605,7 +607,7 @@
                         {
                             "name": "currentDepth",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -636,7 +638,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -668,7 +670,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -790,7 +792,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -822,7 +824,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -938,7 +940,7 @@
                 "parentClassShortName": "Monad",
                 "parentClass": {
                     "_type": "class",
-                    "endLine": 49,
+                    "endLine": 71,
                     "filename": "src\/monad.php",
                     "interfaces": [],
                     "methods": [
@@ -958,7 +960,7 @@
                                 {
                                     "name": "value",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -990,7 +992,7 @@
                                 {
                                     "name": "args",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -1050,8 +1052,9 @@
                         }
                     ],
                     "shortName": "Monad",
-                    "startLine": 7,
+                    "startLine": 30,
                     "traits": [],
+                    "summary": "Just here for testing documentation generation.",
                     "ns": "Datashaman\\Logic"
                 },
                 "ns": "Datashaman\\Logic"
@@ -1161,7 +1164,7 @@
                         {
                             "name": "currentDepth",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -1192,7 +1195,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -1224,7 +1227,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -1376,7 +1379,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -1408,7 +1411,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -1524,7 +1527,7 @@
                 "parentClassShortName": "Monad",
                 "parentClass": {
                     "_type": "class",
-                    "endLine": 49,
+                    "endLine": 71,
                     "filename": "src\/monad.php",
                     "interfaces": [],
                     "methods": [
@@ -1544,7 +1547,7 @@
                                 {
                                     "name": "value",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -1576,7 +1579,7 @@
                                 {
                                     "name": "args",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -1636,8 +1639,9 @@
                         }
                     ],
                     "shortName": "Monad",
-                    "startLine": 7,
+                    "startLine": 30,
                     "traits": [],
+                    "summary": "Just here for testing documentation generation.",
                     "ns": "Datashaman\\Logic"
                 },
                 "ns": "Datashaman\\Logic"
@@ -1747,7 +1751,7 @@
                         {
                             "name": "currentDepth",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -1914,7 +1918,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -1946,7 +1950,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2098,7 +2102,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -2130,7 +2134,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -2246,7 +2250,7 @@
                 "parentClassShortName": "Monad",
                 "parentClass": {
                     "_type": "class",
-                    "endLine": 49,
+                    "endLine": 71,
                     "filename": "src\/monad.php",
                     "interfaces": [],
                     "methods": [
@@ -2266,7 +2270,7 @@
                                 {
                                     "name": "value",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -2298,7 +2302,7 @@
                                 {
                                     "name": "args",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -2358,8 +2362,9 @@
                         }
                     ],
                     "shortName": "Monad",
-                    "startLine": 7,
+                    "startLine": 30,
                     "traits": [],
+                    "summary": "Just here for testing documentation generation.",
                     "ns": "Datashaman\\Logic"
                 },
                 "ns": "Datashaman\\Logic"
@@ -2454,7 +2459,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2500,7 +2505,7 @@
                         {
                             "name": "currentDepth",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2591,7 +2596,7 @@
                         {
                             "name": "values",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2621,7 +2626,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2666,7 +2671,7 @@
                         {
                             "name": "items",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2741,7 +2746,7 @@
                         {
                             "name": "default",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2802,7 +2807,7 @@
                         {
                             "name": "key",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2832,7 +2837,7 @@
                         {
                             "name": "delimiter",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2878,7 +2883,7 @@
                         {
                             "name": "items",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -2908,7 +2913,7 @@
                         {
                             "name": "items",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3013,7 +3018,7 @@
                         {
                             "name": "items",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3057,7 +3062,7 @@
                         {
                             "name": "value",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3102,7 +3107,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3161,7 +3166,7 @@
                         {
                             "name": "initial",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3192,7 +3197,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3206,7 +3211,7 @@
                         {
                             "name": "strict",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3267,7 +3272,7 @@
                         {
                             "name": "offset",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3312,7 +3317,7 @@
                         {
                             "name": "offset",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3341,7 +3346,7 @@
                         {
                             "name": "replacement",
                             "position": 2,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3448,7 +3453,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3484,7 +3489,7 @@
             "parentClassShortName": "Monad",
             "parentClass": {
                 "_type": "class",
-                "endLine": 49,
+                "endLine": 71,
                 "filename": "src\/monad.php",
                 "interfaces": [],
                 "methods": [
@@ -3504,7 +3509,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -3536,7 +3541,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -3596,8 +3601,9 @@
                     }
                 ],
                 "shortName": "Monad",
-                "startLine": 7,
+                "startLine": 30,
                 "traits": [],
+                "summary": "Just here for testing documentation generation.",
                 "ns": "Datashaman\\Logic"
             },
             "ns": "Datashaman\\Logic"
@@ -3690,7 +3696,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3722,7 +3728,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -3838,7 +3844,7 @@
             "parentClassShortName": "Monad",
             "parentClass": {
                 "_type": "class",
-                "endLine": 49,
+                "endLine": 71,
                 "filename": "src\/monad.php",
                 "interfaces": [],
                 "methods": [
@@ -3858,7 +3864,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -3890,7 +3896,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -3950,8 +3956,9 @@
                     }
                 ],
                 "shortName": "Monad",
-                "startLine": 7,
+                "startLine": 30,
                 "traits": [],
+                "summary": "Just here for testing documentation generation.",
                 "ns": "Datashaman\\Logic"
             },
             "summary": "Abstract base class for Maybe monads.",
@@ -4060,7 +4067,7 @@
                         {
                             "name": "currentDepth",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -4091,7 +4098,7 @@
                         {
                             "name": "value",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -4123,7 +4130,7 @@
                         {
                             "name": "args",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -4275,7 +4282,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -4307,7 +4314,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -4423,7 +4430,7 @@
                 "parentClassShortName": "Monad",
                 "parentClass": {
                     "_type": "class",
-                    "endLine": 49,
+                    "endLine": 71,
                     "filename": "src\/monad.php",
                     "interfaces": [],
                     "methods": [
@@ -4443,7 +4450,7 @@
                                 {
                                     "name": "value",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -4475,7 +4482,7 @@
                                 {
                                     "name": "args",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -4535,8 +4542,9 @@
                         }
                     ],
                     "shortName": "Monad",
-                    "startLine": 7,
+                    "startLine": 30,
                     "traits": [],
+                    "summary": "Just here for testing documentation generation.",
                     "ns": "Datashaman\\Logic"
                 },
                 "summary": "Abstract base class for Maybe monads.",
@@ -4647,7 +4655,7 @@
                         {
                             "name": "_",
                             "position": 0,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -4692,7 +4700,7 @@
                         {
                             "name": "currentDepth",
                             "position": 1,
-                            "type": "mixed",
+                            "type": "",
                             "modifiers": {
                                 "array": false,
                                 "callable": false,
@@ -4845,7 +4853,7 @@
                             {
                                 "name": "value",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -4877,7 +4885,7 @@
                             {
                                 "name": "args",
                                 "position": 0,
-                                "type": "mixed",
+                                "type": "",
                                 "modifiers": {
                                     "array": false,
                                     "callable": false,
@@ -4993,7 +5001,7 @@
                 "parentClassShortName": "Monad",
                 "parentClass": {
                     "_type": "class",
-                    "endLine": 49,
+                    "endLine": 71,
                     "filename": "src\/monad.php",
                     "interfaces": [],
                     "methods": [
@@ -5013,7 +5021,7 @@
                                 {
                                     "name": "value",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -5045,7 +5053,7 @@
                                 {
                                     "name": "args",
                                     "position": 0,
-                                    "type": "mixed",
+                                    "type": "",
                                     "modifiers": {
                                         "array": false,
                                         "callable": false,
@@ -5105,8 +5113,9 @@
                         }
                     ],
                     "shortName": "Monad",
-                    "startLine": 7,
+                    "startLine": 30,
                     "traits": [],
+                    "summary": "Just here for testing documentation generation.",
                     "ns": "Datashaman\\Logic"
                 },
                 "summary": "Abstract base class for Maybe monads.",
@@ -5137,7 +5146,7 @@
                 {
                     "name": "x",
                     "position": 1,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5177,7 +5186,7 @@
                 {
                     "name": "x",
                     "position": 1,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5203,7 +5212,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5259,7 +5268,7 @@
                 {
                     "name": "d",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5364,7 +5373,7 @@
                 {
                     "name": "arg",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5394,7 +5403,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5479,7 +5488,7 @@
                 {
                     "name": "conditions",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5539,7 +5548,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5583,7 +5592,7 @@
                 {
                     "name": "args",
                     "position": 1,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5631,7 +5640,7 @@
             "startLine": 62,
             "summary": "Return a simple string representation of the value for display and logging.",
             "example": "use function Datashaman\\Logic\\repr;\nuse Ds\\Map;\n\nprint repr([1, 2, 3]) . PHP_EOL;\nprint repr(['a' => 'A', 'b' => 'B', 'c' => 'C']) . PHP_EOL;\nprint repr(new Ds\\Map(['a' => 'A', 'b' => 'B', 'c' => 'C'])) . PHP_EOL;\nprint repr(\"string\") . PHP_EOL;\nprint repr(100) . PHP_EOL;\nprint repr(new DateTime()) . PHP_EOL;\n",
-            "output": "[1, 2, 3]\n[\"a\" => \"A\", \"b\" => \"B\", \"c\" => \"C\"]\n<Ds\\Map @ 00000000739e00b2000000006d07fcc2>\n\"string\"\n100\n<DateTime @ 00000000739e00b2000000006d07fcc2>\n",
+            "output": "[1, 2, 3]\n[\"a\" => \"A\", \"b\" => \"B\", \"c\" => \"C\"]\n<Ds\\Map @ 0000000050fbd9c10000000033ddf58f>\n\"string\"\n100\n<DateTime @ 0000000050fbd9c10000000033ddf58f>\n",
             "gist": "https:\/\/gist.github.com\/9f56652ab4a105db2197555c8b4d1bed",
             "ns": "Datashaman\\Logic"
         },
@@ -5706,7 +5715,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5736,7 +5745,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5766,7 +5775,7 @@
                 {
                     "name": "d",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5811,7 +5820,7 @@
                 {
                     "name": "d",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5918,7 +5927,7 @@
                 {
                     "name": "es",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5948,7 +5957,7 @@
                 {
                     "name": "es",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -5978,7 +5987,7 @@
                 {
                     "name": "es",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6004,7 +6013,7 @@
                 {
                     "name": "value",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6030,7 +6039,7 @@
                 {
                     "name": "value",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6057,7 +6066,7 @@
                 {
                     "name": "b",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6130,7 +6139,7 @@
             "startLine": 63,
             "summary": "The fromJust function extracts the element out of a Just and throws an error if its argument is Nothing.",
             "example": "use function Datashaman\\Logic\\fromJust;\nuse function Datashaman\\Logic\\mkMaybe;\nuse function Datashaman\\Logic\\repr;\n\n$s = mkMaybe('hello');\n$n = mkMaybe(null);\n\necho repr(fromJust($s)) . PHP_EOL;\n\nfromJust($n);\n",
-            "output": "\"hello\"\nException: Maybe.fromJust: Nothing in \/home\/marlinf\/Desktop\/logic\/src\/maybe.php:69\nStack trace:\n#0 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(259) : eval()'d code(10): Datashaman\\Logic\\fromJust(Object(Datashaman\\Logic\\Nothing))\n#1 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(259): eval()\n#2 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(354): getOutput('use function Da...')\n#3 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(421): transformFunction(Object(ReflectionFunction))\n#4 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(467): transform(Object(ReflectionFunction), 'transformFuncti...')\n#5 {main}\n",
+            "output": "\"hello\"\nException: Maybe.fromJust: Nothing in \/home\/marlinf\/Desktop\/logic\/src\/maybe.php:69\nStack trace:\n#0 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(259) : eval()'d code(10): Datashaman\\Logic\\fromJust(Object(Datashaman\\Logic\\Nothing))\n#1 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(259): eval()\n#2 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(354): getOutput('use function Da...')\n#3 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(421): transformFunction(Object(ReflectionFunction))\n#4 \/home\/marlinf\/Desktop\/logic\/generate-namespaces(469): transform(Object(ReflectionFunction), 'transformFuncti...')\n#5 {main}\n",
             "gist": "https:\/\/gist.github.com\/50607eac2ef927494a6cc0de3062766b",
             "ns": "Datashaman\\Logic"
         },
@@ -6197,7 +6206,7 @@
                 {
                     "name": "d",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6242,7 +6251,7 @@
                 {
                     "name": "m",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6268,7 +6277,7 @@
                 {
                     "name": "x",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6364,7 +6373,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6390,7 +6399,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,
@@ -6416,7 +6425,7 @@
                 {
                     "name": "args",
                     "position": 0,
-                    "type": "mixed",
+                    "type": "",
                     "modifiers": {
                         "array": false,
                         "callable": false,

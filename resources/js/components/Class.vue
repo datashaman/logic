@@ -3,11 +3,11 @@
         <h1>{{ shortName }}</h1>
 
         <p>
-            class <strong>{{ shortName }}</strong>
+            {{ nsClass._type }} <strong>{{ shortName }}</strong>
             <span v-if="nsClass.parentClass || nsClass.parentClassName">
                 extends
                 <template v-if="nsClass.parentClass">
-                    <b-link :to="{ name: 'class', params: { ns: nsClass.parentClass.ns, shortName: nsClass.parentClass.shortName }}">
+                    <b-link :to="{ name: 'class', params: { ns: nsClass.parentClass.ns, name: nsClass.parentClass.name }}">
                         {{ nsClass.parentClass.shortName }}
                     </b-link>
                 </template>
@@ -19,7 +19,7 @@
                 implements
                 <template v-for="i in nsClass.interfaces">
                     <template v-if="nsClass.ns === i.ns">
-                        <b-link :to="{ name: 'class', params: { ns: i.ns, shortName: i.shortName }}">
+                        <b-link :to="{ name: 'class', params: { ns: i.ns, name: i.name }}">
                             {{ i.shortName }}
                         </b-link>
                     </template>
@@ -45,7 +45,7 @@
                     <col width="25%"></col>
                 </template>
                 <template slot="meta" slot-scope="data">
-                    {{ abstract(data.item) }}
+                    {{ abstract(data.item, nsClass._type) }}
                     {{ scope(data.item) }}
                     {{ visibility(data.item) }}
                     {{ data.item.type }}
@@ -75,7 +75,7 @@
             <div class="details">
                 <div v-for="m in nsClass.methods">
                     <div :id="m.name" class="details_signature p-2 lolight">
-                        {{ abstract(m) }}
+                        {{ abstract(m, nsClass._type) }}
                         {{ scope(m) }}
                         {{ visibility(m) }}
                         {{ m.returnType }}
@@ -85,7 +85,7 @@
                     <div v-if="m.summary" class="px-4 pt-4" v-html="m.summary"></div>
                     <div v-if="m.description" class="px-4 pt-4" v-html="m.description"></div>
 
-                    <div class="px-4 pt-4">
+                    <div class="px-4 pt-2">
                         <h3 class="details_header">Parameters</h3>
 
                         <b-table borderless small :fields="fields.parameters" :items="m.parameters" thead-class="hide" tbody-tr-class="tr-underline">
@@ -98,12 +98,12 @@
                         </b-table>
                     </div>
 
-                    <template v-if="m.returnType">
+                    <div v-if="m.returnType" class="px-4">
                         <h3 class="details_header">Return Value</h3>
 
                         <b-table borderless small :items="[{type: m.returnType}]" thead-class="hide">
                         </b-table>
-                    </template>
+                    </div>
 
                     <template v-if="m.example">
                         <h3>Example</h3>

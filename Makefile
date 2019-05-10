@@ -9,29 +9,13 @@ watch:
 watch-playground:
 	while inotifywait -e close_write -r composer.* ./src ./checks ./functions ./playground ./tests; do php playground/test.php; done
 
-classes:
-	mkdir -p resources/json/
-	./generate-classes > resources/json/classes.json
-
-classes-gists:
-	mkdir -p resources/json/
-	./generate-classes --gists > resources/json/classes.json
-
-functions:
-	mkdir -p resources/json/
-	./generate-functions > resources/json/functions.json
-
-functions-gists:
-	mkdir -p resources/json/
-	./generate-functions --gists > resources/json/functions.json
-
 namespaces:
 	mkdir -p resources/json/
-	./generate-namespaces 'Datashaman\\Logic' > resources/json/namespaces.json
+	./generate-namespaces > resources/json/namespaces.json
 
 namespaces-gists:
 	mkdir -p resources/json/
-	./generate-namespaces --gists 'Datashaman\\Logic' > resources/json/namespaces.json
+	./generate-namespaces --gists > resources/json/namespaces.json
 
 phpcheck:
 	@phpcheck
@@ -76,7 +60,7 @@ profile:
 	sudo phpdismod xdebug
 
 deploy:
-	ssh $(DEPLOY_HOST) "cd logic && git pull && yarn && node_modules/.bin/webpack --mode=production && mv current previous && mv build current"
+	ssh $(DEPLOY_HOST) "cd logic && git pull && yarn && node_modules/.bin/webpack --mode=production && rm -rf previous && mv current previous && mv build current"
 
 webpack-dev-server:
 	webpack-dev-server

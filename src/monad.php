@@ -4,6 +4,29 @@ namespace Datashaman\Logic;
 
 use Exception;
 
+/**
+ * Just here for testing documentation generation.
+interface MonadInterface
+{
+    public function bind(callable $f);
+}
+
+trait MonadTrait
+{
+    public function bind(callable $f)
+    {
+        // $f must return a monad
+        $result = $this($f);
+
+        if (!$result instanceof self) {
+            throw new Exception('Function must return a monad');
+        }
+
+        return $result;
+    }
+}
+ */
+
 abstract class Monad
 {
     /**
@@ -45,5 +68,4 @@ abstract class Monad
 
         return $result;
     }
-
 }

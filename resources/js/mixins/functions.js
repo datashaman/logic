@@ -16,7 +16,7 @@ export const functionsMixin = {
                     result += '$' + param.name
 
                     if (param.defaultValue !== undefined) {
-                        result += ' = ' + param.defaultValue
+                        result += ' = ' + JSON.stringify(param.defaultValue)
                     } else if (param.defaultValueConstantName !== undefined) {
                         result += ' = ' + param.defaultValueConstantName
                     }
@@ -31,8 +31,8 @@ export const functionsMixin = {
                 return (f.shortName || f.name) + '(' + parameters + ')'
             }
         },
-        abstract(f) {
-            if (f.modifiers.abstract) {
+        abstract(f, type) {
+            if (f.modifiers.abstract && type !== 'interface') {
                 return 'abstract';
             }
             if (f.modifiers.final) {

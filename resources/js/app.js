@@ -138,9 +138,17 @@ const store = new Vuex.Store({
                 'returnType',
                 'name',
             ],
+            interfaces: [
+                'shortName',
+                'summary',
+            ],
             parameters: [
                 'type',
                 'name',
+            ],
+            traits: [
+                'shortName',
+                'summary',
             ],
         }
     },
@@ -148,7 +156,7 @@ const store = new Vuex.Store({
         nsClass: state => (ns, shortName) => {
             const results = state
                 .namespaces[ns]
-                .filter(e => e._type === 'class' && e.shortName === shortName)
+                .filter(e => e.shortName === shortName)
 
             return results[0]
         },
@@ -164,6 +172,18 @@ const store = new Vuex.Store({
                 .filter(e => e._type === 'function')
                 .sort(sortByShortName)
         },
+        nsInterfaces: state => ns => {
+            return state
+                .namespaces[ns]
+                .filter(e => e._type === 'interface')
+                .sort(sortByShortName)
+        },
+        nsTraits: state => ns => {
+            return state
+                .namespaces[ns]
+                .filter(e => e._type === 'trait')
+                .sort(sortByShortName)
+        }
     },
     mutations: {
         filter (state, query) {
