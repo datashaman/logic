@@ -1,10 +1,9 @@
 import FuzzySearch from 'fuzzy-search'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import Vue from 'vue'
 import VueClipboard from 'vue-clipboard2'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
-
-import { library } from '@fortawesome/fontawesome-svg-core'
 
 import {
     faArrowUp,
@@ -179,3 +178,21 @@ const app = new Vue({
     store,
     render: h => h(Vue.component('App'))
 })
+
+if (navigator.storage && navigator.storage.persist) {
+    navigator.storage.persist().then(granted => {
+        if (!granted) {
+            alert("Storage not granted")
+        }
+    })
+}
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(function(reg) {
+            console.log('Registration succeeded. Scope is ' + reg.scope)
+        })
+        .catch(function(error) {
+            console.log('Registration failed with ' + error)
+        })
+}

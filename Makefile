@@ -72,13 +72,16 @@ profile:
 	@php -d xdebug.profiler_enable=1 `which phpcheck`
 	sudo phpdismod xdebug
 
+deploy:
+	ssh $(DEPLOY_HOST) "cd logic; git pull"
+
 webpack-dev-server:
 	cp resources/favicon/* resources/robots.txt docs/
 	webpack-dev-server
 
 webpack-development:
 	webpack --mode=development
-	cp resources/favicon/* resources/robots.txt docs/
+	cp resources/favicon/* resources/robots.txt resources/service-worker.js docs/
 
 webpack-production:
 	webpack --mode=production

@@ -39,7 +39,12 @@ module.exports = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                '*.bundle.js*',
+                'index.html'
+            ]
+        }),
         new CompressionPlugin(),
         new HtmlWebpackPlugin({
             inject: 'body',
