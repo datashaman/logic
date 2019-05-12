@@ -1,21 +1,10 @@
 test: phpcheck-no-defects phpunit
 
-clean:
-	rm -rf build/
-
 watch:
 	while inotifywait -e close_write -r composer.* ./src ./checks ./functions ./tests; do make phpunit phpcheck; done
 
 watch-playground:
 	while inotifywait -e close_write -r composer.* ./src ./checks ./functions ./playground ./tests; do php playground/test.php; done
-
-namespaces:
-	mkdir -p resources/json/
-	./generate-namespaces > resources/json/namespaces.json
-
-namespaces-gists:
-	mkdir -p resources/json/
-	./generate-namespaces --gists > resources/json/namespaces.json
 
 phpcheck:
 	@phpcheck
@@ -60,16 +49,4 @@ profile:
 	sudo phpdismod xdebug
 
 deploy:
-	ssh $(DEPLOY_HOST) "cd logic && git pull && yarn && node_modules/.bin/webpack --mode=production && rm -rf previous && mv current previous && mv build current"
-
-webpack-dev-server:
-	webpack-dev-server
-
-webpack-development: clean
-	webpack --mode=development
-
-webpack-production: clean
-	webpack --mode=production
-
-webpack-watch:
-	webpack --mode=development --watch
+	ssh $(DEPLOY_HOST) "cd logic && git pull && vendor/bin/lowdown && rm -rf previous && mv current previous && mv build current"
