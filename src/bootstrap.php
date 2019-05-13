@@ -1,9 +1,10 @@
 <?php
 
-if (file_exists($file = __DIR__.'/compiled.php')) {
-    require_once $file;
-} else {
-    foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__, RecursiveDirectoryIterator::SKIP_DOTS)) as $file) {
-        require_once $file->getRealPath();
-    }
-}
+require_once 'monad.php';
+require_once 'either.php';
+require_once 'chain.php';
+require_once 'list.php';
+require_once 'maybe.php';
+require_once 'helpers.php';
+require_once 'predicates.php';
+require_once 'shortcuts.php';
